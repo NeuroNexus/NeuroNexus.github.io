@@ -1,0 +1,75 @@
+Examples
+========
+
+
+Streaming live signals
+----------------------
+
+.. code-block:: python
+
+    from radiens import AllegoClient
+    from time import sleep
+
+
+    def main():
+        client = AllegoClient()
+        conf = client.get_config()
+        loop_dur = conf['stream_loop_dur_ms']/1000 # 
+
+        # Get the 'signal group', which describes all the channel metadata
+        sig_grp = client.get_signal_group()
+
+        client.set_time_to_cache_head()     # set time range to primary cache head
+        sleep(loop_dur)                     # wait for the buffer to build up about as long as the loop duration
+        while True:
+            sigs, tr = client.get_signals() # gets all signals up to primary cache head since last call (or since last set_time_range_to_head())
+
+            # do somthing
+
+            sleep(loop_dur)                 # wait loop duration before getting more signals
+        
+
+
+    if __name__ == '__main__':
+        main()
+
+
+
+Load and access saved recording
+-------------------------------
+.. code-block:: python 
+
+    import os
+    from radiens import VidereClient
+    from time import sleep
+
+    def main():
+        client = VidereClient()
+
+        # get all recording files in directory
+        datasets = client.list_dir('~/mouse_recording_data')
+
+        print('there are {} datasets in {}'.format(recordings['num_dsource'], recordings['dest_path']))
+
+        print('loading first dataset')
+
+        dset = datasets['data_source_info']['descriptor'][0] # get descriptor for dataset at index 0
+
+        base_name = dset['base_name'] # dataset base name
+        path = dset['path']           # parent directory
+
+        # load dataset on Radiens and get data source information as return value
+        dsource = client.load_dataset(os.path.join(path, base_name))
+
+        print('loaded dataset\'s total time range is {}'.format(dsource['status']['time_range']))
+
+        time_range_request = [2, 4] # desired time range of signals in seconds
+
+        signals = client.get_signals(dsource['dsourceID'], time_range_request)
+    
+
+
+
+    if __name__ == '__main__':
+        main()
+

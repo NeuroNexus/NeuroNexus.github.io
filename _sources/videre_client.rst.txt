@@ -1,0 +1,7 @@
+VidereClient
+------------
+
+.. currentmodule:: radiens
+
+.. autoclass:: VidereClient
+   :members:

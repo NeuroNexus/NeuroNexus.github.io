@@ -1,0 +1,14 @@
+radiens
+=======
+
+radiens.allego\_client module
+-----------------------------
+   
+.. autoclass:: radiens.allego_client
+   :members:
+
+radiens.videre\_client module
+-----------------------------
+
+.. autoclass:: radiens.videre_client
+   :members:

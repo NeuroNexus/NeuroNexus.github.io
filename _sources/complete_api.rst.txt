@@ -1,0 +1,19 @@
+Complete API
+============
+
+AllegoClient
+------------
+
+.. currentmodule:: radiens
+
+.. autoclass:: AllegoClient
+   :members: 
+
+
+VidereClient
+------------
+
+.. currentmodule:: radiens
+
+.. autoclass:: VidereClient
+   :members:

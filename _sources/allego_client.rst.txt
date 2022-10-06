@@ -1,0 +1,7 @@
+AllegoClient
+------------
+
+.. currentmodule:: radiens
+
+.. autoclass:: AllegoClient
+   :members: 

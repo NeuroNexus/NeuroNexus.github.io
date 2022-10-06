@@ -15,11 +15,16 @@ Install the most recent Jinja version using pip:
 
 Basic Usage
 ------------
-Radiens currently provides two clients `AllegoClient` and `VidereClient` that can be used to interact with their respective servers `Allego` and `Videre`
+Radiens currently provides two clients `AllegoClient` and `VidereClient` that can be used to interact with their respective servers `Allego` and `Videre`. They can be imported and used via the following:
+
 .. code-block:: python
 
-    from radiens import AllegoClient
+    from radiens import AllegoClient, VidereClient
 
-.. code-block:: python 
+    allego = AllegoClient()
+    videre = VidereClient()
 
-    from radiens import VidereClient
+
+
+
+
