@@ -19,7 +19,7 @@ To be documented
 
 Basic Usage
 -----------
-Radiens currently provides two clients `AllegoClient` and `VidereClient` that can be used to interact with their respective servers `Allego` and `Videre`. They can be imported and used via the following:
+Radiens currently provides two clients ``AllegoClient`` and ``VidereClient`` that can be used to interact with their respective servers `Allego` and `Videre`. They can be imported and used via the following:
 
 .. code-block:: python
 
