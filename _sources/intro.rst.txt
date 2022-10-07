@@ -6,7 +6,7 @@ Radiens supports Python 3.7 and newer.
 Installation
 ------------
 
-Install the most recent Jinja version using pip:
+Install the most recent Radiens version using pip:
 
 .. code-block:: console
 
