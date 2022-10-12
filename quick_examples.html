@@ -83,20 +83,27 @@
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">client</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
+
+    <span class="c1"># get some config properties</span>
     <span class="n">conf</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
     <span class="n">loop_dur</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;stream_loop_dur_ms&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span> <span class="c1">#</span>
 
     <span class="c1"># Get the &#39;signal group&#39;, which describes all the channel metadata</span>
     <span class="n">sig_grp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_signal_group</span><span class="p">()</span>
 
-    <span class="n">client</span><span class="o">.</span><span class="n">set_time_to_cache_head</span><span class="p">()</span>     <span class="c1"># set time range to primary cache head</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span>                     <span class="c1"># wait for the buffer to build up about as long as the loop duration</span>
+    <span class="c1"># set time range to primary cache head</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">set_time_to_cache_head</span><span class="p">()</span>
+
+    <span class="c1"># wait for the buffer to build up about as long as the loop duration</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span>
+
+    <span class="c1"># get live signals loop</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">sigs</span><span class="p">,</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_signals</span><span class="p">()</span> <span class="c1"># gets all signals up to primary cache head since last call (or since last set_time_range_to_head())</span>
 
         <span class="c1"># do somthing</span>
 
-        <span class="n">sleep</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span>                 <span class="c1"># wait loop duration before getting more signals</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span>                 <span class="c1"># wait for cache to build up before getting more signals</span>
 
 
 

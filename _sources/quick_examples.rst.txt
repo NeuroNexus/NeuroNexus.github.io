@@ -13,20 +13,27 @@ Streaming live signals
 
     def main():
         client = AllegoClient()
+        
+        # get some config properties
         conf = client.get_config()
         loop_dur = conf['stream_loop_dur_ms']/1000 # 
 
         # Get the 'signal group', which describes all the channel metadata
         sig_grp = client.get_signal_group()
 
-        client.set_time_to_cache_head()     # set time range to primary cache head
-        sleep(loop_dur)                     # wait for the buffer to build up about as long as the loop duration
+        # set time range to primary cache head
+        client.set_time_to_cache_head()     
+
+        # wait for the buffer to build up about as long as the loop duration
+        sleep(loop_dur)      
+
+        # get live signals loop               
         while True:
             sigs, tr = client.get_signals() # gets all signals up to primary cache head since last call (or since last set_time_range_to_head())
 
             # do somthing
 
-            sleep(loop_dur)                 # wait loop duration before getting more signals
+            sleep(loop_dur)                 # wait for cache to build up before getting more signals
         
 
 
