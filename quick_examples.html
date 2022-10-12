@@ -117,24 +117,18 @@
     <span class="c1"># get all recording files in directory</span>
     <span class="n">datasets</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_dir</span><span class="p">(</span><span class="s1">&#39;~/mouse_recording_data&#39;</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;there are </span><span class="si">{}</span><span class="s1"> datasets in </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recordings</span><span class="p">[</span><span class="s1">&#39;num_dsource&#39;</span><span class="p">],</span> <span class="n">recordings</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]))</span>
+    <span class="c1"># get dataset descriptor for first in list</span>
+    <span class="n">dset</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">[</span><span class="s1">&#39;data_source_info&#39;</span><span class="p">][</span><span class="s1">&#39;descriptor&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;loading first dataset&#39;</span><span class="p">)</span>
-
-    <span class="n">dset</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">[</span><span class="s1">&#39;data_source_info&#39;</span><span class="p">][</span><span class="s1">&#39;descriptor&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># get descriptor for dataset at index 0</span>
-
-    <span class="n">base_name</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s1">&#39;base_name&#39;</span><span class="p">]</span> <span class="c1"># dataset base name</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>           <span class="c1"># parent directory</span>
 
     <span class="c1"># load dataset on Radiens and get data source information as return value</span>
+    <span class="n">base_name</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s1">&#39;base_name&#39;</span><span class="p">]</span> <span class="c1"># dataset base name</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>           <span class="c1"># parent directory</span>
     <span class="n">dsource</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">base_name</span><span class="p">))</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;loaded dataset</span><span class="se">\&#39;</span><span class="s1">s total time range is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dsource</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">][</span><span class="s1">&#39;time_range&#39;</span><span class="p">]))</span>
-
-    <span class="n">time_range_request</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="c1"># desired time range of signals in seconds</span>
-
+    <span class="c1"># get signals</span>
+    <span class="n">time_range_request</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
     <span class="n">signals</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_signals</span><span class="p">(</span><span class="n">dsource</span><span class="p">[</span><span class="s1">&#39;dsourceID&#39;</span><span class="p">],</span> <span class="n">time_range_request</span><span class="p">)</span>
-
 
 
 

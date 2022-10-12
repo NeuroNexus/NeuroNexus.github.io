@@ -49,25 +49,19 @@ Load and access saved recording
         # get all recording files in directory
         datasets = client.list_dir('~/mouse_recording_data')
 
-        print('there are {} datasets in {}'.format(recordings['num_dsource'], recordings['dest_path']))
+        # get dataset descriptor for first in list
+        dset = datasets['data_source_info']['descriptor'][0] 
 
-        print('loading first dataset')
-
-        dset = datasets['data_source_info']['descriptor'][0] # get descriptor for dataset at index 0
-
-        base_name = dset['base_name'] # dataset base name
-        path = dset['path']           # parent directory
 
         # load dataset on Radiens and get data source information as return value
+        base_name = dset['base_name'] # dataset base name
+        path = dset['path']           # parent directory
         dsource = client.load_dataset(os.path.join(path, base_name))
 
-        print('loaded dataset\'s total time range is {}'.format(dsource['status']['time_range']))
-
-        time_range_request = [2, 4] # desired time range of signals in seconds
-
+        # get signals
+        time_range_request = [2, 4] 
         signals = client.get_signals(dsource['dsourceID'], time_range_request)
     
-
 
 
     if __name__ == '__main__':
