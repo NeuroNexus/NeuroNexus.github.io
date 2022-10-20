@@ -1,0 +1,6 @@
+Other data structures
+=====================
+
+.. currentmodule:: radiens
+
+.. class:: SignalGroup

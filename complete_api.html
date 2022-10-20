@@ -19,7 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Examples" href="quick_examples.html" /> 
+    <link rel="next" title="Other data structures" href="other_data_structures.html" />
+    <link rel="prev" title="Accessing clients in MATLAB" href="matlab_examples.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,12 +41,14 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Complete API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#allegoclient">AllegoClient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#videreclient">VidereClient</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures</a></li>
 </ul>
 
         </div>
@@ -89,6 +92,22 @@
 <dd class="field-odd"><p><strong>config</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – has various keys relating to the configuration</p>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+<span class="go">{&#39;backbone_mode&#39;: &#39;SMARTBOX_SIM_GEN_SPIKES&#39;,</span>
+<span class="go">&#39;base_samp_freq&#39;: 20000.0,</span>
+<span class="go">&#39;headstage_cable_lens&#39;: {&#39;A&#39;: 3.0,</span>
+<span class="go">                        &#39;B&#39;: 3.0,</span>
+<span class="go">                        &#39;C&#39;: 3.0,</span>
+<span class="go">                        &#39;D&#39;: 3.0,</span>
+<span class="go">                        &#39;E&#39;: 3.0,</span>
+<span class="go">                        &#39;F&#39;: 3.0,</span>
+<span class="go">                        &#39;G&#39;: 3.0,</span>
+<span class="go">                        &#39;H&#39;: 3.0},</span>
+<span class="go">&#39;stream_loop_dur_ms&#39;: 200,</span>
+<span class="go">&#39;system_server_port&#39;: &#39;:50051&#39;}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -97,12 +116,15 @@
 <dd><p>Gets digital out state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>dout1_state</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – dout 1 state</p></li>
-<li><p><strong>dout2_state</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – dout 2 state</p></li>
-</ul>
+<dd class="field-odd"><p><strong>dout_state_dict</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – has keys ‘digital_outs_mode’ and ‘states’.</p>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_digital_out_states</span><span class="p">()</span>
+<span class="go">{&#39;digital_outs_mode&#39;: &#39;manual&#39;,</span>
+<span class="go">&#39;states&#39;: [{&#39;chan_idx&#39;: 0, &#39;state&#39;: True}, {&#39;chan_idx&#39;: 1, &#39;state&#39;: False}]}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -111,7 +133,7 @@
 <dd><p>Gets the signal group (channel metadata).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>signal_group</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">SignalGroup</span></code>) – object containing metadata information for all channels</p>
+<dd class="field-odd"><p><strong>signal_group</strong> (<a class="reference internal" href="other_data_structures.html#radiens.SignalGroup" title="radiens.SignalGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalGroup</span></code></a>) – object containing metadata information for all channels</p>
 </dd>
 </dl>
 </dd></dl>
@@ -139,6 +161,15 @@
 <dd class="field-odd"><p><strong>status</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – has keys ‘streaming’ and ‘recording’ that map to dictionaries describing their respective status</p>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_status</span><span class="p">()</span>
+<span class="go">{&#39;recording&#39;: {&#39;active_filename&#39;: &#39;allego_0__uid1020-00-53-02&#39;,</span>
+<span class="go">            &#39;duration&#39;: 0.0,</span>
+<span class="go">            &#39;error&#39;: &#39;&#39;,</span>
+<span class="go">            &#39;mode&#39;: &#39;off&#39;},</span>
+<span class="go">&#39;streaming&#39;: {&#39;hardware_memory&#39;: 0.0, &#39;mode&#39;: &#39;off&#39;, &#39;time_range&#39;: [0.0, 0.0]}}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -217,7 +248,8 @@ will return the new signals since the last call to <a class="reference internal"
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="quick_examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="matlab_examples.html" class="btn btn-neutral float-left" title="Accessing clients in MATLAB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="other_data_structures.html" class="btn btn-neutral float-right" title="Other data structures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

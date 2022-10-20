@@ -1,0 +1,78 @@
+.. _Python examples:
+
+Example use cases
+=================
+
+
+Streaming live signals
+----------------------
+
+.. code-block:: python
+
+    from radiens import AllegoClient
+    from time import sleep
+
+
+    def main():
+        client = AllegoClient()
+        
+        # get some config properties
+        conf = client.get_config()
+        loop_dur = conf['stream_loop_dur_ms']/1000 # 
+
+        # Get the 'signal group', which describes all the channel metadata
+        sig_grp = client.get_signal_group()
+
+        # set time range to primary cache head
+        client.set_time_to_cache_head()     
+
+        # wait for the buffer to build up about as long as the loop duration
+        sleep(loop_dur)      
+
+        # get live signals loop               
+        while True:
+            sigs, tr = client.get_signals() # gets all signals up to primary cache head since last call (or since last set_time_range_to_head())
+
+            # do somthing
+
+            sleep(loop_dur)                 # wait for cache to build up before getting more signals
+        
+
+
+    if __name__ == '__main__':
+        main()
+
+
+
+Loading and accessing saved recording
+-------------------------------------
+.. code-block:: python 
+
+    import os
+    from radiens import VidereClient
+    from time import sleep
+
+    def main():
+        client = VidereClient()
+
+        # get all recording files in directory
+        datasets = client.list_dir('~/mouse_recording_data')
+
+        # get dataset descriptor for first in list
+        dset = datasets['data_source_info']['descriptor'][0] 
+
+
+        # load dataset on Radiens and get data source information as return value
+        base_name = dset['base_name'] # dataset base name
+        path = dset['path']           # parent directory
+        dsource = client.load_dataset(os.path.join(path, base_name))
+
+        # get signals
+        time_range_request = [2, 4] 
+        signals = client.get_signals(dsource['dsourceID'], time_range_request)
+    
+
+
+    if __name__ == '__main__':
+        main()
+

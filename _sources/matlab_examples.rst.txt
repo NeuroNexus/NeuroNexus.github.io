@@ -1,0 +1,47 @@
+Accessing clients in MATLAB
+===========================
+
+Although there is no MATLAB client for Radiens, the Python client may be accessed via MATLAB using some built-in functionality.
+
+First download and install Python if not already installed, but check that you have (or are installing) the correct Python version for your version of MATLAB `here <https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/python-compatibility.pdf>`_. For trouble shooting see `these docs <https://www.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html>`_.
+
+Next you need to tell matlab where your python executable is (if you are using an environment direct ``pypath`` to that binary).  
+
+.. code-block:: matlab
+
+    % run these 2 lines upon every MATLAB launch
+    pypath = '/path/to/python/executable';
+    pe = pyenv("Version", pypath);
+
+Then you can install the radiens package via Python, or you can run the following command in matlab which does the same thing.
+
+.. code-block:: matlab 
+
+    % install radiens package - only needs to be run once (unless you change executables)
+    system([pypath ' -m pip install radiens']) 
+
+Once the above has executed successfully, you can access the clients as follows:
+
+.. code-block:: matlab
+
+    radiens = py.importlib.import_module('radiens');
+    client = radiens.AllegoClient();
+
+Here are the same examples seen :ref:`previously <Python examples>`, but accessing the clients in MATLAB.
+
+Streaming live signals
+----------------------
+
+.. code-block:: matlab
+
+    TODO
+
+
+
+Loading and accessing saved recording
+-------------------------------------
+
+.. code-block::  matlab
+
+    TODO
+

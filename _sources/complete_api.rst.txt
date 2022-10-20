@@ -17,3 +17,5 @@ VidereClient
 
 .. autoclass:: VidereClient
    :members:
+
+

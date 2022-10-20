@@ -11,8 +11,10 @@ Radiens is a python API for Radiens™ Analytics Software Suite.
    :caption: Contents:
 
    intro
-   quick_examples
+   examples
+   matlab_examples
    complete_api
+   other_data_structures
 
 
 
