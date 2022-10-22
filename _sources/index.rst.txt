@@ -3,7 +3,7 @@
 Radiens
 =======
 
-Radiens is a python API for Radiens™ Analytics Software Suite.
+Radiens is a python API for `Radiens™ Analytics Software Suite <https://www.neuronexus.com/products/radiens-analytics-system>`_.
 
 
 .. toctree::
