@@ -1,6 +1,15 @@
+.. _Other data structures:
+
 Other data structures
 =====================
 
+.. _signal group:
+
+SignalGroup
+-----------
+
 .. currentmodule:: radiens
 
-.. class:: SignalGroup
+.. autoclass:: SignalGroup
+    :members:
+    :member-order: bysource

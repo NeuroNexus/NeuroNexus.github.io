@@ -12,10 +12,6 @@ Install the most recent Radiens version using pip:
 
     $ pip install radiens
 
-Licensing
----------
-To be documented
-
 
 Basic Usage
 -----------

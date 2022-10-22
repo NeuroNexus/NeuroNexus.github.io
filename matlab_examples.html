@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accessing clients in MATLAB &mdash; Radiens 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,6 +15,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,40 +75,96 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="accessing-clients-in-matlab">
+  <div class="section" id="accessing-clients-in-matlab">
 <h1>Accessing clients in MATLAB<a class="headerlink" href="#accessing-clients-in-matlab" title="Permalink to this heading"></a></h1>
 <p>Although there is no MATLAB client for Radiens, the Python client may be accessed via MATLAB using some built-in functionality.</p>
-<p>First download and install Python if not already installed, but check that you have (or are installing) the correct Python version for your version of MATLAB <a class="reference external" href="https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/python-compatibility.pdf">here</a>. For trouble shooting see <a class="reference external" href="https://www.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html">these docs</a>.</p>
-<p>Next you need to tell matlab where your python executable is (if you are using an environment direct <code class="docutils literal notranslate"><span class="pre">pypath</span></code> to that binary).</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% run these 2 lines upon every MATLAB launch</span><span class="w"></span>
-<span class="n">pypath</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;/path/to/python/executable&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="n">pe</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pyenv</span><span class="p">(</span><span class="s">&quot;Version&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pypath</span><span class="p">);</span><span class="w"></span>
+<ol class="arabic simple">
+<li><p>First download and install Python if not already installed, but check that you have (or are installing) the correct Python version for your version of MATLAB <a class="reference external" href="https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/python-compatibility.pdf">here</a>. For trouble shooting see <a class="reference external" href="https://www.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html">these docs</a>.</p></li>
+<li><p>Next you need to tell matlab where your python executable is (if you are using an environment direct <code class="docutils literal notranslate"><span class="pre">pypath</span></code> to that binary).  The following lines must be run once upon every matlab launch. It’s recommended that you run these lines outside of your main script, especially if you are running an acquisition loop.</p></li>
+</ol>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">pypath</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;/path/to/python/executable&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="nb">pyenv</span><span class="p">(</span><span class="s">&quot;Version&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pypath</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Then you can install the radiens package via Python, or you can run the following command in matlab which does the same thing.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% install radiens package - only needs to be run once (unless you change executables)</span><span class="w"></span>
-<span class="nb">system</span><span class="p">([</span><span class="n">pypath</span><span class="w"> </span><span class="s">&#39; -m pip install radiens&#39;</span><span class="p">])</span><span class="w"></span>
+<ol class="arabic simple" start="3">
+<li><p>The following command only needs to be run once per unique <code class="docutils literal notranslate"><span class="pre">pypath</span></code>. That is, you’ll only have to install radiens again if you change the python executable matlab uses.</p></li>
+</ol>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">system</span><span class="p">([</span><span class="n">pypath</span><span class="w"> </span><span class="s">&#39; -m pip install radiens&#39;</span><span class="p">])</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Once the above has executed successfully, you can access the clients as follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">radiens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">py</span><span class="p">.</span><span class="n">importlib</span><span class="p">.</span><span class="n">import_module</span><span class="p">(</span><span class="s">&#39;radiens&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">AllegoClient</span><span class="p">();</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Here are the same examples seen <a class="reference internal" href="examples.html#python-examples"><span class="std std-ref">previously</span></a>, but accessing the clients in MATLAB.</p>
-<section id="streaming-live-signals">
+<ol class="arabic simple" start="4">
+<li><p>Once the above has executed successfully, you can access the clients. The following are the same use cases we saw <a class="reference internal" href="examples.html#python-examples"><span class="std std-ref">previously</span></a>, but this time in MATLAB.</p></li>
+</ol>
+<div class="section" id="streaming-live-signals">
 <h2>Streaming live signals<a class="headerlink" href="#streaming-live-signals" title="Permalink to this heading"></a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">TODO</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% import radiens python package and connect client</span><span class="w"></span>
+<span class="n">radiens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">py</span><span class="p">.</span><span class="n">importlib</span><span class="p">.</span><span class="n">import_module</span><span class="p">(</span><span class="s">&#39;radiens&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">AllegoClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% get stream loop duration from config</span><span class="w"></span>
+<span class="n">cfg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">get_config</span><span class="p">();</span><span class="w"></span>
+<span class="n">loop_dur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">{</span><span class="s">&#39;stream_loop_dur_ms&#39;</span><span class="p">}</span><span class="o">/</span><span class="mi">1000</span><span class="p">;</span><span class="w"> </span><span class="c">% access py.dict with &#39;{}&#39;</span><span class="w"></span>
+
+<span class="c">% sig_grp (signal group) describes channel mapping metadata</span><span class="w"></span>
+<span class="n">sig_grp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">get_signal_group</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% set time to primary cache head (live signals)</span><span class="w"></span>
+<span class="n">client</span><span class="p">.</span><span class="n">set_time_to_cache_head</span><span class="p">()</span><span class="w">  </span>
+
+<span class="c">% wait for cache to build up before starting aquisition loop</span><span class="w"></span>
+<span class="nb">pause</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span><span class="w"></span>
+
+<span class="c">% aquisition loop   </span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="nb">true</span><span class="w">    </span>
+<span class="w">    </span><span class="c">% returns a py.tuple</span><span class="w"></span>
+<span class="w">    </span><span class="n">sigs_tuple</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">get_signals</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">% we can cast py.tuple as a cell array in matlab</span><span class="w"></span>
+<span class="w">    </span><span class="n">sigs_cell_array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="n">sigs_tuple</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">% first cell is py.numpy.ndarray which can be cast as single or double</span><span class="w"></span>
+<span class="w">    </span><span class="n">sigs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">single</span><span class="p">(</span><span class="n">sigs_cell_array</span><span class="p">{</span><span class="mi">1</span><span class="p">});</span><span class="w"> </span>
+
+<span class="w">    </span><span class="c">% second cell is py.list, which can also be cast as above</span><span class="w"></span>
+<span class="w">    </span><span class="n">time_range</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">single</span><span class="p">(</span><span class="n">sigs_cell_array</span><span class="p">{</span><span class="mi">2</span><span class="p">});</span><span class="w"> </span>
+
+
+<span class="w">    </span><span class="c">% do something</span><span class="w"></span>
+
+
+<span class="w">    </span><span class="nb">pause</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span><span class="w">    </span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="loading-and-accessing-saved-recording">
+<p>Note that converting from Python to MATLAB types adds a bit of latency, and the true loop duration may be</p>
+</div>
+<div class="section" id="loading-and-accessing-saved-recording">
 <h2>Loading and accessing saved recording<a class="headerlink" href="#loading-and-accessing-saved-recording" title="Permalink to this heading"></a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">TODO</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% import radiens python package and connect client</span><span class="w"></span>
+<span class="n">radiens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">py</span><span class="p">.</span><span class="n">importlib</span><span class="p">.</span><span class="n">import_module</span><span class="p">(</span><span class="s">&#39;radiens&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">VidereClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% get all recording files in directory</span><span class="w"></span>
+<span class="n">dir_dict</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">list_dir</span><span class="p">(</span><span class="s">&#39;~/mouse_recording_data&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% pick a dataset</span><span class="w"></span>
+<span class="n">descriptors_cell_array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="n">dir_dict</span><span class="p">{</span><span class="s">&#39;data_source_info&#39;</span><span class="p">}{</span><span class="s">&#39;descriptor&#39;</span><span class="p">});</span><span class="w"></span>
+<span class="n">dataset_dict</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">descriptors_cell_array</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span><span class="w"></span>
+
+<span class="c">% load dataset on Radiens and get data source information as return value</span><span class="w"></span>
+<span class="n">base_name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="n">dataset_dict</span><span class="p">{</span><span class="s">&#39;base_name&#39;</span><span class="p">});</span><span class="w"> </span><span class="c">% dataset base name</span><span class="w"></span>
+<span class="nb">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="n">dataset_dict</span><span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">});</span><span class="w">           </span><span class="c">% parent directory</span><span class="w"></span>
+<span class="n">dset_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="nb">path</span><span class="p">,</span><span class="w"> </span><span class="n">base_name</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">% get signals</span><span class="w"></span>
+<span class="n">time_range_request</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w"></span>
+<span class="n">signals</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">single</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">get_signals</span><span class="p">(</span><span class="n">dset_id</span><span class="p">,</span><span class="w"> </span><span class="n">time_range_request</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">% do something</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

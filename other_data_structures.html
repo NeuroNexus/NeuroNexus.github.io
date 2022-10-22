@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Other data structures &mdash; Radiens 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,6 +15,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -43,7 +43,21 @@
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example use cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html">Complete API</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Other data structures</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Other data structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#signalgroup">SignalGroup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.SignalGroup"><code class="docutils literal notranslate"><span class="pre">SignalGroup</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.SignalGroup.full_table"><code class="docutils literal notranslate"><span class="pre">SignalGroup.full_table</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.SignalGroup.num_sigs"><code class="docutils literal notranslate"><span class="pre">SignalGroup.num_sigs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.SignalGroup.num_selected_sigs"><code class="docutils literal notranslate"><span class="pre">SignalGroup.num_selected_sigs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.SignalGroup.sensor_spec"><code class="docutils literal notranslate"><span class="pre">SignalGroup.sensor_spec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.SignalGroup.sigs"><code class="docutils literal notranslate"><span class="pre">SignalGroup.sigs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.SignalGroup.selected_sigs"><code class="docutils literal notranslate"><span class="pre">SignalGroup.selected_sigs()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -70,14 +84,68 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="other-data-structures">
-<h1>Other data structures<a class="headerlink" href="#other-data-structures" title="Permalink to this heading"></a></h1>
+  <div class="section" id="other-data-structures">
+<span id="id1"></span><h1>Other data structures<a class="headerlink" href="#other-data-structures" title="Permalink to this heading"></a></h1>
+<div class="section" id="signalgroup">
+<span id="signal-group"></span><h2>SignalGroup<a class="headerlink" href="#signalgroup" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="radiens.SignalGroup">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.</span></span><span class="sig-name descname"><span class="pre">SignalGroup</span></span><a class="headerlink" href="#radiens.SignalGroup" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.</span></span><span class="sig-name descname"><span class="pre">SignalGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.SignalGroup" title="Permalink to this definition"></a></dt>
+<dd><p>Channel mapping metadata</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.SignalGroup.full_table">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">full_table</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#radiens.SignalGroup.full_table" title="Permalink to this definition"></a></dt>
+<dd><p>Dataframe describing channel metadata (index, position, channel type, units, etc)</p>
+</dd></dl>
 
-</section>
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.SignalGroup.num_sigs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_sigs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.SignalGroup.num_sigs" title="Permalink to this definition"></a></dt>
+<dd><p>Dict with keys (str) <code class="docutils literal notranslate"><span class="pre">'pri'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aux'</span></code>, <code class="docutils literal notranslate"><span class="pre">'din'</span></code>, <code class="docutils literal notranslate"><span class="pre">'dout'</span></code> mapping to their respective number of signals</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.SignalGroup.num_selected_sigs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_selected_sigs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.SignalGroup.num_selected_sigs" title="Permalink to this definition"></a></dt>
+<dd><p>Dict with keys (str) <code class="docutils literal notranslate"><span class="pre">'pri'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aux'</span></code>, <code class="docutils literal notranslate"><span class="pre">'din'</span></code>, <code class="docutils literal notranslate"><span class="pre">'dout'</span></code> mapping to their respective number of selected signals</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.SignalGroup.sensor_spec">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sensor_spec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.SignalGroup.sensor_spec" title="Permalink to this definition"></a></dt>
+<dd><p>Dict with ports (str) as keys mapping to dicts describing headstage, site, and probe wireframe metadata</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.SignalGroup.sigs">
+<span class="sig-name descname"><span class="pre">sigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.SignalGroup.sigs" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>signal_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – one of <code class="docutils literal notranslate"><span class="pre">'pri'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aux'</span></code>, <code class="docutils literal notranslate"><span class="pre">'din'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'dout'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sigs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – full_table but just for <code class="docutils literal notranslate"><span class="pre">signal_type</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.SignalGroup.selected_sigs">
+<span class="sig-name descname"><span class="pre">selected_sigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.SignalGroup.selected_sigs" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>signal_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – one of <code class="docutils literal notranslate"><span class="pre">'pri'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aux'</span></code>, <code class="docutils literal notranslate"><span class="pre">'din'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'dout'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sel_sigs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – full_table but just for <code class="docutils literal notranslate"><span class="pre">signal_type</span></code> of selected sigs</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
 
 
            </div>

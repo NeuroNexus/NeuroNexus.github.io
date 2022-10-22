@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Complete API &mdash; Radiens 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,6 +15,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -44,8 +44,28 @@
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example use cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Complete API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#allegoclient">AllegoClient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#videreclient">VidereClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#allegoclient">AllegoClient</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient"><code class="docutils literal notranslate"><span class="pre">AllegoClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_config"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_digital_out_states"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_digital_out_states()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_signal_group"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_signal_group()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_signals"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_signals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_status"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_digital_out_manual"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_digital_out_manual()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_time_to_cache_head"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_time_to_cache_head()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#videreclient">VidereClient</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.VidereClient"><code class="docutils literal notranslate"><span class="pre">VidereClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.VidereClient.get_signals"><code class="docutils literal notranslate"><span class="pre">VidereClient.get_signals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.VidereClient.list_dir"><code class="docutils literal notranslate"><span class="pre">VidereClient.list_dir()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.VidereClient.load_dataset"><code class="docutils literal notranslate"><span class="pre">VidereClient.load_dataset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures</a></li>
@@ -75,9 +95,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="complete-api">
+  <div class="section" id="complete-api">
 <h1>Complete API<a class="headerlink" href="#complete-api" title="Permalink to this heading"></a></h1>
-<section id="allegoclient">
+<div class="section" id="allegoclient">
 <h2>AllegoClient<a class="headerlink" href="#allegoclient" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="radiens.AllegoClient">
@@ -133,7 +153,7 @@
 <dd><p>Gets the signal group (channel metadata).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>signal_group</strong> (<a class="reference internal" href="other_data_structures.html#radiens.SignalGroup" title="radiens.SignalGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalGroup</span></code></a>) – object containing metadata information for all channels</p>
+<dd class="field-odd"><p><strong>signal_group</strong> (<a class="reference internal" href="other_data_structures.html#radiens.SignalGroup" title="radiens.SignalGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalGroup</span></code></a>) – object containing metadata information for all channels. See <a class="reference internal" href="other_data_structures.html#signal-group"><span class="std std-ref">SignalGroup</span></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -145,8 +165,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sigarray</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray[float32]</span></code>) – raw signal data; the mapping contained in signal_group (see <a class="reference internal" href="#radiens.AllegoClient.get_signal_group" title="radiens.AllegoClient.get_signal_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signal_group()</span></code></a>)</p></li>
-<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>) – time range (in seconds) of sigarray</p></li>
+<li><p><strong>sigarray</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray[numpy.float32]</span></code>) – raw signal data; the mapping contained in signal_group (see <a class="reference internal" href="#radiens.AllegoClient.get_signal_group" title="radiens.AllegoClient.get_signal_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signal_group()</span></code></a>)</p></li>
+<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – time range (in seconds) of sigarray</p></li>
 </ul>
 </dd>
 </dl>
@@ -196,8 +216,8 @@ will return the new signals since the last call to <a class="reference internal"
 
 </dd></dl>
 
-</section>
-<section id="videreclient">
+</div>
+<div class="section" id="videreclient">
 <h2>VidereClient<a class="headerlink" href="#videreclient" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="radiens.VidereClient">
@@ -208,10 +228,16 @@ will return the new signals since the last call to <a class="reference internal"
 <span class="sig-name descname"><span class="pre">get_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.VidereClient.get_signals" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the the signals for specified time range</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sigarray</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray[float32]</span></code>) – raw signal data; the mapping contained in signal_group (see <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signal_group()</span></code>)</p></li>
-<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>)</p></li>
+<li><p><strong>dataset_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – can be obtained from <a class="reference internal" href="#radiens.VidereClient.load_dataset" title="radiens.VidereClient.load_dataset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_dataset()</span></code></a></p></li>
+<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>sigarray</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray[numpy.float32]</span></code>) – raw signal data; the mapping contained in signal_group (see <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signal_group()</span></code>)</p></li>
+<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -219,30 +245,96 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.VidereClient.list_dir">
-<span class="sig-name descname"><span class="pre">list_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#radiens.VidereClient.list_dir" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">list_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.VidereClient.list_dir" title="Permalink to this definition"></a></dt>
 <dd><p>list datasets from specified directory</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>datasets</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – dictionary with metadata pertaining to all datasets in requested directory</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>directory</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Union[str,</span> <span class="pre">pathlib.PosixPath]</span></code>) – path to directory that contains dataset(s)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>datasets</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – dictionary with metadata pertaining to all datasets in requested directory</p>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">list_dir</span><span class="p">(</span><span class="s2">&quot;Users/example/recording_data&quot;</span><span class="p">)</span>
+<span class="go">{&#39;data_source_info&#39;: {&#39;descriptor&#39;: [{&#39;base_name&#39;: &#39;allego_0__uid0823-10-56-41&#39;,</span>
+<span class="go">                                    &#39;file_type&#39;: &#39;xdat&#39;,</span>
+<span class="go">                                    &#39;path&#39;: &#39;Users/example/recording_data/&#39;},</span>
+<span class="go">                                    {&#39;base_name&#39;: &#39;allego_0__uid1014-15-03-32&#39;,</span>
+<span class="go">                                    &#39;file_type&#39;: &#39;xdat&#39;,</span>
+<span class="go">                                    &#39;path&#39;: &#39;Users/example/recording_data/&#39;}],</span>
+<span class="go">                    &#39;stat&#39;: [{&#39;dataset_checksum&#39;: &#39;62daa95366c8760122ea0706e141a67f991ee1c5605a98596c0ae859231e2683&#39;,</span>
+<span class="go">                                &#39;dataset_uid&#39;: &#39;ce7f4a7e-bb50-4e6b-ad0d-3ab0c5a8ea5e&#39;,</span>
+<span class="go">                                &#39;duration_sec&#39;: 14.8032,</span>
+<span class="go">                                &#39;is_meta_data_file&#39;: True,</span>
+<span class="go">                                &#39;num_bytes&#39;: 47455590,</span>
+<span class="go">                                &#39;num_bytes_meta_data&#39;: 85350,</span>
+<span class="go">                                &#39;num_bytes_primary_data&#39;: 47370240,</span>
+<span class="go">                                &#39;num_channels&#39;: 38,</span>
+<span class="go">                                &#39;num_files&#39;: 3,</span>
+<span class="go">                                &#39;sample_freq&#39;: 20000,</span>
+<span class="go">                                &#39;time_stamp&#39;: {&#39;nanos&#39;: 53210000,</span>
+<span class="go">                                            &#39;seconds&#39;: 1661266601}},</span>
+<span class="go">                            {&#39;dataset_checksum&#39;: &#39;9ae779f46e38a6589b84594c07f62c5f5797f13e61a1481d41f862b956c96de2&#39;,</span>
+<span class="go">                                &#39;dataset_uid&#39;: &#39;348d18dc-e5b5-4046-8fae-d0e4f2f53566&#39;,</span>
+<span class="go">                                &#39;duration_sec&#39;: 16.5952,</span>
+<span class="go">                                &#39;is_meta_data_file&#39;: True,</span>
+<span class="go">                                &#39;num_bytes&#39;: 53189991,</span>
+<span class="go">                                &#39;num_bytes_meta_data&#39;: 85351,</span>
+<span class="go">                                &#39;num_bytes_primary_data&#39;: 53104640,</span>
+<span class="go">                                &#39;num_channels&#39;: 38,</span>
+<span class="go">                                &#39;num_files&#39;: 3,</span>
+<span class="go">                                &#39;sample_freq&#39;: 20000,</span>
+<span class="go">                                &#39;time_stamp&#39;: {&#39;nanos&#39;: 705758000,</span>
+<span class="go">                                            &#39;seconds&#39;: 1665777812}}]},</span>
+<span class="go">&#39;dest_path&#39;: &#39;Users/example/recording_data&#39;,</span>
+<span class="go">&#39;msg&#39;: &#39;&#39;,</span>
+<span class="go">&#39;num_bytes&#39;: 100645581,</span>
+<span class="go">&#39;num_dsource&#39;: 2,</span>
+<span class="go">&#39;num_files&#39;: 6}</span>
+</pre></div>
+</div>
+<p>You can access dataset/recording information via the <code class="docutils literal notranslate"><span class="pre">'data_source_info'</span></code> key of the returned <strong>datasets</strong> dictionary. Said key
+maps to another dictionary with keys <code class="docutils literal notranslate"><span class="pre">'descriptor'</span></code> and <code class="docutils literal notranslate"><span class="pre">stat</span></code> describing various metadata.</p>
+<p>Notice that there are 2 data sources (<code class="docutils literal notranslate"><span class="pre">'num_dsource'</span></code>) but 6 files total (<code class="docutils literal notranslate"><span class="pre">num_files</span></code>). This is because an xdat recording
+corresponds to 3 files with suffixes <code class="docutils literal notranslate"><span class="pre">*.xdat.json</span></code>, <code class="docutils literal notranslate"><span class="pre">*_data.xdat</span></code>, <code class="docutils literal notranslate"><span class="pre">*_timestamp.xdat</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.VidereClient.load_dataset">
-<span class="sig-name descname"><span class="pre">load_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_name_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#radiens.VidereClient.load_dataset" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_name_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.VidereClient.load_dataset" title="Permalink to this definition"></a></dt>
 <dd><p>Loads a dataset on Videre</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>base_name_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Union[str,</span> <span class="pre">pathlib.PosixPath]</span></code>) – full path and basename (no extension) to dataset</p>
+<dd class="field-odd"><p><strong>base_name_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Union[str,</span> <span class="pre">pathlib.PosixPath]</span></code>) – full path and base name (no extension) to dataset</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dataset_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>)</p>
 </dd>
 </dl>
+<dl class="simple">
+<dt>Side effects:</dt><dd><p>Sets value of <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code> as key in <code class="docutils literal notranslate"><span class="pre">dataset_map</span></code> attribute on client. See the following example.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset_id</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;/Users/example/recording_data/allego_0__uid0823-10-56-41&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">dataset_map</span><span class="p">[</span><span class="n">dsource_id</span><span class="p">]</span>
+<span class="go">{&#39;base_name&#39;: &#39;allego_0__uid0823-10-56-41&#39;,</span>
+<span class="go">&#39;duration&#39;: 14.8032,</span>
+<span class="go">&#39;file_type&#39;: &#39;xdat&#39;,</span>
+<span class="go">&#39;num_chans&#39;: {&#39;aux&#39;: 2, &#39;din&#39;: 2, &#39;dout&#39;: 2, &#39;pri&#39;: 32},</span>
+<span class="go">&#39;samp_freq&#39;: 20000.0,</span>
+<span class="go">&#39;shape&#39;: [296064, 38],</span>
+<span class="go">&#39;time_range&#39;: [0.0, 14.8032],</span>
+<span class="go">&#39;time_stamp_range&#39;: [0, 296064]}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
