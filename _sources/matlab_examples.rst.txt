@@ -5,7 +5,7 @@ Although there is no MATLAB client for Radiens, the Python client may be accesse
 
 1. First download and install Python if not already installed. Check that you have (or are installing) the correct Python version for your version of MATLAB `here <https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/python-compatibility.pdf>`_. For trouble shooting see `these docs <https://www.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html>`_.
 
-2. Next you need to tell matlab where your python executable is (if you are using an environment direct ``pypath`` to that binary).  The following lines must be run once upon every matlab launch. 
+2. Next you need to tell matlab where your python executable is (if you are using an environment, direct ``pypath`` to that binary).  The following lines must be run once upon every matlab launch. 
 
 .. literalinclude:: ../tutorials/set_pypath.m
     :language: matlab
