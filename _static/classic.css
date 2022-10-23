@@ -266,4 +266,5 @@ div.viewcode-block:target {
 div.code-block-caption {
     color: #efefef;
     background-color: #1c4e63;
+    caption-side: bottom;
 }

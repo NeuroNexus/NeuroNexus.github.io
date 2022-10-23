@@ -6,6 +6,7 @@
   <title>Accessing clients in MATLAB &mdash; Radiens 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -79,12 +80,15 @@
 <h1>Accessing clients in MATLAB<a class="headerlink" href="#accessing-clients-in-matlab" title="Permalink to this heading"></a></h1>
 <p>Although there is no MATLAB client for Radiens, the Python client may be accessed via MATLAB using some built-in functionality.</p>
 <ol class="arabic simple">
-<li><p>First download and install Python if not already installed, but check that you have (or are installing) the correct Python version for your version of MATLAB <a class="reference external" href="https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/python-compatibility.pdf">here</a>. For trouble shooting see <a class="reference external" href="https://www.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html">these docs</a>.</p></li>
-<li><p>Next you need to tell matlab where your python executable is (if you are using an environment direct <code class="docutils literal notranslate"><span class="pre">pypath</span></code> to that binary).  The following lines must be run once upon every matlab launch. It’s recommended that you run these lines outside of your main script, especially if you are running an acquisition loop.</p></li>
+<li><p>First download and install Python if not already installed. Check that you have (or are installing) the correct Python version for your version of MATLAB <a class="reference external" href="https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/python-compatibility.pdf">here</a>. For trouble shooting see <a class="reference external" href="https://www.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html">these docs</a>.</p></li>
+<li><p>Next you need to tell matlab where your python executable is (if you are using an environment direct <code class="docutils literal notranslate"><span class="pre">pypath</span></code> to that binary).  The following lines must be run once upon every matlab launch.</p></li>
 </ol>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Because of the asyncronous nature of Python env creation in via MATLAB, we recommended that you run these lines outside of your main script to avoid errors.</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">pypath</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;/path/to/python/executable&#39;</span><span class="p">;</span><span class="w"></span>
 <span class="nb">pyenv</span><span class="p">(</span><span class="s">&quot;Version&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pypath</span><span class="p">);</span><span class="w"></span>
 </pre></div>
+</div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>The following command only needs to be run once per unique <code class="docutils literal notranslate"><span class="pre">pypath</span></code>. That is, you’ll only have to install radiens again if you change the python executable matlab uses.</p></li>
@@ -136,7 +140,7 @@
 <span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Note that converting from Python to MATLAB types adds a bit of latency, and the true loop duration may be</p>
+<p>Note that the type conversions add noticable latency, and the effective loop duration may be considerably larger than <code class="docutils literal notranslate"><span class="pre">loop_dur</span></code>.</p>
 </div>
 <div class="section" id="loading-and-accessing-saved-recording">
 <h2>Loading and accessing saved recording<a class="headerlink" href="#loading-and-accessing-saved-recording" title="Permalink to this heading"></a></h2>
@@ -153,12 +157,12 @@
 
 <span class="c">% load dataset on Radiens and get data source information as return value</span><span class="w"></span>
 <span class="n">base_name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="n">dataset_dict</span><span class="p">{</span><span class="s">&#39;base_name&#39;</span><span class="p">});</span><span class="w"> </span><span class="c">% dataset base name</span><span class="w"></span>
-<span class="nb">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="n">dataset_dict</span><span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">});</span><span class="w">           </span><span class="c">% parent directory</span><span class="w"></span>
-<span class="n">dset_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="nb">path</span><span class="p">,</span><span class="w"> </span><span class="n">base_name</span><span class="p">));</span><span class="w"></span>
+<span class="n">data_path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="n">dataset_dict</span><span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">});</span><span class="w">           </span><span class="c">% parent directory</span><span class="w"></span>
+<span class="n">dataset_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span><span class="w"> </span><span class="n">base_name</span><span class="p">));</span><span class="w"></span>
 
 <span class="c">% get signals</span><span class="w"></span>
 <span class="n">time_range_request</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w"></span>
-<span class="n">signals</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">single</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">get_signals</span><span class="p">(</span><span class="n">dset_id</span><span class="p">,</span><span class="w"> </span><span class="n">time_range_request</span><span class="p">));</span><span class="w"></span>
+<span class="n">signals</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">single</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">get_signals</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">,</span><span class="w"> </span><span class="n">time_range_request</span><span class="p">));</span><span class="w"></span>
 
 <span class="c">% do something</span><span class="w"></span>
 </pre></div>
