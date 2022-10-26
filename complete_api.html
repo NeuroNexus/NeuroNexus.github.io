@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Complete API &mdash; Radiens 1.0.0 documentation</title>
+  <title>Complete API &mdash; Radiens 1.0.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -47,6 +47,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Complete API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#allegoclient">AllegoClient</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient"><code class="docutils literal notranslate"><span class="pre">AllegoClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.samp_freq"><code class="docutils literal notranslate"><span class="pre">AllegoClient.samp_freq</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_config"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_config()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_digital_out_states"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_digital_out_states()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_signal_group"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_signal_group()</span></code></a></li>
@@ -104,6 +105,17 @@
 <dt class="sig sig-object py" id="radiens.AllegoClient">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.</span></span><span class="sig-name descname"><span class="pre">AllegoClient</span></span><a class="headerlink" href="#radiens.AllegoClient" title="Permalink to this definition"></a></dt>
 <dd><p>A python API for allego</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.AllegoClient.samp_freq">
+<span class="sig-name descname"><span class="pre">samp_freq</span></span><a class="headerlink" href="#radiens.AllegoClient.samp_freq" title="Permalink to this definition"></a></dt>
+<dd><p>current sampling rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_config">
 <span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_config" title="Permalink to this definition"></a></dt>
@@ -111,6 +123,10 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><strong>config</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – has various keys relating to the configuration</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Side Effect:</dt><dd><p>sets <code class="docutils literal notranslate"><span class="pre">samp_freq</span></code> to current sampling rate.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>

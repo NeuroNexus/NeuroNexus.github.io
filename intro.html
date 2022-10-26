@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction &mdash; Radiens 1.0.0 documentation</title>
+  <title>Introduction &mdash; Radiens 1.0.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -88,11 +88,28 @@
 </div>
 <div class="section" id="basic-usage">
 <h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
-<p>Radiens currently provides two clients <code class="docutils literal notranslate"><span class="pre">AllegoClient</span></code> and <code class="docutils literal notranslate"><span class="pre">VidereClient</span></code> that can be used to interact with their respective servers <cite>Allego</cite> and <cite>Videre</cite>. They can be imported and used via the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">AllegoClient</span><span class="p">,</span> <span class="n">VidereClient</span>
+<p>Radiens currently provides two clients <code class="docutils literal notranslate"><span class="pre">AllegoClient</span></code> and <code class="docutils literal notranslate"><span class="pre">VidereClient</span></code> that can be used to interact with their respective servers <cite>ALLEGO</cite> and <cite>VIDERE</cite>.</p>
+<p>First, start the ALLEGO app. Then you can access it in python like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">AllegoClient</span>
 
-<span class="n">allego</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
-<span class="n">videre</span> <span class="o">=</span> <span class="n">VidereClient</span><span class="p">()</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
+<span class="n">cfg</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>It is best practice to run <code class="docutils literal notranslate"><span class="pre">client.get_config()</span></code> everytime you start a session with ALLEGO or change the sampling rate.
+This is because it initializes the sampling rate on the client. This is especially important if you are going to stream live signals (using <code class="docutils literal notranslate"><span class="pre">client.get_signals()</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">samp_freq</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">samp_freq</span>
+<span class="go">20000.0</span>
+</pre></div>
+</div>
+<p>For VIDERE, first start the app. Access the client in python like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">VidereClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">VidereClient</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
