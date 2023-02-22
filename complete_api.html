@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Complete API &mdash; Radiens 1.0.2 documentation</title>
+  <title>Complete API &mdash; Radiens 1.0.4 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -48,13 +48,30 @@
 <li class="toctree-l2"><a class="reference internal" href="#allegoclient">AllegoClient</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient"><code class="docutils literal notranslate"><span class="pre">AllegoClient</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.samp_freq"><code class="docutils literal notranslate"><span class="pre">AllegoClient.samp_freq</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_available_sensors"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_available_sensors()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_config"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_connected_ports"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_connected_ports()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_digital_out_states"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_digital_out_states()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_signal_group"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_signal_group()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_signals"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_signals()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.get_status"><code class="docutils literal notranslate"><span class="pre">AllegoClient.get_status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.restart"><code class="docutils literal notranslate"><span class="pre">AllegoClient.restart()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_digital_out_manual"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_digital_out_manual()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_recording"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_recording()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_recording_config"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_recording_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_samp_freq"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_samp_freq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_sensor"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_sensor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_streaming"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_streaming()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.set_time_to_cache_head"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_time_to_cache_head()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.sorter_cmd"><code class="docutils literal notranslate"><span class="pre">AllegoClient.sorter_cmd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.sorter_get_dashboard"><code class="docutils literal notranslate"><span class="pre">AllegoClient.sorter_get_dashboard()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.sorter_get_params"><code class="docutils literal notranslate"><span class="pre">AllegoClient.sorter_get_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.sorter_get_state"><code class="docutils literal notranslate"><span class="pre">AllegoClient.sorter_get_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.workspace_current"><code class="docutils literal notranslate"><span class="pre">AllegoClient.workspace_current()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.workspace_delete"><code class="docutils literal notranslate"><span class="pre">AllegoClient.workspace_delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.workspace_list"><code class="docutils literal notranslate"><span class="pre">AllegoClient.workspace_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.workspace_save"><code class="docutils literal notranslate"><span class="pre">AllegoClient.workspace_save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radiens.AllegoClient.workspace_switch"><code class="docutils literal notranslate"><span class="pre">AllegoClient.workspace_switch()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -117,16 +134,33 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.get_available_sensors">
+<span class="sig-name descname"><span class="pre">get_available_sensors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_available_sensors" title="Permalink to this definition"></a></dt>
+<dd><p>Gets dictionary of dictionaries of available Radiens headstage and probe models, with each model of form key=component ID, value=number of channels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>sensors</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – has keys ‘headstages’ and ‘probes’ that map to dictionaries of the available headstage models and probe models, respectively.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_available_sensors</span><span class="p">()</span>
+<span class="go">{&#39;sensors&#39;: {&#39;headstages&#39;: {&#39;hstg__chronic_smartlink_HC16&#39;: 16, &#39;hstg__acute_smartlink_A64&#39;: 64, ...},</span>
+<span class="go">            &#39;probes&#39;: {&#39;a2x16_10mm50_500_177&#39;: 32, &#39;a1x16_5mm150_177&#39;: 16, ...}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_config">
 <span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_config" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the configuration of Allego.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>config</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – has various keys relating to the configuration</p>
+<dd class="field-odd"><p><strong>config</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – has various keys relating to the system configuration</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Side Effect:</dt><dd><p>sets <code class="docutils literal notranslate"><span class="pre">samp_freq</span></code> to current sampling rate.</p>
+<dt>Side Effect:</dt><dd><p>sets <code class="docutils literal notranslate"><span class="pre">samp_freq</span></code> attribute to the current system sampling rate.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -142,8 +176,30 @@
 <span class="go">                        &#39;G&#39;: 3.0,</span>
 <span class="go">                        &#39;H&#39;: 3.0},</span>
 <span class="go">&#39;stream_loop_dur_ms&#39;: 200,</span>
-<span class="go">&#39;system_server_port&#39;: &#39;:50051&#39;}</span>
+<span class="go">&#39;system_server_port&#39;: &#39;:50051&#39;,</span>
+<span class="go">&#39;base_filename&#39;: &#39;my_filename&#39;,</span>
+<span class="go">&#39;filepath&#39;: &#39;my_filepath&#39; }</span>
 </pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.get_connected_ports">
+<span class="sig-name descname"><span class="pre">get_connected_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_connected_ports" title="Permalink to this definition"></a></dt>
+<dd><p>Gets dictionary of connected ports.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ports</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – dictionary with key=port label, value=number of channels.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_connected_ports</span><span class="p">()</span>
+<span class="go">{&#39;A&#39;: 32, &#39;B&#39;: 256}</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>client.get_signal_group()</p>
 </div>
 </dd></dl>
 
@@ -167,12 +223,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_signal_group">
 <span class="sig-name descname"><span class="pre">get_signal_group</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_signal_group" title="Permalink to this definition"></a></dt>
-<dd><p>Gets the signal group (channel metadata).</p>
+<dd><p>Gets the signal group (channel metadata) for all connected ports.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><strong>signal_group</strong> (<a class="reference internal" href="other_data_structures.html#radiens.SignalGroup" title="radiens.SignalGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalGroup</span></code></a>) – object containing metadata information for all channels. See <a class="reference internal" href="other_data_structures.html#signal-group"><span class="std std-ref">SignalGroup</span></a></p>
 </dd>
 </dl>
+<p class="rubric">Notes</p>
+<p>All ports are scanned to detect the connected ports.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -210,6 +268,28 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.restart">
+<span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.restart" title="Permalink to this definition"></a></dt>
+<dd><p>Restarts Allego in the requested mode.  Valid modes: ‘sbpro’, ‘=’sbpro-sinaps-256’, ‘sbpro-sinaps-1024’
+‘sbclassic’, ‘sim-sine’, ‘sim-spikes’, ‘open-ephys_usb2’,’open-ephys_usb3’, ‘intan1024’, ‘intan512’,
+‘xdaq-one-rec’, ‘xdaq-one-stim’, ‘xdaq-core-rec’, ‘xdaq-core-stim’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Side Effect:</dt><dd><p>Resets all settings to their initialization values in the requested mode.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span><span class="s1">&#39;sim-spikes&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_digital_out_manual">
 <span class="sig-name descname"><span class="pre">set_digital_out_manual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dout1_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dout2_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_digital_out_manual" title="Permalink to this definition"></a></dt>
 <dd><p>Sets digital out state.</p>
@@ -220,15 +300,316 @@
 <li><p><strong>dout2_state</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – new dout 2 state</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_digital_out_manual</span><span class="p">(</span><span class="n">true</span><span class="p">,</span> <span class="n">false</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.set_recording">
+<span class="sig-name descname"><span class="pre">set_recording</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_recording" title="Permalink to this definition"></a></dt>
+<dd><p>Sets signal recording to ‘on’ or ‘off’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – requested mode, <code class="docutils literal notranslate"><span class="pre">on</span></code> or <code class="docutils literal notranslate"><span class="pre">off</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Side Effect:</dt><dd><p>sets streaming on if <cite>mode=``on`</cite> and streaming is off</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_recording</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_recording</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.set_recording_config">
+<span class="sig-name descname"><span class="pre">set_recording_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasource_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasource_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasource_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_time_stamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_recording_config" title="Permalink to this definition"></a></dt>
+<dd><p>Sets recording configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datasource_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – path to output XDAT file set</p></li>
+<li><p><strong>datasource_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – base name of XDAT file set</p></li>
+<li><p><strong>datasource_idx</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – index number of output XDAT file set</p></li>
+<li><p><strong>is_time_stamp</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – <cite>True</cite> if file name includes time stamp</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Side Effect:</dt><dd><p>sets streaming on if <cite>mode=``on`</cite> and streaming is off</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_recording</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_recording</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.set_samp_freq">
+<span class="sig-name descname"><span class="pre">set_samp_freq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_samp_freq" title="Permalink to this definition"></a></dt>
+<dd><p>Sets sampling frequency.  Valid sampling frequencies: 625, 1000, 1250, 1500, 2000, 2500, 3000, 3333,
+4000, 5000, 6250, 8000, 10000, 12500, 15000, 20000, 25000, 30000</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – requested sampling frequency (samples/sec)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_samp_freq</span><span class="p">(</span><span class="mi">12500</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.set_sensor">
+<span class="sig-name descname"><span class="pre">set_sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headstage_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probe_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_sensor" title="Permalink to this definition"></a></dt>
+<dd><p>Sets a sensor (headstage paired with probe) to the requested port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – requested port (must be a currently connected port)</p></li>
+<li><p><strong>headstage_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – requested headstage alias or headstage ID</p></li>
+<li><p><strong>probe_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – requested probe alias or probe ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_sensor</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;smart-32&#39;</span><span class="p">,</span> <span class="s1">&#39;4x8-32&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>use radiens.utils.HEADSTAGE_ALIAS and radiens.utils.PROBE_ALIAS to get headstage and probe aliases, respectively.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>client.get_available_sensors()
+client.get_connected_ports()</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.set_streaming">
+<span class="sig-name descname"><span class="pre">set_streaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_streaming" title="Permalink to this definition"></a></dt>
+<dd><p>Sets signal streaming to ‘on’ or ‘off’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – requested mode, <code class="docutils literal notranslate"><span class="pre">on</span></code> or <code class="docutils literal notranslate"><span class="pre">off</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_streaming</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_streaming</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_time_to_cache_head">
 <span class="sig-name descname"><span class="pre">set_time_to_cache_head</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_time_to_cache_head" title="Permalink to this definition"></a></dt>
 <dd><p>Sets current time to most recent time point in signal cache.</p>
-<p>This should be called before the first call of <a class="reference internal" href="#radiens.AllegoClient.get_signals" title="radiens.AllegoClient.get_signals"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signals()</span></code></a>. the first call of <a class="reference internal" href="#radiens.AllegoClient.get_signals" title="radiens.AllegoClient.get_signals"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signals()</span></code></a>
+<p>This should be called before the first call of <a class="reference internal" href="#radiens.AllegoClient.get_signals" title="radiens.AllegoClient.get_signals"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signals()</span></code></a>. The first call of <a class="reference internal" href="#radiens.AllegoClient.get_signals" title="radiens.AllegoClient.get_signals"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signals()</span></code></a>
 will return the new signals since the last call to <a class="reference internal" href="#radiens.AllegoClient.set_time_to_cache_head" title="radiens.AllegoClient.set_time_to_cache_head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_time_to_cache_head()</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.sorter_cmd">
+<span class="sig-name descname"><span class="pre">sorter_cmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.sorter_cmd" title="Permalink to this definition"></a></dt>
+<dd><p>Sends the requested command to the spike sorter.</p>
+<p>Available spike sorter commands: ‘on’, ‘off’, ‘clear’, ‘rebase’, ‘init’, ‘localize’, ‘sort’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cmd</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – spike sorter command</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">sorter_cmd</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.sorter_get_dashboard">
+<span class="sig-name descname"><span class="pre">sorter_get_dashboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.sorter_get_dashboard" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the spike sorter dashboard</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>pandas.DataFrame</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">sorter_get_dashboard</span><span class="p">()</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.sorter_get_params">
+<span class="sig-name descname"><span class="pre">sorter_get_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.sorter_get_params" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the spike sorter parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>pandas.DataFrame</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">sorter_get_params</span><span class="p">()</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.sorter_get_state">
+<span class="sig-name descname"><span class="pre">sorter_get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.sorter_get_state" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the spike sorter state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>pandas.DataFrame</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">sorter_get_state</span><span class="p">()</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.workspace_current">
+<span class="sig-name descname"><span class="pre">workspace_current</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.workspace_current" title="Permalink to this definition"></a></dt>
+<dd><p>Returns current workspace ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>workspaces</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">workspace_current</span><span class="p">()</span>
+<span class="go">df</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.workspace_delete">
+<span class="sig-name descname"><span class="pre">workspace_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.workspace_delete" title="Permalink to this definition"></a></dt>
+<dd><p>Deletes requested workspace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>workspace_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – workspace ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">workspace_delete</span><span class="p">(</span><span class="s1">&#39;my_wspace&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.workspace_list">
+<span class="sig-name descname"><span class="pre">workspace_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.workspace_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns table of all available workspaces</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>workspaces</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">workspace_list</span><span class="p">()</span>
+<span class="go">df</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.workspace_save">
+<span class="sig-name descname"><span class="pre">workspace_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.workspace_save" title="Permalink to this definition"></a></dt>
+<dd><p>Saves current workspace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>workspace_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – optional workspace ID</p></li>
+<li><p><strong>tags</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – optional tags</p></li>
+<li><p><strong>notes</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – optional notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">workspace_save</span><span class="p">(</span><span class="n">workspace_id</span><span class="o">=</span><span class="s1">&#39;my_wspace&#39;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="s1">&#39;my_tags&#39;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s1">&#39;my_notes)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.AllegoClient.workspace_switch">
+<span class="sig-name descname"><span class="pre">workspace_switch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.workspace_switch" title="Permalink to this definition"></a></dt>
+<dd><p>Switches to requested workspace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>workspace_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – workspace ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>None</strong></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">workspace_switch</span><span class="p">(</span><span class="s1">&#39;my_wspace&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
