@@ -1,21 +1,18 @@
 Complete API
 ============
 
-AllegoClient
-------------
-
 .. currentmodule:: radiens
 
 .. autoclass:: AllegoClient
    :members: 
 
 
-VidereClient
-------------
-
 .. currentmodule:: radiens
 
 .. autoclass:: VidereClient
    :members:
 
+.. currentmodule:: radiens
 
+.. autoclass:: CurateClient
+   :members:
