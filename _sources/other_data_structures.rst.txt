@@ -1,13 +1,36 @@
 .. _Other data structures:
 
-Other data structures
-=====================
+Other data structures and types
+===============================
 
-.. _signal group:
+.. currentmodule:: radiens.lib.channel_metadata
 
-
-.. currentmodule:: radiens
-
-.. autoclass:: SignalGroup
+.. autoclass:: ChannelMetadata
     :members:
     :member-order: bysource
+
+.. currentmodule:: radiens.lib.dataset_metadata
+
+.. autoclass:: DatasetMetadata
+    :members:
+    :member-order: bysource
+
+.. currentmodule:: radiens.lib.allego_lib
+
+.. autoclass:: AllegoState
+    :members:
+    :member-order: bysource
+
+.. currentmodule:: radiens.utils.constants
+
+.. autoclass:: KeyIndex
+    :members:
+    :member-order: bysource
+
+.. autoclass:: SignalType
+    :members:
+    :member-order: bysource
+    
+.. autoclass:: TRS_MODE
+    :members:
+

@@ -1,18 +1,49 @@
-Complete API
-============
+Clients API
+===========
 
 .. currentmodule:: radiens
 
 .. autoclass:: AllegoClient
    :members: 
-
-
-.. currentmodule:: radiens
+   :member-order: bysource
 
 .. autoclass:: VidereClient
    :members:
-
-.. currentmodule:: radiens
+   :member-order: bysource
 
 .. autoclass:: CurateClient
    :members:
+   :member-order: bysource
+
+SubClients API
+==============
+
+.. currentmodule:: radiens.workspace_client
+
+.. autoclass:: WorkspaceClient
+   :members:
+   :member-order: bysource
+
+.. currentmodule:: radiens.spike_sorter
+
+.. autoclass:: SpikeSorterClient
+   :members:
+   :member-order: bysource
+
+.. currentmodule:: radiens.spikes_client
+
+.. autoclass:: SpikesClient
+   :members:
+   :member-order: bysource
+   
+.. currentmodule:: radiens.metrics_client
+
+.. autoclass:: MetricsClient
+   :members:
+   :member-order: bysource
+
+.. currentmodule:: radiens.signals_client
+
+.. autoclass:: SignalsClient
+   :members:
+   :member-order: bysource

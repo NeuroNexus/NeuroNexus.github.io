@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Other data structures &mdash; Radiens 1.0.4 documentation</title>
+  <title>Other data structures and types &mdash; Radiens 1.0.4 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -11,16 +12,15 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Complete API" href="complete_api.html" /> 
+    <link rel="prev" title="Clients API" href="complete_api.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -28,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Radiens
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Radiens
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -43,15 +47,61 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example use cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="complete_api.html">Complete API</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Other data structures</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.SignalGroup"><code class="docutils literal notranslate"><span class="pre">SignalGroup</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.SignalGroup.full_table"><code class="docutils literal notranslate"><span class="pre">SignalGroup.full_table</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.SignalGroup.num_sigs"><code class="docutils literal notranslate"><span class="pre">SignalGroup.num_sigs</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.SignalGroup.num_selected_sigs"><code class="docutils literal notranslate"><span class="pre">SignalGroup.num_selected_sigs</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.SignalGroup.sensor_spec"><code class="docutils literal notranslate"><span class="pre">SignalGroup.sensor_spec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.SignalGroup.sigs"><code class="docutils literal notranslate"><span class="pre">SignalGroup.sigs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.SignalGroup.selected_sigs"><code class="docutils literal notranslate"><span class="pre">SignalGroup.selected_sigs()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complete_api.html#subclients-api">SubClients API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Other data structures and types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.table"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.table</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.attributes"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.attributes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.index"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.sel_index"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.sel_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.num_sigs"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.num_sigs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.sel_num_sigs"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.sel_num_sigs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.num_sigs_total"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.num_sigs_total()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.num_selected_sigs_total"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.num_selected_sigs_total</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.sensor_spec"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.sensor_spec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.id"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.time_range"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.time_range</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.TR"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.TR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.channel_metadata"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.channel_metadata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.attributes"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.attributes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.path"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.path</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.base_name"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.base_name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.table"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.table</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.clear_dataset_id"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.clear_dataset_id()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState"><code class="docutils literal notranslate"><span class="pre">AllegoState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.sample_freq"><code class="docutils literal notranslate"><span class="pre">AllegoState.sample_freq</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.system_mode"><code class="docutils literal notranslate"><span class="pre">AllegoState.system_mode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.port_num_channels"><code class="docutils literal notranslate"><span class="pre">AllegoState.port_num_channels</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.cable_length_ft"><code class="docutils literal notranslate"><span class="pre">AllegoState.cable_length_ft</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.recording"><code class="docutils literal notranslate"><span class="pre">AllegoState.recording</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.stream"><code class="docutils literal notranslate"><span class="pre">AllegoState.stream</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.connected"><code class="docutils literal notranslate"><span class="pre">AllegoState.connected</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.base_name"><code class="docutils literal notranslate"><span class="pre">AllegoState.base_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.KeyIndex"><code class="docutils literal notranslate"><span class="pre">KeyIndex</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.KeyIndex.NTV"><code class="docutils literal notranslate"><span class="pre">KeyIndex.NTV</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.KeyIndex.DATA"><code class="docutils literal notranslate"><span class="pre">KeyIndex.DATA</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.KeyIndex.SYS"><code class="docutils literal notranslate"><span class="pre">KeyIndex.SYS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.SignalType"><code class="docutils literal notranslate"><span class="pre">SignalType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalType.AMP"><code class="docutils literal notranslate"><span class="pre">SignalType.AMP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalType.AIN"><code class="docutils literal notranslate"><span class="pre">SignalType.AIN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalType.DIN"><code class="docutils literal notranslate"><span class="pre">SignalType.DIN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalType.DOUT"><code class="docutils literal notranslate"><span class="pre">SignalType.DOUT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE"><code class="docutils literal notranslate"><span class="pre">TRS_MODE</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.FROM_HEAD"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.FROM_HEAD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.SUBSET"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.SUBSET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.TO_HEAD"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.TO_HEAD</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -71,8 +121,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Other data structures</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Other data structures and types</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/other_data_structures.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -82,77 +132,319 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="other-data-structures">
-<span id="id1"></span><h1>Other data structures<a class="headerlink" href="#other-data-structures" title="Permalink to this heading"></a></h1>
-<span class="target" id="signal-group"></span><dl class="py class">
-<dt class="sig sig-object py" id="radiens.SignalGroup">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.</span></span><span class="sig-name descname"><span class="pre">SignalGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SignalGroup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.SignalGroup" title="Permalink to this definition"></a></dt>
-<dd><p>Channel mapping metadata</p>
+  <section id="other-data-structures-and-types">
+<span id="other-data-structures"></span><h1>Other data structures and types<a class="headerlink" href="#other-data-structures-and-types" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.channel_metadata.</span></span><span class="sig-name descname"><span class="pre">ChannelMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SignalGroup</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata" title="Permalink to this definition"></a></dt>
+<dd><p>Container for channel metadata.</p>
 <dl class="py property">
-<dt class="sig sig-object py" id="radiens.SignalGroup.full_table">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">full_table</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#radiens.SignalGroup.full_table" title="Permalink to this definition"></a></dt>
-<dd><p>Dataframe describing channel metadata (index, position, channel type, units, etc)</p>
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.table">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">table</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.table" title="Permalink to this definition"></a></dt>
+<dd><p>Metadata table providing metadata on each channel (aka signal) in the dataset.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="radiens.SignalGroup.num_sigs">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_sigs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.SignalGroup.num_sigs" title="Permalink to this definition"></a></dt>
-<dd><p>Dict with keys (str) <code class="docutils literal notranslate"><span class="pre">'pri'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aux'</span></code>, <code class="docutils literal notranslate"><span class="pre">'din'</span></code>, <code class="docutils literal notranslate"><span class="pre">'dout'</span></code> mapping to their respective number of signals</p>
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.attributes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attributes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.attributes" title="Permalink to this definition"></a></dt>
+<dd><p>Dictionary of attributes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#radiens.utils.constants.SignalType" title="radiens.utils.constants.SignalType"><span class="pre">SignalType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">KEY_IDXS</span></span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.index" title="Permalink to this definition"></a></dt>
+<dd><p>Signal indices by signal type and index type. All indices are zero-indexed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">SignalType</span></code>) – requested signal type</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">SignalType</span><span class="o">.</span><span class="n">AMP</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">KEY_IDXS</span><span class="p">(</span><span class="n">ntv</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">46</span><span class="p">],</span> <span class="n">dset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">sys</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">46</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">SignalType</span><span class="o">.</span><span class="n">AIN</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">KEY_IDXS</span><span class="p">(</span><span class="n">ntv</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">dset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">sys</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">33</span><span class="p">])</span>  <span class="c1"># signal has 32 AMP channels</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<dl class="simple">
+<dt>Index definitions:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">ntv</span></code> is the position of the signal (channel) trace when the backing dataset</p>
+</dd>
+</dl>
+<p>was created for each signal type.  For recording files, it is the position of the channels in the DAQ data stream or primary data file.
+The <code class="docutils literal notranslate"><span class="pre">ntv</span></code> index starts at zero for each signal type.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">dset</span></code> is the position of a signal trace in the backing dataset for each signal type.  Unless the signal traces</p>
+</div></blockquote>
+<dl>
+<dt>in the dataset were re-ordered, <code class="docutils literal notranslate"><span class="pre">dset</span></code> will equal <code class="docutils literal notranslate"><span class="pre">ntv</span></code>.</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">dset</span></code> index starts at zero for each signal type.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">sys</span></code> is the position of the signal (channel) trace when the backing dataset was created.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">sys</span></code> index starts at zero and increases in natural order over all signal types alway in the following order: ‘amp’, ‘gpio_ain’, ‘gpio_din’, ‘gpio_dout’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.sel_index">
+<span class="sig-name descname"><span class="pre">sel_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#radiens.utils.constants.SignalType" title="radiens.utils.constants.SignalType"><span class="pre">SignalType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">KEY_IDXS</span></span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.sel_index" title="Permalink to this definition"></a></dt>
+<dd><p>Selected signal indices by signal type and index type.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">'index'</span></code> for more information on signal indices.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.num_sigs">
+<span class="sig-name descname"><span class="pre">num_sigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#radiens.utils.constants.SignalType" title="radiens.utils.constants.SignalType"><span class="pre">SignalType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.num_sigs" title="Permalink to this definition"></a></dt>
+<dd><p>Number of signals for the requested signal type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.sel_num_sigs">
+<span class="sig-name descname"><span class="pre">sel_num_sigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#radiens.utils.constants.SignalType" title="radiens.utils.constants.SignalType"><span class="pre">SignalType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.sel_num_sigs" title="Permalink to this definition"></a></dt>
+<dd><p>Number of selected signals for the requested signal type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.num_sigs_total">
+<span class="sig-name descname"><span class="pre">num_sigs_total</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.num_sigs_total" title="Permalink to this definition"></a></dt>
+<dd><p>Total number of signals</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="radiens.SignalGroup.num_selected_sigs">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_selected_sigs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.SignalGroup.num_selected_sigs" title="Permalink to this definition"></a></dt>
-<dd><p>Dict with keys (str) <code class="docutils literal notranslate"><span class="pre">'pri'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aux'</span></code>, <code class="docutils literal notranslate"><span class="pre">'din'</span></code>, <code class="docutils literal notranslate"><span class="pre">'dout'</span></code> mapping to their respective number of selected signals</p>
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.num_selected_sigs_total">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_selected_sigs_total</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.num_selected_sigs_total" title="Permalink to this definition"></a></dt>
+<dd><p>Total number of signals</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="radiens.SignalGroup.sensor_spec">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sensor_spec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.SignalGroup.sensor_spec" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.sensor_spec">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sensor_spec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.sensor_spec" title="Permalink to this definition"></a></dt>
 <dd><p>Dict with ports (str) as keys mapping to dicts describing headstage, site, and probe wireframe metadata</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="radiens.SignalGroup.sigs">
-<span class="sig-name descname"><span class="pre">sigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.SignalGroup.sigs" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>signal_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – one of <code class="docutils literal notranslate"><span class="pre">'pri'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aux'</span></code>, <code class="docutils literal notranslate"><span class="pre">'din'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'dout'</span></code></p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>sigs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – full_table but just for <code class="docutils literal notranslate"><span class="pre">signal_type</span></code></p>
-</dd>
-</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.dataset_metadata.</span></span><span class="sig-name descname"><span class="pre">DatasetMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataSourceSetSaveReply</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata" title="Permalink to this definition"></a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.id" title="Permalink to this definition"></a></dt>
+<dd><p>Dataset ID of this DataSource the Radiens hub.  <cite>None</cite> indicates that it is not on a hub.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.time_range">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_range</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">TIME_RANGE</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.time_range" title="Permalink to this definition"></a></dt>
+<dd><p>Dataset time range</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.TR">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">TIME_RANGE</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.TR" title="Permalink to this definition"></a></dt>
+<dd><p>Aliases <cite>obj.time_range</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.channel_metadata">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">channel_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><span class="pre">ChannelMetadata</span></a></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.channel_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Dataset’s ChannelMetadata, which describes the dataset’s signals (aka channels), probes, positions, etc.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.attributes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attributes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.attributes" title="Permalink to this definition"></a></dt>
+<dd><p>Dataset attributes.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.path">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.path" title="Permalink to this definition"></a></dt>
+<dd><p>File system path of the Radiens data file set that backs this DataSource.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.base_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.base_name" title="Permalink to this definition"></a></dt>
+<dd><p>File system base name of the Radiens data file set that backs this DataSource.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.table">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">table</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.table" title="Permalink to this definition"></a></dt>
+<dd><p>Dataset attributes as a table.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="radiens.SignalGroup.selected_sigs">
-<span class="sig-name descname"><span class="pre">selected_sigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.SignalGroup.selected_sigs" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>signal_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – one of <code class="docutils literal notranslate"><span class="pre">'pri'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aux'</span></code>, <code class="docutils literal notranslate"><span class="pre">'din'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'dout'</span></code></p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>sel_sigs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – full_table but just for <code class="docutils literal notranslate"><span class="pre">signal_type</span></code> of selected sigs</p>
-</dd>
-</dl>
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.clear_dataset_id">
+<span class="sig-name descname"><span class="pre">clear_dataset_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.clear_dataset_id" title="Permalink to this definition"></a></dt>
+<dd><p>Clears this DataSource’s dataset ID by setting it to None.
+This is a power user function. Best practice is to call it when the dataset has been cleared from the Radiens hub.</p>
 </dd></dl>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.allego_lib.</span></span><span class="sig-name descname"><span class="pre">AllegoState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw=&lt;class</span> <span class="pre">'allegoserver_pb2.ConfigAndStatus'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState" title="Permalink to this definition"></a></dt>
+<dd><p>Container for Allego configuration</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.sample_freq">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sample_freq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.sample_freq" title="Permalink to this definition"></a></dt>
+<dd><p>Current system sample frequency in samples/sec [Hz]</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.system_mode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">system_mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.system_mode" title="Permalink to this definition"></a></dt>
+<dd><p>Current Allego mode, e.g. ‘sim-spikes’, etc.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.port_num_channels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">port_num_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.port_num_channels" title="Permalink to this definition"></a></dt>
+<dd><p>Number of channels on each connected port.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.cable_length_ft">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cable_length_ft</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.cable_length_ft" title="Permalink to this definition"></a></dt>
+<dd><p>Headstage cable length in feet for each system port</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.recording">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">recording</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">RecordingSpec</span></em><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.recording" title="Permalink to this definition"></a></dt>
+<dd><p>Recording status</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.stream">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stream</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">StreamSpec</span></em><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.stream" title="Permalink to this definition"></a></dt>
+<dd><p>Streaming status</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.connected">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connected</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.connected" title="Permalink to this definition"></a></dt>
+<dd><p>Returns true if there is a headstage connected on any channel.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.base_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.base_name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns true if there is a headstage connected on any channel.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">KeyIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.KeyIndex" title="Permalink to this definition"></a></dt>
+<dd><p>An enumeration of key index types</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">key_ind</span> <span class="o">=</span> <span class="n">KeyIndex</span><span class="o">.</span><span class="n">NTV</span>
+</pre></div>
 </div>
+<p>Valid values are as follows:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex.NTV">
+<span class="sig-name descname"><span class="pre">NTV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#radiens.utils.constants.KeyIndex.NTV" title="Permalink to this definition"></a></dt>
+<dd><p>native</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex.DATA">
+<span class="sig-name descname"><span class="pre">DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.utils.constants.KeyIndex.DATA" title="Permalink to this definition"></a></dt>
+<dd><p>data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex.SYS">
+<span class="sig-name descname"><span class="pre">SYS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#radiens.utils.constants.KeyIndex.SYS" title="Permalink to this definition"></a></dt>
+<dd><p>system</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">SignalType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.SignalType" title="Permalink to this definition"></a></dt>
+<dd><p>An enumeration of signal types</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sig_type</span> <span class="o">=</span> <span class="n">SignalType</span><span class="o">.</span><span class="n">AMP</span>
+</pre></div>
+</div>
+<p>Valid values are as follows:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalType.AMP">
+<span class="sig-name descname"><span class="pre">AMP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#radiens.utils.constants.SignalType.AMP" title="Permalink to this definition"></a></dt>
+<dd><p>primary signals</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalType.AIN">
+<span class="sig-name descname"><span class="pre">AIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.utils.constants.SignalType.AIN" title="Permalink to this definition"></a></dt>
+<dd><p>analog in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalType.DIN">
+<span class="sig-name descname"><span class="pre">DIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#radiens.utils.constants.SignalType.DIN" title="Permalink to this definition"></a></dt>
+<dd><p>digital in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalType.DOUT">
+<span class="sig-name descname"><span class="pre">DOUT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#radiens.utils.constants.SignalType.DOUT" title="Permalink to this definition"></a></dt>
+<dd><p>digital out</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">TRS_MODE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.TRS_MODE" title="Permalink to this definition"></a></dt>
+<dd><p>TRS_MODE is the time range selector (TRS) enum used to control time range selection in calls to get signals, spikes, power spectral density, or similar data sets.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sel_mode</span> <span class="o">=</span> <span class="n">TRS_MODE</span><span class="o">.</span><span class="n">SUBSET</span>
+</pre></div>
+</div>
+<p>Given a time range [start, end) in seconds (dataset time), the selector modes are:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE.FROM_HEAD">
+<span class="sig-name descname"><span class="pre">FROM_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#radiens.utils.constants.TRS_MODE.FROM_HEAD" title="Permalink to this definition"></a></dt>
+<dd><p>selects [(head of stream/cache/file - start)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE.SUBSET">
+<span class="sig-name descname"><span class="pre">SUBSET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#radiens.utils.constants.TRS_MODE.SUBSET" title="Permalink to this definition"></a></dt>
+<dd><p>selects [start, end)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE.TO_HEAD">
+<span class="sig-name descname"><span class="pre">TO_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.utils.constants.TRS_MODE.TO_HEAD" title="Permalink to this definition"></a></dt>
+<dd><p>selects [start, head of stream/cache/file]</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="complete_api.html" class="btn btn-neutral float-left" title="Complete API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="complete_api.html" class="btn btn-neutral float-left" title="Clients API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, NeuroNexus.</p>
+    <p>&#169; Copyright 2023, NeuroNexus.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

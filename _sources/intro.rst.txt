@@ -38,7 +38,7 @@ This is because it initializes the sampling rate on the client. This is especial
     >>> client.samp_freq
     20000.0
 
-For VIDERE, first start the app. Access the client in python like this
+For VIDERE, first start the app. Access the client in python like this 
 
 .. code-block:: python
 

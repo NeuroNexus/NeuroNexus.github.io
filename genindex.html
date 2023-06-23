@@ -11,10 +11,9 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -27,11 +26,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Radiens
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Radiens
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,8 +45,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example use cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="complete_api.html">Complete API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complete_api.html#subclients-api">SubClients API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures and types</a></li>
 </ul>
 
         </div>
@@ -59,8 +63,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Index</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Index</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -74,16 +78,21 @@
 
 <div class="genindex-jumpbox">
  <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
+ | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
  | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
  
@@ -91,19 +100,61 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.utils.constants.SignalType.AIN">AIN (radiens.utils.constants.SignalType attribute)</a>
+</li>
       <li><a href="complete_api.html#radiens.AllegoClient">AllegoClient (class in radiens)</a>
 </li>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState">AllegoState (class in radiens.lib.allego_lib)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.utils.constants.SignalType.AMP">AMP (radiens.utils.constants.SignalType attribute)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.attributes">attributes (radiens.lib.channel_metadata.ChannelMetadata property)</a>
+
+      <ul>
+        <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.attributes">(radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.base_name">base_name (radiens.lib.allego_lib.AllegoState property)</a>
+
+      <ul>
+        <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.base_name">(radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.CurateClient.copy_files">copy_files() (radiens.CurateClient method)</a>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.cable_length_ft">cable_length_ft (radiens.lib.allego_lib.AllegoState property)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.calculate">calculate() (radiens.metrics_client.MetricsClient method)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.channel_metadata">channel_metadata (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata">ChannelMetadata (class in radiens.lib.channel_metadata)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.clear">clear() (radiens.metrics_client.MetricsClient method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.CurateClient.cp">cp() (radiens.CurateClient method)</a>
+      <li><a href="complete_api.html#radiens.VidereClient.clear_dataset">clear_dataset() (radiens.VidereClient method)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.clear_dataset_id">clear_dataset_id() (radiens.lib.dataset_metadata.DatasetMetadata method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.clear_spikes">clear_spikes() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.connected">connected (radiens.lib.allego_lib.AllegoState property)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spikes_client.SpikesClient.convert_kilosort_output">convert_kilosort_output() (radiens.spikes_client.SpikesClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.CurateClient">CurateClient (class in radiens)</a>
 </li>
@@ -113,21 +164,47 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.CurateClient.delete_files">delete_files() (radiens.CurateClient method)</a>
+      <li><a href="complete_api.html#radiens.VidereClient.dashboard">dashboard() (radiens.VidereClient method)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.KeyIndex.DATA">DATA (radiens.utils.constants.KeyIndex attribute)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata">DatasetMetadata (class in radiens.lib.dataset_metadata)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.SignalType.DIN">DIN (radiens.utils.constants.SignalType attribute)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.SignalType.DOUT">DOUT (radiens.utils.constants.SignalType attribute)</a>
+</li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_band_pass_filter">dsp_band_pass_filter() (radiens.CurateClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_band_stop_filter">dsp_band_stop_filter() (radiens.CurateClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_car">dsp_car() (radiens.CurateClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_clean_up">dsp_clean_up() (radiens.CurateClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.CurateClient.dsp_high_pass_filter">dsp_high_pass_filter() (radiens.CurateClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.CurateClient.dsp_low_pass_filter">dsp_low_pass_filter() (radiens.CurateClient method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_low_pass_filter">dsp_low_pass_filter() (radiens.CurateClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_notch_filter">dsp_notch_filter() (radiens.CurateClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_paired_diff">dsp_paired_diff() (radiens.CurateClient method)</a>
+</li>
       <li><a href="complete_api.html#radiens.CurateClient.dsp_progress">dsp_progress() (radiens.CurateClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.CurateClient.dsp_progress_bar">dsp_progress_bar() (radiens.CurateClient method)</a>
 </li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_slice_channels">dsp_slice_channels() (radiens.CurateClient method)</a>
+</li>
       <li><a href="complete_api.html#radiens.CurateClient.dsp_slice_time">dsp_slice_time() (radiens.CurateClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.CurateClient.dsp_stream">dsp_stream (radiens.CurateClient property)</a>
+</li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_time_decimate">dsp_time_decimate() (radiens.CurateClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.CurateClient.dsp_virtual_ref">dsp_virtual_ref() (radiens.CurateClient method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -135,7 +212,7 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="other_data_structures.html#radiens.SignalGroup.full_table">full_table (radiens.SignalGroup property)</a>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TRS_MODE.FROM_HEAD">FROM_HEAD (radiens.utils.constants.TRS_MODE attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -143,25 +220,59 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="complete_api.html#radiens.AllegoClient.get_analog_out_settings">get_analog_out_settings() (radiens.AllegoClient method)</a>
+</li>
       <li><a href="complete_api.html#radiens.AllegoClient.get_available_sensors">get_available_sensors() (radiens.AllegoClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.get_config">get_config() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.AllegoClient.get_channel_metadata">get_channel_metadata() (radiens.AllegoClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.get_connected_ports">get_connected_ports() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.get_dashboard">get_dashboard() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.VidereClient.get_data_file_metadata">get_data_file_metadata() (radiens.VidereClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.VidereClient.get_dataset_ids">get_dataset_ids() (radiens.VidereClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.AllegoClient.get_digital_out_states">get_digital_out_states() (radiens.AllegoClient method)</a>
 </li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.get_metrics">get_metrics() (radiens.metrics_client.MetricsClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.get_metrics_status">get_metrics_status() (radiens.metrics_client.MetricsClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spikes_client.SpikesClient.get_neurons">get_neurons() (radiens.spikes_client.SpikesClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.get_params">get_params() (radiens.metrics_client.MetricsClient method)</a>
+
+      <ul>
+        <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.get_params">(radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.AllegoClient.get_signal_group">get_signal_group() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.signals_client.SignalsClient.get_psd">get_psd() (radiens.signals_client.SignalsClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spikes_client.SpikesClient.get_recent_spikes">get_recent_spikes() (radiens.spikes_client.SpikesClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.AllegoClient.get_signals">get_signals() (radiens.AllegoClient method)</a>
 
       <ul>
-        <li><a href="complete_api.html#radiens.VidereClient.get_signals">(radiens.VidereClient method)</a>
+        <li><a href="complete_api.html#radiens.signals_client.SignalsClient.get_signals">(radiens.signals_client.SignalsClient method)</a>
 </li>
       </ul></li>
+      <li><a href="complete_api.html#radiens.spikes_client.SpikesClient.get_spike_rasters">get_spike_rasters() (radiens.spikes_client.SpikesClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spikes_client.SpikesClient.get_spike_timestamps">get_spike_timestamps() (radiens.spikes_client.SpikesClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spikes_client.SpikesClient.get_spike_waveforms">get_spike_waveforms() (radiens.spikes_client.SpikesClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spikes_client.SpikesClient.get_spikes_metadata">get_spikes_metadata() (radiens.spikes_client.SpikesClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.get_state">get_state() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
       <li><a href="complete_api.html#radiens.AllegoClient.get_status">get_status() (radiens.AllegoClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.AllegoClient.get_stim_params">get_stim_params() (radiens.AllegoClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.AllegoClient.get_stream_loop_dur_ms">get_stream_loop_dur_ms() (radiens.AllegoClient method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -169,7 +280,45 @@
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="complete_api.html#radiens.VidereClient.hub">hub (radiens.VidereClient property)</a>
+</li>
       <li><a href="complete_api.html#radiens.CurateClient.hubs">hubs (radiens.CurateClient property)</a>
+
+      <ul>
+        <li><a href="complete_api.html#radiens.VidereClient.hubs">(radiens.VidereClient property)</a>
+</li>
+        <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient.hubs">(radiens.workspace_client.WorkspaceClient property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="complete_api.html#radiens.CurateClient.id">id (radiens.CurateClient property)</a>
+
+      <ul>
+        <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.id">(radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+</li>
+        <li><a href="complete_api.html#radiens.VidereClient.id">(radiens.VidereClient property)</a>
+</li>
+        <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient.id">(radiens.workspace_client.WorkspaceClient property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.index">index() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.initialize">initialize() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.utils.constants.KeyIndex">KeyIndex (class in radiens.utils.constants)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -177,19 +326,7 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.CurateClient.list_dir">list_dir() (radiens.CurateClient method)</a>
-
-      <ul>
-        <li><a href="complete_api.html#radiens.VidereClient.list_dir">(radiens.VidereClient method)</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.CurateClient.load_data_set">load_data_set() (radiens.CurateClient method)</a>
-</li>
-      <li><a href="complete_api.html#radiens.VidereClient.load_dataset">load_dataset() (radiens.VidereClient method)</a>
-</li>
-      <li><a href="complete_api.html#radiens.CurateClient.ls">ls() (radiens.CurateClient method)</a>
+      <li><a href="complete_api.html#radiens.VidereClient.link_data_file">link_data_file() (radiens.VidereClient method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -197,7 +334,7 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.CurateClient.mv">mv() (radiens.CurateClient method)</a>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient">MetricsClient (class in radiens.metrics_client)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -205,11 +342,27 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="other_data_structures.html#radiens.SignalGroup.num_selected_sigs">num_selected_sigs (radiens.SignalGroup property)</a>
+      <li><a href="other_data_structures.html#radiens.utils.constants.KeyIndex.NTV">NTV (radiens.utils.constants.KeyIndex attribute)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.num_selected_sigs_total">num_selected_sigs_total (radiens.lib.channel_metadata.ChannelMetadata property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="other_data_structures.html#radiens.SignalGroup.num_sigs">num_sigs (radiens.SignalGroup property)</a>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.num_sigs">num_sigs() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.num_sigs_total">num_sigs_total() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.path">path (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.port_num_channels">port_num_channels (radiens.lib.allego_lib.AllegoState property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -217,13 +370,13 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.CurateClient.rename_file">rename_file() (radiens.CurateClient method)</a>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.rebase">rebase() (radiens.spike_sorter.SpikeSorterClient method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.AllegoClient.restart">restart() (radiens.AllegoClient method)</a>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.recording">recording (radiens.lib.allego_lib.AllegoState property)</a>
 </li>
-      <li><a href="complete_api.html#radiens.CurateClient.rm">rm() (radiens.CurateClient method)</a>
+      <li><a href="complete_api.html#radiens.AllegoClient.restart">restart() (radiens.AllegoClient method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -231,40 +384,124 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.AllegoClient.samp_freq">samp_freq (radiens.AllegoClient attribute)</a>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.sample_freq">sample_freq (radiens.lib.allego_lib.AllegoState property)</a>
 </li>
-      <li><a href="other_data_structures.html#radiens.SignalGroup.selected_sigs">selected_sigs() (radiens.SignalGroup method)</a>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.sel_index">sel_index() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
 </li>
-      <li><a href="other_data_structures.html#radiens.SignalGroup.sensor_spec">sensor_spec (radiens.SignalGroup property)</a>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.sel_num_sigs">sel_num_sigs() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.sensor_spec">sensor_spec (radiens.lib.channel_metadata.ChannelMetadata property)</a>
+</li>
+      <li><a href="complete_api.html#radiens.AllegoClient.set_analog_out_high_pass">set_analog_out_high_pass() (radiens.AllegoClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.AllegoClient.set_digital_out_manual">set_digital_out_manual() (radiens.AllegoClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.set_event_shadow">set_event_shadow() (radiens.metrics_client.MetricsClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.set_event_threshold">set_event_threshold() (radiens.metrics_client.MetricsClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.set_event_threshold_level">set_event_threshold_level() (radiens.metrics_client.MetricsClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.set_event_window">set_event_window() (radiens.metrics_client.MetricsClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.AllegoClient.set_manual_stim_trigger">set_manual_stim_trigger() (radiens.AllegoClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.set_packet_duration">set_packet_duration() (radiens.metrics_client.MetricsClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.AllegoClient.set_recording">set_recording() (radiens.AllegoClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.AllegoClient.set_recording_config">set_recording_config() (radiens.AllegoClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.set_samp_freq">set_samp_freq() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.AllegoClient.set_sampling_freq">set_sampling_freq() (radiens.AllegoClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.AllegoClient.set_sensor">set_sensor() (radiens.AllegoClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.set_sorting">set_sorting() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.set_spike_shadow">set_spike_shadow() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.set_spike_window">set_spike_window() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.AllegoClient.set_stim_params">set_stim_params() (radiens.AllegoClient method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="complete_api.html#radiens.AllegoClient.set_streaming">set_streaming() (radiens.AllegoClient method)</a>
 </li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.set_threshold">set_threshold() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.set_threshold_level">set_threshold_level() (radiens.spike_sorter.SpikeSorterClient method)</a>
+</li>
       <li><a href="complete_api.html#radiens.AllegoClient.set_time_to_cache_head">set_time_to_cache_head() (radiens.AllegoClient method)</a>
 </li>
-      <li><a href="other_data_structures.html#radiens.SignalGroup">SignalGroup (class in radiens)</a>
+      <li><a href="complete_api.html#radiens.AllegoClient.signal_metrics">signal_metrics() (radiens.AllegoClient method)</a>
+
+      <ul>
+        <li><a href="complete_api.html#radiens.CurateClient.signal_metrics">(radiens.CurateClient method)</a>
 </li>
-      <li><a href="other_data_structures.html#radiens.SignalGroup.sigs">sigs() (radiens.SignalGroup method)</a>
+        <li><a href="complete_api.html#radiens.VidereClient.signal_metrics">(radiens.VidereClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.sorter_cmd">sorter_cmd() (radiens.AllegoClient method)</a>
+      </ul></li>
+      <li><a href="complete_api.html#radiens.VidereClient.signals">signals() (radiens.VidereClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.sorter_get_dashboard">sorter_get_dashboard() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.signals_client.SignalsClient">SignalsClient (class in radiens.signals_client)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.sorter_get_params">sorter_get_params() (radiens.AllegoClient method)</a>
+      <li><a href="other_data_structures.html#radiens.utils.constants.SignalType">SignalType (class in radiens.utils.constants)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.sorter_get_state">sorter_get_state() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.AllegoClient.spike_sorter">spike_sorter() (radiens.AllegoClient method)</a>
+
+      <ul>
+        <li><a href="complete_api.html#radiens.VidereClient.spike_sorter">(radiens.VidereClient method)</a>
 </li>
+      </ul></li>
+      <li><a href="complete_api.html#radiens.AllegoClient.spikes">spikes() (radiens.AllegoClient method)</a>
+
+      <ul>
+        <li><a href="complete_api.html#radiens.CurateClient.spikes">(radiens.CurateClient method)</a>
+</li>
+        <li><a href="complete_api.html#radiens.VidereClient.spikes">(radiens.VidereClient method)</a>
+</li>
+      </ul></li>
+      <li><a href="complete_api.html#radiens.spikes_client.SpikesClient">SpikesClient (class in radiens.spikes_client)</a>
+</li>
+      <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient">SpikeSorterClient (class in radiens.spike_sorter)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.stream">stream (radiens.lib.allego_lib.AllegoState property)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TRS_MODE.SUBSET">SUBSET (radiens.utils.constants.TRS_MODE attribute)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.KeyIndex.SYS">SYS (radiens.utils.constants.KeyIndex attribute)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.system_mode">system_mode (radiens.lib.allego_lib.AllegoState property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.table">table (radiens.lib.channel_metadata.ChannelMetadata property)</a>
+
+      <ul>
+        <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.table">(radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+</li>
+      </ul></li>
+      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.time_range">time_range (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TRS_MODE.TO_HEAD">TO_HEAD (radiens.utils.constants.TRS_MODE attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.TR">TR (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TRS_MODE">TRS_MODE (class in radiens.utils.constants)</a>
+</li>
+      <li><a href="complete_api.html#radiens.AllegoClient.type">type (radiens.AllegoClient property)</a>
+
+      <ul>
+        <li><a href="complete_api.html#radiens.VidereClient.type">(radiens.VidereClient property)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -279,17 +516,21 @@
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.AllegoClient.workspace_current">workspace_current() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.AllegoClient.workspace">workspace() (radiens.AllegoClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.workspace_delete">workspace_delete() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient.workspace_current">workspace_current() (radiens.workspace_client.WorkspaceClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient.workspace_delete">workspace_delete() (radiens.workspace_client.WorkspaceClient method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="complete_api.html#radiens.AllegoClient.workspace_list">workspace_list() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient.workspace_list">workspace_list() (radiens.workspace_client.WorkspaceClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.workspace_save">workspace_save() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient.workspace_save">workspace_save() (radiens.workspace_client.WorkspaceClient method)</a>
 </li>
-      <li><a href="complete_api.html#radiens.AllegoClient.workspace_switch">workspace_switch() (radiens.AllegoClient method)</a>
+      <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient.workspace_switch">workspace_switch() (radiens.workspace_client.WorkspaceClient method)</a>
+</li>
+      <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient">WorkspaceClient (class in radiens.workspace_client)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -303,7 +544,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, NeuroNexus.</p>
+    <p>&#169; Copyright 2023, NeuroNexus.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
