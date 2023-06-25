@@ -21,22 +21,13 @@ First, start the ALLEGO app. Then you can access it in python like this
 
 .. code-block:: python
 
-    from radiens import AllegoClient
-
-    client = AllegoClient()
-    cfg = client.get_config()
-
-It is best practice to run ``client.get_config()`` everytime you start a session with ALLEGO or change the sampling rate. 
-This is because it initializes the sampling rate on the client. This is especially important if you are going to stream live signals (using ``client.get_signals()``).
-
-.. code-block:: python
+    >>> from radiens import AllegoClient
 
     >>> client = AllegoClient()
-    >>> client.samp_freq
-    None
-    >>> client.get_config()
-    >>> client.samp_freq
+    >>> stat = client.get_status()
+    >>> stat.samp_freq
     20000.0
+    
 
 For VIDERE, first start the app. Access the client in python like this 
 

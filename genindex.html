@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; Radiens 1.0.4 documentation</title>
+  <title>Index &mdash; Radiens 1.0.5 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -47,7 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html#subclients-api">SubClients API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures and types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures, functions, and types</a></li>
 </ul>
 
         </div>
@@ -115,6 +115,8 @@
       <ul>
         <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.attributes">(radiens.lib.dataset_metadata.DatasetMetadata property)</a>
 </li>
+        <li><a href="other_data_structures.html#radiens.lib.signals_snapshot.Signals.attributes">(radiens.lib.signals_snapshot.Signals property)</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -139,7 +141,11 @@
       <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.calculate">calculate() (radiens.metrics_client.MetricsClient method)</a>
 </li>
       <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.channel_metadata">channel_metadata (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+
+      <ul>
+        <li><a href="other_data_structures.html#radiens.lib.signals_snapshot.Signals.channel_metadata">(radiens.lib.signals_snapshot.Signals property)</a>
 </li>
+      </ul></li>
       <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata">ChannelMetadata (class in radiens.lib.channel_metadata)</a>
 </li>
       <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.clear">clear() (radiens.metrics_client.MetricsClient method)</a>
@@ -206,13 +212,21 @@
 </li>
       <li><a href="complete_api.html#radiens.CurateClient.dsp_virtual_ref">dsp_virtual_ref() (radiens.CurateClient method)</a>
 </li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TIME_RANGE.dur_sec">dur_sec (radiens.utils.constants.TIME_RANGE attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.utils.constants.FFT_WINDOW">FFT_WINDOW (class in radiens.utils.constants)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="other_data_structures.html#radiens.utils.constants.TRS_MODE.FROM_HEAD">FROM_HEAD (radiens.utils.constants.TRS_MODE attribute)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TIME_RANGE.fs">fs (radiens.utils.constants.TIME_RANGE attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -334,6 +348,10 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.utils.util.make_time_range">make_time_range() (in module radiens.utils.util)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="complete_api.html#radiens.metrics_client.MetricsClient">MetricsClient (class in radiens.metrics_client)</a>
 </li>
   </ul></td>
@@ -342,12 +360,14 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="other_data_structures.html#radiens.utils.constants.KeyIndex.NTV">NTV (radiens.utils.constants.KeyIndex attribute)</a>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TIME_RANGE.N">N (radiens.utils.constants.TIME_RANGE attribute)</a>
 </li>
-      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.num_selected_sigs_total">num_selected_sigs_total (radiens.lib.channel_metadata.ChannelMetadata property)</a>
+      <li><a href="other_data_structures.html#radiens.utils.constants.KeyIndex.NTV">NTV (radiens.utils.constants.KeyIndex attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.num_selected_sigs_total">num_selected_sigs_total (radiens.lib.channel_metadata.ChannelMetadata property)</a>
+</li>
       <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.num_sigs">num_sigs() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
 </li>
       <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.num_sigs_total">num_sigs_total() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
@@ -363,6 +383,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.port_num_channels">port_num_channels (radiens.lib.allego_lib.AllegoState property)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.PSD_SCALING">PSD_SCALING (class in radiens.utils.constants)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -386,6 +408,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="other_data_structures.html#radiens.lib.allego_lib.AllegoState.sample_freq">sample_freq (radiens.lib.allego_lib.AllegoState property)</a>
 </li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TIME_RANGE.sec">sec (radiens.utils.constants.TIME_RANGE attribute)</a>
+</li>
       <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.sel_index">sel_index() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
 </li>
       <li><a href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata.sel_num_sigs">sel_num_sigs() (radiens.lib.channel_metadata.ChannelMetadata method)</a>
@@ -403,8 +427,6 @@
       <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.set_event_threshold_level">set_event_threshold_level() (radiens.metrics_client.MetricsClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.set_event_window">set_event_window() (radiens.metrics_client.MetricsClient method)</a>
-</li>
-      <li><a href="complete_api.html#radiens.AllegoClient.set_manual_stim_trigger">set_manual_stim_trigger() (radiens.AllegoClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.metrics_client.MetricsClient.set_packet_duration">set_packet_duration() (radiens.metrics_client.MetricsClient method)</a>
 </li>
@@ -424,10 +446,10 @@
 </li>
       <li><a href="complete_api.html#radiens.AllegoClient.set_stim_params">set_stim_params() (radiens.AllegoClient method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="complete_api.html#radiens.AllegoClient.set_streaming">set_streaming() (radiens.AllegoClient method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.set_threshold">set_threshold() (radiens.spike_sorter.SpikeSorterClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.spike_sorter.SpikeSorterClient.set_threshold_level">set_threshold_level() (radiens.spike_sorter.SpikeSorterClient method)</a>
@@ -442,6 +464,10 @@
         <li><a href="complete_api.html#radiens.VidereClient.signal_metrics">(radiens.VidereClient method)</a>
 </li>
       </ul></li>
+      <li><a href="other_data_structures.html#radiens.lib.signals_snapshot.Signals">Signals (class in radiens.lib.signals_snapshot)</a>
+</li>
+      <li><a href="other_data_structures.html#radiens.lib.signals_snapshot.Signals.signals">signals (radiens.lib.signals_snapshot.Signals property)</a>
+</li>
       <li><a href="complete_api.html#radiens.VidereClient.signals">signals() (radiens.VidereClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.signals_client.SignalsClient">SignalsClient (class in radiens.signals_client)</a>
@@ -486,14 +512,26 @@
         <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.table">(radiens.lib.dataset_metadata.DatasetMetadata property)</a>
 </li>
       </ul></li>
-      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.time_range">time_range (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TIME_RANGE">TIME_RANGE (class in radiens.utils.constants)</a>
 </li>
-      <li><a href="other_data_structures.html#radiens.utils.constants.TRS_MODE.TO_HEAD">TO_HEAD (radiens.utils.constants.TRS_MODE attribute)</a>
+      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.time_range">time_range (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+
+      <ul>
+        <li><a href="other_data_structures.html#radiens.lib.signals_snapshot.Signals.time_range">(radiens.lib.signals_snapshot.Signals property)</a>
+</li>
+      </ul></li>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TIME_RANGE.timestamp">timestamp (radiens.utils.constants.TIME_RANGE attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.TR">TR (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TRS_MODE.TO_HEAD">TO_HEAD (radiens.utils.constants.TRS_MODE attribute)</a>
 </li>
+      <li><a href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata.TR">TR (radiens.lib.dataset_metadata.DatasetMetadata property)</a>
+
+      <ul>
+        <li><a href="other_data_structures.html#radiens.lib.signals_snapshot.Signals.TR">(radiens.lib.signals_snapshot.Signals property)</a>
+</li>
+      </ul></li>
       <li><a href="other_data_structures.html#radiens.utils.constants.TRS_MODE">TRS_MODE (class in radiens.utils.constants)</a>
 </li>
       <li><a href="complete_api.html#radiens.AllegoClient.type">type (radiens.AllegoClient property)</a>
@@ -516,6 +554,8 @@
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="other_data_structures.html#radiens.utils.constants.TIME_RANGE.walltime">walltime (radiens.utils.constants.TIME_RANGE attribute)</a>
+</li>
       <li><a href="complete_api.html#radiens.AllegoClient.workspace">workspace() (radiens.AllegoClient method)</a>
 </li>
       <li><a href="complete_api.html#radiens.workspace_client.WorkspaceClient.workspace_current">workspace_current() (radiens.workspace_client.WorkspaceClient method)</a>

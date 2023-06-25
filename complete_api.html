@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clients API &mdash; Radiens 1.0.4 documentation</title>
+  <title>Clients API &mdash; Radiens 1.0.5 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Other data structures and types" href="other_data_structures.html" />
+    <link rel="next" title="Other data structures, functions, and types" href="other_data_structures.html" />
     <link rel="prev" title="Accessing clients in MATLAB" href="matlab_examples.html" /> 
 </head>
 
@@ -68,7 +68,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient.set_analog_out_high_pass"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_analog_out_high_pass()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient.set_sensor"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_sensor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient.set_time_to_cache_head"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_time_to_cache_head()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient.set_manual_stim_trigger"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_manual_stim_trigger()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient.set_stim_params"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_stim_params()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient.set_streaming"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_streaming()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.AllegoClient.set_recording"><code class="docutils literal notranslate"><span class="pre">AllegoClient.set_recording()</span></code></a></li>
@@ -171,7 +170,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures and types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures, functions, and types</a></li>
 </ul>
 
         </div>
@@ -376,36 +375,36 @@ will return the new signals since the last call to <a class="reference internal"
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_stim_params">
 <span class="sig-name descname"><span class="pre">get_stim_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_stim_params" title="Permalink to this definition"></a></dt>
-<dd><p>returns current stimulation params</p>
+<dd><p>returns current stimulation params (see <a class="reference internal" href="#radiens.AllegoClient.set_stim_params" title="radiens.AllegoClient.set_stim_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_stim_params()</span></code></a>)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>stim_params</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – a dictionary where the keys are the system channel indices and the values are dictionaries containing the stimulation parameters. Each dictionary associated with a channel will have the following key-value pairs:</p></li>
-<li><p><strong>- ‘enabled’</strong> – stimulation enabled on channel (bool)</p></li>
-<li><p><strong>- ‘enable_amp_settle’</strong> – amp settle enabled on channel (bool)</p></li>
-<li><p><strong>- ‘enable_charge_recovery’</strong> – charge recovery enabled on channel (bool)</p></li>
-<li><p><strong>- ‘first_phase_amplitude_uA’</strong> – Level of current in µA for the first phase of the stimulation waveform (type)</p></li>
-<li><p><strong>- ‘first_phase_duration_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘interphase_delay_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘maintain_amp_settle_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘number_of_stim_pulses’</strong> – # 2</p></li>
-<li><p><strong>- ‘post_stim_amp_settle_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘post_stim_charge_recovery_off_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘post_stim_charge_recovery_on_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘post_trigger_delay_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘pre_stim_amp_settle_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘pulse_or_train’</strong> – # 0</p></li>
-<li><p><strong>- ‘pulse_train_period_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘refactory_period_ms’</strong> – # 1</p></li>
-<li><p><strong>- ‘second_phase_amplitude_uA’</strong> – Level of current in µA for the second phase of the stimulation waveform (type)</p></li>
-<li><p><strong>- ‘second_phase_duration_us’</strong> – # 0</p></li>
-<li><p><strong>- ‘stim_polarity’</strong> – # 0</p></li>
-<li><p><strong>- ‘stim_shape’</strong> – # 0</p></li>
-<li><p><strong>- ‘stim_sys_chan_idx’</strong> – # 0</p></li>
-<li><p><strong>- ‘trigger_edge_or_level’</strong> – # 0</p></li>
-<li><p><strong>- ‘trigger_high_or_low’</strong> – # 0</p></li>
-<li><p><strong>- ‘trigger_source_is_keypress’</strong> – # 0</p></li>
-<li><p><strong>- ‘trigger_source_idx’</strong> – # 0</p></li>
+<dd class="field-odd"><p><strong>stim_params</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – a dictionary where the keys are the system channel indices and the values are dictionaries containing the stimulation parameters. Each dictionary associated with a channel will have the following key-value pairs:</p>
+<ul class="simple">
+<li><p>‘enabled’: stimulation enabled on channel (<cite>bool</cite>)</p></li>
+<li><p>‘enable_amp_settle’: amp settle enabled on channel (<cite>bool</cite>)</p></li>
+<li><p>‘enable_charge_recovery’: charge recovery enabled on channel (<cite>bool</cite>)</p></li>
+<li><p>‘first_phase_amplitude_uA’: Level of current in µA for the first phase of the stimulation waveform (type)</p></li>
+<li><p>‘first_phase_duration_us’: (<cite>float</cite>)</p></li>
+<li><p>‘interphase_delay_us’: (<cite>float</cite>)</p></li>
+<li><p>‘maintain_amp_settle_us’: (<cite>float</cite>)</p></li>
+<li><p>‘number_of_stim_pulses’: (<cite>int</cite>)</p></li>
+<li><p>‘post_stim_amp_settle_us’: (<cite>float</cite>)</p></li>
+<li><p>‘post_stim_charge_recovery_off_us’: (<cite>float</cite>)</p></li>
+<li><p>‘post_stim_charge_recovery_on_us’: (<cite>float</cite>)</p></li>
+<li><p>‘post_trigger_delay_us’: (<cite>float</cite>)</p></li>
+<li><p>‘pre_stim_amp_settle_us’: (<cite>float</cite>)</p></li>
+<li><p>‘pulse_or_train’: (<cite>int</cite>)</p></li>
+<li><p>‘pulse_train_period_us’: (<cite>float</cite>)</p></li>
+<li><p>‘refactory_period_ms’: (<cite>float</cite>)</p></li>
+<li><p>‘second_phase_amplitude_uA’: Level of current in µA for the second phase of the stimulation waveform (type)</p></li>
+<li><p>‘second_phase_duration_us’: (<cite>float</cite>)</p></li>
+<li><p>‘stim_polarity’: (<cite>int</cite>)</p></li>
+<li><p>‘stim_shape’: (<cite>int</cite>)</p></li>
+<li><p>‘stim_sys_chan_idx’: (<cite>int</cite>)</p></li>
+<li><p>‘trigger_edge_or_level’: (<cite>int</cite>)</p></li>
+<li><p>‘trigger_high_or_low’: (<cite>int</cite>)</p></li>
+<li><p>‘trigger_source_is_keypress’: (<cite>bool</cite>)</p></li>
+<li><p>‘trigger_source_idx’: (<cite>int</cite>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -530,44 +529,42 @@ will return the new signals since the last call to <a class="reference internal"
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="radiens.AllegoClient.set_manual_stim_trigger">
-<span class="sig-name descname"><span class="pre">set_manual_stim_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trigger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_manual_stim_trigger" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_stim_params">
 <span class="sig-name descname"><span class="pre">set_stim_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_stim_params" title="Permalink to this definition"></a></dt>
-<dd><p>Sets stimulation parameters to a stim channel. Any parameter not specified in the parameter <cite>param_dict</cite> will be kept as is, or set to default parameter, if not already set.</p>
-<p>Parameters: param_dict: has following key-value pairs (comments are defaults):</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>‘enabled’: # False</p></li>
-<li><p>‘enable_amp_settle’: # False</p></li>
-<li><p>‘enable_charge_recovery’: # False</p></li>
-<li><p>‘first_phase_amplitude_uA’: # 0</p></li>
-<li><p>‘first_phase_duration_us’: # 0</p></li>
-<li><p>‘interphase_delay_us’: # 0</p></li>
-<li><p>‘maintain_amp_settle_us’: # 0</p></li>
-<li><p>‘number_of_stim_pulses’: # 2</p></li>
-<li><p>‘post_stim_amp_settle_us’: # 0</p></li>
-<li><p>‘post_stim_charge_recovery_off_us’: # 0</p></li>
-<li><p>‘post_stim_charge_recovery_on_us’: # 0</p></li>
-<li><p>‘post_trigger_delay_us’: # 0</p></li>
-<li><p>‘pre_stim_amp_settle_us’: # 0</p></li>
-<li><p>‘pulse_or_train’: # 0</p></li>
-<li><p>‘pulse_train_period_us’: # 0</p></li>
-<li><p>‘refactory_period_ms’: # 1</p></li>
-<li><p>‘second_phase_amplitude_uA’: # 0</p></li>
-<li><p>‘second_phase_duration_us’: # 0</p></li>
-<li><p>‘stim_polarity’: # 0</p></li>
-<li><p>‘stim_shape’: # 0</p></li>
-<li><p>‘stim_sys_chan_idx’: # 0</p></li>
-<li><p>‘trigger_edge_or_level’: # 0</p></li>
-<li><p>‘trigger_high_or_low’: # 0</p></li>
-<li><p>‘trigger_source_is_keypress’: # 0</p></li>
-<li><p>‘trigger_source_idx’: # 0</p></li>
+<dd><p>Sets stimulation parameters to a stim channel. Any parameter not specified in the parameter <cite>param_dict</cite> will be kept as is, or set to default parameter, if not already set (see <a class="reference internal" href="#radiens.AllegoClient.get_stim_params" title="radiens.AllegoClient.get_stim_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_stim_params()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param_dict</strong> – <p>has following key-value pairs; comments are defaults:</p>
+<ul class="simple">
+<li><p>’enabled’: # False</p></li>
+<li><p>’enable_amp_settle’: # False</p></li>
+<li><p>’enable_charge_recovery’: # False</p></li>
+<li><p>’first_phase_amplitude_uA’: # 0</p></li>
+<li><p>’first_phase_duration_us’: # 0</p></li>
+<li><p>’interphase_delay_us’: # 0</p></li>
+<li><p>’maintain_amp_settle_us’: # 0</p></li>
+<li><p>’number_of_stim_pulses’: # 2</p></li>
+<li><p>’post_stim_amp_settle_us’: # 0</p></li>
+<li><p>’post_stim_charge_recovery_off_us’: # 0</p></li>
+<li><p>’post_stim_charge_recovery_on_us’: # 0</p></li>
+<li><p>’post_trigger_delay_us’: # 0</p></li>
+<li><p>’pre_stim_amp_settle_us’: # 0</p></li>
+<li><p>’pulse_or_train’: # 0</p></li>
+<li><p>’pulse_train_period_us’: # 0</p></li>
+<li><p>’refactory_period_ms’: # 1</p></li>
+<li><p>’second_phase_amplitude_uA’: # 0</p></li>
+<li><p>’second_phase_duration_us’: # 0</p></li>
+<li><p>’stim_polarity’: # 0</p></li>
+<li><p>’stim_shape’: # 0</p></li>
+<li><p>’stim_sys_chan_idx’: # 0</p></li>
+<li><p>’trigger_edge_or_level’: # 0</p></li>
+<li><p>’trigger_high_or_low’: # 0</p></li>
+<li><p>’trigger_source_is_keypress’: # 0</p></li>
+<li><p>’trigger_source_idx’: # 0</p></li>
 </ul>
-</div></blockquote>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2032,27 +2029,27 @@ The returned spike data has spike timestamps, spike waveforms, and spike labels.
 <dd><p>Signals client object for Allego, Curate, and Videre</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.signals_client.SignalsClient.get_signals">
-<span class="sig-name descname"><span class="pre">get_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TIME_RANGE</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.utils.constants.TRS_MODE" title="radiens.utils.constants.TRS_MODE"><span class="pre">TRS_MODE</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_sel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SIG_SELECT</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Signals</span></span></span><a class="headerlink" href="#radiens.signals_client.SignalsClient.get_signals" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.utils.constants.TIME_RANGE" title="radiens.utils.constants.TIME_RANGE"><span class="pre">TIME_RANGE</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.utils.constants.TRS_MODE" title="radiens.utils.constants.TRS_MODE"><span class="pre">TRS_MODE</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_sel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SIG_SELECT</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><span class="pre">DatasetMetadata</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="other_data_structures.html#radiens.lib.signals_snapshot.Signals" title="radiens.lib.signals_snapshot.Signals"><span class="pre">Signals</span></a></span></span><a class="headerlink" href="#radiens.signals_client.SignalsClient.get_signals" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the signals for specified time range</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – dataset ID</p></li>
-<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – </p></li>
+<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TIME_RANGE</span></code>) – see <a class="reference internal" href="other_data_structures.html#radiens.utils.util.make_time_range" title="radiens.utils.util.make_time_range"><code class="xref py py-meth docutils literal notranslate"><span class="pre">make_time_range()</span></code></a></p></li>
+<li><p><strong>dataset_metadata</strong> – see <code class="xref py py-meth docutils literal notranslate"><span class="pre">link_data_file()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_data_file_metadata()</span></code></p></li>
+<li><p><strong>sel_mode</strong> – optional (default <code class="xref py py-attr docutils literal notranslate"><span class="pre">TRS_MODE.SUBSET</span></code>)</p></li>
+<li><p><strong>sig_sel</strong> – optional</p></li>
+<li><p><strong>hub_name</strong> – optional</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>sigarray</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray[numpy.float32]</span></code>) – raw signal data; the mapping contained in signal_group (see <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signal_group()</span></code>)</p></li>
-<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>)</p></li>
-</ul>
+<dd class="field-even"><p><strong>signals</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Signals</span></code>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.signals_client.SignalsClient.get_psd">
-<span class="sig-name descname"><span class="pre">get_psd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TIME_RANGE</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.utils.constants.TRS_MODE" title="radiens.utils.constants.TRS_MODE"><span class="pre">TRS_MODE</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_sel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SIG_SELECT</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samp_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[1,</span> <span class="pre">300]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collapse_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PSD_SCALING</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PSD_SCALING.SPECTRUM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FFT_WINDOW</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">FFT_WINDOW.HAMMING_p01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PSD</span></span></span><a class="headerlink" href="#radiens.signals_client.SignalsClient.get_psd" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_psd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.utils.constants.TIME_RANGE" title="radiens.utils.constants.TIME_RANGE"><span class="pre">TIME_RANGE</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.utils.constants.TRS_MODE" title="radiens.utils.constants.TRS_MODE"><span class="pre">TRS_MODE</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_sel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SIG_SELECT</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samp_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[1,</span> <span class="pre">300]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collapse_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.utils.constants.PSD_SCALING" title="radiens.utils.constants.PSD_SCALING"><span class="pre">PSD_SCALING</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PSD_SCALING.SPECTRUM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="other_data_structures.html#radiens.utils.constants.FFT_WINDOW" title="radiens.utils.constants.FFT_WINDOW"><span class="pre">FFT_WINDOW</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">FFT_WINDOW.HAMMING_p01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PSD</span></span></span><a class="headerlink" href="#radiens.signals_client.SignalsClient.get_psd" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the power spectral density (PSD) for the specified signals over the specified time range.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2087,7 +2084,7 @@ The returned spike data has spike timestamps, spike waveforms, and spike labels.
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="matlab_examples.html" class="btn btn-neutral float-left" title="Accessing clients in MATLAB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="other_data_structures.html" class="btn btn-neutral float-right" title="Other data structures and types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="other_data_structures.html" class="btn btn-neutral float-right" title="Other data structures, functions, and types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

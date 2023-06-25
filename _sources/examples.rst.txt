@@ -11,9 +11,9 @@ Streaming live signals
     :language: python
 
 
-Loading and accessing saved recording
--------------------------------------
+.. Loading and accessing saved recording
+.. -------------------------------------
 
-.. literalinclude:: ../tutorials/videre_client_example.py
-    :language: python
+.. .. literalinclude:: ../tutorials/videre_client_example.py
+..     :language: python
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Other data structures and types &mdash; Radiens 1.0.4 documentation</title>
+  <title>Other data structures, functions, and types &mdash; Radiens 1.0.5 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -49,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html#subclients-api">SubClients API</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Other data structures and types</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Other data structures, functions, and types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.table"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.table</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.attributes"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.attributes</span></code></a></li>
@@ -85,6 +85,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.base_name"><code class="docutils literal notranslate"><span class="pre">AllegoState.base_name</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals"><code class="docutils literal notranslate"><span class="pre">Signals</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.time_range"><code class="docutils literal notranslate"><span class="pre">Signals.time_range</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.TR"><code class="docutils literal notranslate"><span class="pre">Signals.TR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.signals"><code class="docutils literal notranslate"><span class="pre">Signals.signals</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.attributes"><code class="docutils literal notranslate"><span class="pre">Signals.attributes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.channel_metadata"><code class="docutils literal notranslate"><span class="pre">Signals.channel_metadata</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.util.make_time_range"><code class="docutils literal notranslate"><span class="pre">make_time_range()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.KeyIndex"><code class="docutils literal notranslate"><span class="pre">KeyIndex</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.KeyIndex.NTV"><code class="docutils literal notranslate"><span class="pre">KeyIndex.NTV</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.KeyIndex.DATA"><code class="docutils literal notranslate"><span class="pre">KeyIndex.DATA</span></code></a></li>
@@ -102,6 +111,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.FROM_HEAD"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.FROM_HEAD</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.SUBSET"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.SUBSET</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.TO_HEAD"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.TO_HEAD</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.PSD_SCALING"><code class="docutils literal notranslate"><span class="pre">PSD_SCALING</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.FFT_WINDOW"><code class="docutils literal notranslate"><span class="pre">FFT_WINDOW</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.N"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.N</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.dur_sec"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.dur_sec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.fs"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.fs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.sec"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.sec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.timestamp"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.timestamp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.walltime"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.walltime</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -122,7 +142,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Other data structures and types</li>
+      <li class="breadcrumb-item active">Other data structures, functions, and types</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/other_data_structures.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -132,8 +152,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="other-data-structures-and-types">
-<span id="other-data-structures"></span><h1>Other data structures and types<a class="headerlink" href="#other-data-structures-and-types" title="Permalink to this heading"></a></h1>
+  <section id="other-data-structures-functions-and-types">
+<span id="other-data-structures"></span><h1>Other data structures, functions, and types<a class="headerlink" href="#other-data-structures-functions-and-types" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.channel_metadata.</span></span><span class="sig-name descname"><span class="pre">ChannelMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SignalGroup</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata" title="Permalink to this definition"></a></dt>
@@ -167,30 +187,21 @@
 </pre></div>
 </div>
 <p>Notes:</p>
-<dl class="simple">
-<dt>Index definitions:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">ntv</span></code> is the position of the signal (channel) trace when the backing dataset</p>
-</dd>
-</dl>
-<p>was created for each signal type.  For recording files, it is the position of the channels in the DAQ data stream or primary data file.
-The <code class="docutils literal notranslate"><span class="pre">ntv</span></code> index starts at zero for each signal type.</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">dset</span></code> is the position of a signal trace in the backing dataset for each signal type.  Unless the signal traces</p>
-</div></blockquote>
 <dl>
-<dt>in the dataset were re-ordered, <code class="docutils literal notranslate"><span class="pre">dset</span></code> will equal <code class="docutils literal notranslate"><span class="pre">ntv</span></code>.</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">dset</span></code> index starts at zero for each signal type.</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">sys</span></code> is the position of the signal (channel) trace when the backing dataset was created.</p>
-</div></blockquote>
+<dt>Index definitions:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">ntv</span></code> is the position of the signal (channel) trace when the backing dataset
+was created for each signal type.  For recording files, it is the position of the channels in the DAQ data stream or primary data file. The <code class="docutils literal notranslate"><span class="pre">ntv</span></code> index starts at zero for each signal type.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dset</span></code> is the position of a signal trace in the backing dataset for each signal type.  Unless the signal traces in the dataset were re-ordered, <code class="docutils literal notranslate"><span class="pre">dset</span></code> will equal <code class="docutils literal notranslate"><span class="pre">ntv</span></code>. The <code class="docutils literal notranslate"><span class="pre">dset</span></code> index starts at zero for each signal type.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sys</span></code> is the position of the signal (channel) trace when the backing dataset was created.
+The <code class="docutils literal notranslate"><span class="pre">sys</span></code> index starts at zero and increases in natural order over all signal types alway in the following order: ‘amp’, ‘gpio_ain’, ‘gpio_din’, ‘gpio_dout’.</p>
 </dd>
 </dl>
-<p>The <code class="docutils literal notranslate"><span class="pre">sys</span></code> index starts at zero and increases in natural order over all signal types alway in the following order: ‘amp’, ‘gpio_ain’, ‘gpio_din’, ‘gpio_dout’.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.sel_index">
 <span class="sig-name descname"><span class="pre">sel_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#radiens.utils.constants.SignalType" title="radiens.utils.constants.SignalType"><span class="pre">SignalType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">KEY_IDXS</span></span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.sel_index" title="Permalink to this definition"></a></dt>
 <dd><p>Selected signal indices by signal type and index type.</p>
-<p>See <code class="docutils literal notranslate"><span class="pre">'index'</span></code> for more information on signal indices.</p>
+<p>See <a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.index" title="radiens.lib.channel_metadata.ChannelMetadata.index"><code class="xref py py-meth docutils literal notranslate"><span class="pre">index()</span></code></a> for more information on signal indices.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -236,13 +247,13 @@ The <code class="docutils literal notranslate"><span class="pre">ntv</span></cod
 
 <dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.time_range">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_range</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">TIME_RANGE</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.time_range" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_range</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE" title="radiens.utils.constants.TIME_RANGE"><span class="pre">TIME_RANGE</span></a></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.time_range" title="Permalink to this definition"></a></dt>
 <dd><p>Dataset time range</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.TR">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">TIME_RANGE</span></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.TR" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE" title="radiens.utils.constants.TIME_RANGE"><span class="pre">TIME_RANGE</span></a></em><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.TR" title="Permalink to this definition"></a></dt>
 <dd><p>Aliases <cite>obj.time_range</cite></p>
 </dd></dl>
 
@@ -340,6 +351,76 @@ This is a power user function. Best practice is to call it when the dataset has 
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.signals_snapshot.</span></span><span class="sig-name descname"><span class="pre">Signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HDSnapshot2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals" title="Permalink to this definition"></a></dt>
+<dd><p>Container for a multi-channel (multi-trace) dataset for amplifier, GPIO analog in, GPIO digital in, and GPIO digital out signals.</p>
+<p>All traces for all signal types have the same sampling frequency and start and end times.  Thus, the set of traces of each signal type is a 2-D matrix.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals.time_range">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_range</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE" title="radiens.utils.constants.TIME_RANGE"><span class="pre">TIME_RANGE</span></a></em><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals.time_range" title="Permalink to this definition"></a></dt>
+<dd><p>dataset time range in seconds</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals.TR">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE" title="radiens.utils.constants.TIME_RANGE"><span class="pre">TIME_RANGE</span></a></em><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals.TR" title="Permalink to this definition"></a></dt>
+<dd><p>Aliases dataset time range.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals.signals">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">signals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">SIGNALS</span></em><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals.signals" title="Permalink to this definition"></a></dt>
+<dd><p>Time-series signals as a named tuple by signal type.</p>
+<p>For each signal type, the multi-channel dataset is a 2-D numpy array, with dim 0=trace position and dim 1 is the sample values over the time range.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals.attributes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attributes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals.attributes" title="Permalink to this definition"></a></dt>
+<dd><p>Dataset attributes</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals.channel_metadata">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">channel_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><span class="pre">ChannelMetadata</span></a></em><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals.channel_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Dataset channel metadata</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiens.utils.util.make_time_range">
+<span class="sig-prename descclassname"><span class="pre">radiens.utils.util.</span></span><span class="sig-name descname"><span class="pre">make_time_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walltime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pbTR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TimeRange</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.util.make_time_range" title="Permalink to this definition"></a></dt>
+<dd><p>Utility function to compose the TIME_RANGE named tuple composed from either a time range or timestamp list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span> <span class="pre">|</span> <span class="pre">numpy.ndarray</span></code>) – time range in seconds as [time start, time end] (optional, default=None).</p></li>
+<li><p><strong>timestamp</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span> <span class="pre">|</span> <span class="pre">numpy.ndarray</span></code>) – timestamp in seconds as [timestamp start, timestamp end]  (optional, default=None).</p></li>
+<li><p><strong>fs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – sampling frequency in samples/sec (required, default=None)</p></li>
+<li><p><strong>walltime</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code>) – wall time of the time range start.</p></li>
+<li><p><strong>pbTR</strong> – low-level system parameter not available to user.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Notes:</p>
+<dl class="simple">
+<dt>TIME_RANGE named tuple fields:</dt><dd><p><cite>sec</cite> (numpy.ndarray): [time start, time end]
+<cite>timestamp</cite> (numpy.ndarray): [timestamp start, timestamp end]
+<cite>fs</cite> (float): sampling frequency
+<cite>walltime</cite>: wall time of the time range start
+<cite>dur_sec</cite> (float): imputed time range duration equal to <cite>TR.time_range[1]</cite>-<cite>TR.time_range[0]</cite>.
+<cite>N</cite> (int): imputednumber of sample points equal to <cite>TR.timestamp[1]</cite>-<cite>TR.timestamp[0]</cite>.</p>
+</dd>
+</dl>
+<p>Either <cite>timestamp</cite> or <cite>time_range</cite> must be provided, with <cite>timestamp</cite> having preference.
+<cite>walltime</cite> is optional.  <cite>dur_sec</cite> and <cite>N</cite> are imputed from the arguments.</p>
+<p>System use only (not available to user)
+Either <cite>pbTR</cite> or (<cite>fs</cite> and either <cite>time_range</cite> or <cite>timestamp</cite>) must be provided as arguments.
+<cite>pbTR</cite> has preference.</p>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">KeyIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.KeyIndex" title="Permalink to this definition"></a></dt>
 <dd><p>An enumeration of key index types</p>
@@ -428,6 +509,59 @@ This is a power user function. Best practice is to call it when the dataset has 
 <dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE.TO_HEAD">
 <span class="sig-name descname"><span class="pre">TO_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.utils.constants.TRS_MODE.TO_HEAD" title="Permalink to this definition"></a></dt>
 <dd><p>selects [start, head of stream/cache/file]</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.utils.constants.PSD_SCALING">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">PSD_SCALING</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.PSD_SCALING" title="Permalink to this definition"></a></dt>
+<dd><p>PSD_SCALING is used to set the power spectral density (PSD) scale.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.utils.constants.FFT_WINDOW">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">FFT_WINDOW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.FFT_WINDOW" title="Permalink to this definition"></a></dt>
+<dd><p>FFT_WINDOW is used to set the time-domain window function for power spectral density (PSD) analysis.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">TIME_RANGE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dur_sec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walltime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.N">
+<span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.N" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.dur_sec">
+<span class="sig-name descname"><span class="pre">dur_sec</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.dur_sec" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.fs">
+<span class="sig-name descname"><span class="pre">fs</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.fs" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.sec">
+<span class="sig-name descname"><span class="pre">sec</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.sec" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.timestamp">
+<span class="sig-name descname"><span class="pre">timestamp</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.timestamp" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.walltime">
+<span class="sig-name descname"><span class="pre">walltime</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.walltime" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
 </dd></dl>
 
 </dd></dl>

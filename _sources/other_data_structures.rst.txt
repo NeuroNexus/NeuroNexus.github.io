@@ -1,7 +1,7 @@
 .. _Other data structures:
 
-Other data structures and types
-===============================
+Other data structures, functions, and types
+===========================================
 
 .. currentmodule:: radiens.lib.channel_metadata
 
@@ -21,6 +21,17 @@ Other data structures and types
     :members:
     :member-order: bysource
 
+.. currentmodule:: radiens.lib.signals_snapshot
+
+.. autoclass:: Signals
+    :members:
+    :member-order: bysource
+
+.. currentmodule:: radiens.utils.util
+
+.. autofunction:: make_time_range
+
+
 .. currentmodule:: radiens.utils.constants
 
 .. autoclass:: KeyIndex
@@ -33,4 +44,15 @@ Other data structures and types
     
 .. autoclass:: TRS_MODE
     :members:
+
+.. autoclass:: PSD_SCALING
+    :members:
+
+.. autoclass:: FFT_WINDOW
+    :members:
+
+.. autoclass:: TIME_RANGE
+    :members:
+
+
 

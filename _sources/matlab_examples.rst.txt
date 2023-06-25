@@ -27,8 +27,8 @@ Streaming live signals
 
 Note that the type conversions add noticable latency, and the effective loop duration may be considerably larger than ``loop_dur``.
 
-Loading and accessing saved recording
--------------------------------------
+.. Loading and accessing saved recording
+.. -------------------------------------
 
-.. literalinclude:: ../tutorials/videre_client_example.m
-    :language: matlab
+.. .. literalinclude:: ../tutorials/videre_client_example.m
+..     :language: matlab

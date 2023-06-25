@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accessing clients in MATLAB &mdash; Radiens 1.0.4 documentation</title>
+  <title>Accessing clients in MATLAB &mdash; Radiens 1.0.5 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -49,12 +49,11 @@
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example use cases</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Accessing clients in MATLAB</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#streaming-live-signals">Streaming live signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#loading-and-accessing-saved-recording">Loading and accessing saved recording</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html#subclients-api">SubClients API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures and types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures, functions, and types</a></li>
 </ul>
 
         </div>
@@ -108,17 +107,16 @@
 <h2>Streaming live signals<a class="headerlink" href="#streaming-live-signals" title="Permalink to this heading"></a></h2>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% import radiens python package and connect client</span>
 <span class="n">radiens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">py</span><span class="p">.</span><span class="n">importlib</span><span class="p">.</span><span class="n">import_module</span><span class="p">(</span><span class="s">&#39;radiens&#39;</span><span class="p">);</span>
-<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">AllegoClient</span><span class="p">();</span>
+<span class="n">allego</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">AllegoClient</span><span class="p">();</span>
 
-<span class="c">% get stream loop duration from config</span>
-<span class="n">cfg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">get_config</span><span class="p">();</span><span class="w"> </span><span class="c">% this also sets client.samp_freq (needed for live streaming)</span>
-<span class="n">loop_dur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">{</span><span class="s">&#39;stream_loop_dur_ms&#39;</span><span class="p">}</span><span class="o">/</span><span class="mi">1000</span><span class="p">;</span><span class="w"> </span><span class="c">% access py.dict with &#39;{}&#39;</span>
+<span class="c">% duration of each signal chunk during streaming</span>
+<span class="n">loop_dur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">allego</span><span class="p">.</span><span class="n">get_stream_loop_dur_ms</span><span class="p">()</span>
 
-<span class="c">% sig_grp (signal group) describes channel mapping metadata</span>
-<span class="n">sig_grp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">get_signal_group</span><span class="p">();</span>
+<span class="c">% channel_metadata describes all the channel metadata</span>
+<span class="n">chan_meta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">allego</span><span class="p">.</span><span class="n">get_channel_metadata</span><span class="p">()</span>
 
 <span class="c">% set time to primary cache head (live signals)</span>
-<span class="n">client</span><span class="p">.</span><span class="n">set_time_to_cache_head</span><span class="p">()</span><span class="w">  </span>
+<span class="n">allego</span><span class="p">.</span><span class="n">set_time_to_cache_head</span><span class="p">()</span><span class="w">  </span>
 
 <span class="c">% wait for cache to build up before starting aquisition loop</span>
 <span class="nb">pause</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span>
@@ -126,7 +124,7 @@
 <span class="c">% aquisition loop   </span>
 <span class="k">while</span><span class="w"> </span><span class="nb">true</span><span class="w">    </span>
 <span class="w">    </span><span class="c">% returns a py.tuple</span>
-<span class="w">    </span><span class="n">sigs_tuple</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">get_signals</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sigs_tuple</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">allego</span><span class="p">.</span><span class="n">get_signals</span><span class="p">();</span>
 
 <span class="w">    </span><span class="c">% we can cast py.tuple as a cell array in matlab</span>
 <span class="w">    </span><span class="n">sigs_cell_array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="n">sigs_tuple</span><span class="p">);</span>
@@ -146,32 +144,6 @@
 </pre></div>
 </div>
 <p>Note that the type conversions add noticable latency, and the effective loop duration may be considerably larger than <code class="docutils literal notranslate"><span class="pre">loop_dur</span></code>.</p>
-</section>
-<section id="loading-and-accessing-saved-recording">
-<h2>Loading and accessing saved recording<a class="headerlink" href="#loading-and-accessing-saved-recording" title="Permalink to this heading"></a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% import radiens python package and connect client</span>
-<span class="n">radiens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">py</span><span class="p">.</span><span class="n">importlib</span><span class="p">.</span><span class="n">import_module</span><span class="p">(</span><span class="s">&#39;radiens&#39;</span><span class="p">);</span>
-<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">VidereClient</span><span class="p">();</span>
-
-<span class="c">% get all recording files in directory</span>
-<span class="n">dir_dict</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">list_dir</span><span class="p">(</span><span class="s">&#39;~/mouse_recording_data&#39;</span><span class="p">);</span>
-
-<span class="c">% pick a dataset</span>
-<span class="n">descriptors_cell_array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="n">dir_dict</span><span class="p">{</span><span class="s">&#39;data_source_info&#39;</span><span class="p">}{</span><span class="s">&#39;descriptor&#39;</span><span class="p">});</span>
-<span class="n">dataset_dict</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">descriptors_cell_array</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
-
-<span class="c">% load dataset on Radiens and get data source information as return value</span>
-<span class="n">base_name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="n">dataset_dict</span><span class="p">{</span><span class="s">&#39;base_name&#39;</span><span class="p">});</span><span class="w"> </span><span class="c">% dataset base name</span>
-<span class="n">data_path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="n">dataset_dict</span><span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">});</span><span class="w">           </span><span class="c">% parent directory</span>
-<span class="n">dataset_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span><span class="w"> </span><span class="n">base_name</span><span class="p">));</span>
-
-<span class="c">% get signals</span>
-<span class="n">time_range_request</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span>
-<span class="n">signals</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">single</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">get_signals</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">,</span><span class="w"> </span><span class="n">time_range_request</span><span class="p">));</span>
-
-<span class="c">% do something</span>
-</pre></div>
-</div>
 </section>
 </section>
 
