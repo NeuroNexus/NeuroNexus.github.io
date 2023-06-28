@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example use cases &mdash; Radiens 1.0.5 documentation</title>
+  <title>Example use cases &mdash; Radiens 1.0.6 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Example use cases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#streaming-live-signals">Streaming live signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#closed-loop-stimulation-x-series">Closed loop stimulation (X-Series)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
@@ -114,6 +115,57 @@
 
         <span class="c1"># wait for cache to build up before getting more signals</span>
         <span class="n">sleep</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="closed-loop-stimulation-x-series">
+<h2>Closed loop stimulation (X-Series)<a class="headerlink" href="#closed-loop-stimulation-x-series" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">AllegoClient</span>
+
+<span class="c1"># before running this, set the system mode to &quot;XDAQ One with XSR Headstage&quot;</span>
+<span class="c1"># the corresponding python command would be allego.restart(&#39;xdaq-one-stim&#39;)</span>
+
+<span class="c1"># integer in the range [1,8] (inclusive); arbitrary but must be specified and consistent</span>
+<span class="n">TRIGGER_SOURCE</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">allego</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
+
+    <span class="c1"># make sure streaming is off</span>
+    <span class="n">allego</span><span class="o">.</span><span class="n">set_streaming</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+    <span class="c1"># channels that you want the stimulation on</span>
+    <span class="n">stim_chans_sys_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># set some stim params</span>
+    <span class="k">for</span> <span class="n">sys_idx</span> <span class="ow">in</span> <span class="n">stim_chans_sys_idxs</span><span class="p">:</span>
+        <span class="n">allego</span><span class="o">.</span><span class="n">set_stim_params</span><span class="p">({</span>
+            <span class="s1">&#39;stim_sys_chan_idx&#39;</span><span class="p">:</span> <span class="n">sys_idx</span><span class="p">,</span>
+            <span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># default is False</span>
+            <span class="s1">&#39;first_phase_amplitude_uA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1"># default is 0</span>
+            <span class="s1">&#39;first_phase_duration_us&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>  <span class="c1"># default is 100</span>
+            <span class="s1">&#39;trigger_source_idx&#39;</span><span class="p">:</span> <span class="n">TRIGGER_SOURCE</span><span class="p">,</span>
+            <span class="s1">&#39;trigger_source_is_keypress&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># default is True</span>
+        <span class="p">})</span>
+
+    <span class="c1"># set streaming AFTER modifying params (cannot be modified while streaming - this will throw an exception)</span>
+    <span class="n">allego</span><span class="o">.</span><span class="n">set_streaming</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
+
+    <span class="c1"># set time range to primary cache head</span>
+    <span class="n">allego</span><span class="o">.</span><span class="n">set_time_to_cache_head</span><span class="p">()</span>
+
+    <span class="c1"># repeated stimulation on stim_chans_sys_idxs every 1 sec</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># must subtract 1 for this call</span>
+        <span class="n">allego</span><span class="o">.</span><span class="n">set_manual_stim_trigger</span><span class="p">(</span><span class="n">TRIGGER_SOURCE</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>

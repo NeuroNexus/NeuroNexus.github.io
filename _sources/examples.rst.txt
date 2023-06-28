@@ -11,9 +11,9 @@ Streaming live signals
     :language: python
 
 
-.. Loading and accessing saved recording
-.. -------------------------------------
+Closed loop stimulation (X-Series)
+----------------------------------
+.. literalinclude:: ../tutorials/stim_script.py
+    :language: python
 
-.. .. literalinclude:: ../tutorials/videre_client_example.py
-..     :language: python
 
