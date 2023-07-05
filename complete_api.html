@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clients API &mdash; Radiens 1.0.7 documentation</title>
+  <title>Clients API &mdash; Radiens 2.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -313,7 +313,7 @@ It matches and extends the functionality of the Radiens Allego UI app.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_signals">
-<span class="sig-name descname"><span class="pre">get_signals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_signals" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_signals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiens.AllegoClient.get_signals" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the the most recent signals since last call of itself or <a class="reference internal" href="#radiens.AllegoClient.set_time_to_cache_head" title="radiens.AllegoClient.set_time_to_cache_head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_time_to_cache_head()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -331,7 +331,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_digital_out_states">
-<span class="sig-name descname"><span class="pre">get_digital_out_states</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_digital_out_states" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_digital_out_states</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#radiens.AllegoClient.get_digital_out_states" title="Permalink to this definition"></a></dt>
 <dd><p>Gets digital out state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -348,7 +348,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_analog_out_settings">
-<span class="sig-name descname"><span class="pre">get_analog_out_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_analog_out_settings" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_analog_out_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#radiens.AllegoClient.get_analog_out_settings" title="Permalink to this definition"></a></dt>
 <dd><p>Gets analog out settings</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -375,7 +375,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_stim_params">
-<span class="sig-name descname"><span class="pre">get_stim_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_stim_params" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_stim_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#radiens.AllegoClient.get_stim_params" title="Permalink to this definition"></a></dt>
 <dd><p>returns current stimulation params (see <a class="reference internal" href="#radiens.AllegoClient.set_stim_params" title="radiens.AllegoClient.set_stim_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_stim_params()</span></code></a>)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -446,7 +446,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_sampling_freq">
-<span class="sig-name descname"><span class="pre">set_sampling_freq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_sampling_freq" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_sampling_freq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiens.AllegoClient.set_sampling_freq" title="Permalink to this definition"></a></dt>
 <dd><p>Sets sampling frequency.  Valid sampling frequencies: 625, 1000, 1250, 1500, 2000, 2500, 3000, 3333,
 4000, 5000, 6250, 8000, 10000, 12500, 15000, 20000, 25000, 30000</p>
 <dl class="field-list simple">
@@ -466,7 +466,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_analog_out_high_pass">
-<span class="sig-name descname"><span class="pre">set_analog_out_high_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_analog_out_high_pass" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_analog_out_high_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#radiens.AllegoClient.set_analog_out_high_pass" title="Permalink to this definition"></a></dt>
 <dd><p>Sets the analog out hardware filter</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -485,7 +485,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_sensor">
-<span class="sig-name descname"><span class="pre">set_sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headstage_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probe_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_sensor" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headstage_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probe_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiens.AllegoClient.set_sensor" title="Permalink to this definition"></a></dt>
 <dd><p>Sets a sensor (headstage paired with probe) to the requested port.</p>
 <dl class="simple">
 <dt>The <cite>headstage_id</cite> and <cite>probe_id</cite> arguments are:</dt><dd><ol class="arabic simple">
@@ -523,7 +523,7 @@ an abridged set of headstage and probe aliases provided for convienence.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_time_to_cache_head">
-<span class="sig-name descname"><span class="pre">set_time_to_cache_head</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_time_to_cache_head" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_time_to_cache_head</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiens.AllegoClient.set_time_to_cache_head" title="Permalink to this definition"></a></dt>
 <dd><p>Sets current time to most recent time point in signal cache.</p>
 <p>This should be called before the first call of <a class="reference internal" href="#radiens.AllegoClient.get_signals" title="radiens.AllegoClient.get_signals"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signals()</span></code></a>. The first call of <a class="reference internal" href="#radiens.AllegoClient.get_signals" title="radiens.AllegoClient.get_signals"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_signals()</span></code></a>
 will return the new signals since the last call to <a class="reference internal" href="#radiens.AllegoClient.set_time_to_cache_head" title="radiens.AllegoClient.set_time_to_cache_head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_time_to_cache_head()</span></code></a></p>
@@ -531,7 +531,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_manual_stim_trigger">
-<span class="sig-name descname"><span class="pre">set_manual_stim_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trigger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_manual_stim_trigger" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_manual_stim_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trigger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiens.AllegoClient.set_manual_stim_trigger" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -614,7 +614,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_recording_config">
-<span class="sig-name descname"><span class="pre">set_recording_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasource_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasource_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasource_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_time_stamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_recording_config" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_recording_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasource_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasource_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasource_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_time_stamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiens.AllegoClient.set_recording_config" title="Permalink to this definition"></a></dt>
 <dd><p>Sets recording configuration</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -638,7 +638,7 @@ will return the new signals since the last call to <a class="reference internal"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.set_digital_out_manual">
-<span class="sig-name descname"><span class="pre">set_digital_out_manual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dout1_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dout2_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.set_digital_out_manual" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_digital_out_manual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dout1_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dout2_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiens.AllegoClient.set_digital_out_manual" title="Permalink to this definition"></a></dt>
 <dd><p>Sets digital out state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
