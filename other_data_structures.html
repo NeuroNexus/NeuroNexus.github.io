@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Other data structures, functions, and types &mdash; Radiens 2.0.0 documentation</title>
+  <title>Other data structures, functions, and types &mdash; Radiens 2.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -91,6 +91,21 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.signals"><code class="docutils literal notranslate"><span class="pre">Signals.signals</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.attributes"><code class="docutils literal notranslate"><span class="pre">Signals.attributes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.channel_metadata"><code class="docutils literal notranslate"><span class="pre">Signals.channel_metadata</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics"><code class="docutils literal notranslate"><span class="pre">SignalMetrics</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.time_range"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.time_range</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.TR"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.TR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.ntv_idxs"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.ntv_idxs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.settings"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.settings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.metric_ids"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.metric_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.packet_idxs"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.packet_idxs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.num_packets"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.num_packets</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.num_sigs"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.num_sigs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.packet_dur_sec"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.packet_dur_sec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.val"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.val</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.packet_stats"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.packet_stats</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.print"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.print()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#radiens.utils.util.make_time_range"><code class="docutils literal notranslate"><span class="pre">make_time_range()</span></code></a></li>
@@ -384,6 +399,103 @@ This is a power user function. Best practice is to call it when the dataset has 
 <dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals.channel_metadata">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">channel_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><span class="pre">ChannelMetadata</span></a></em><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals.channel_metadata" title="Permalink to this definition"></a></dt>
 <dd><p>Dataset channel metadata</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.sig_metrics.</span></span><span class="sig-name descname"><span class="pre">SignalMetrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dsource_id:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resp=&lt;class</span> <span class="pre">'common_pb2.KpiBundlePacketMetrics'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics" title="Permalink to this definition"></a></dt>
+<dd><p>Container for signal metrics</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.time_range">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_range</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE" title="radiens.utils.constants.TIME_RANGE"><span class="pre">TIME_RANGE</span></a></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.time_range" title="Permalink to this definition"></a></dt>
+<dd><p>Signal metrics time range</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.TR">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE" title="radiens.utils.constants.TIME_RANGE"><span class="pre">TIME_RANGE</span></a></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.TR" title="Permalink to this definition"></a></dt>
+<dd><p>Aliases signal metrics time range</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.ntv_idxs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ntv_idxs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.ntv_idxs" title="Permalink to this definition"></a></dt>
+<dd><p>Signal metrics native channel indices</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.settings">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">settings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.settings" title="Permalink to this definition"></a></dt>
+<dd><p>Signal metrics settings (dict)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.metric_ids">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metric_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.metric_ids" title="Permalink to this definition"></a></dt>
+<dd><p>Ordered list of signal metric IDs.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.packet_idxs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">packet_idxs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.packet_idxs" title="Permalink to this definition"></a></dt>
+<dd><p>Signal metrics packet indices</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.num_packets">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_packets</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.num_packets" title="Permalink to this definition"></a></dt>
+<dd><p>Signal metrics number of packets</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.num_sigs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_sigs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.num_sigs" title="Permalink to this definition"></a></dt>
+<dd><p>Signal metrics number of signals</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.packet_dur_sec">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">packet_dur_sec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.packet_dur_sec" title="Permalink to this definition"></a></dt>
+<dd><p>Signal metrics packet duration in seconds</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.val">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">val</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.val" title="Permalink to this definition"></a></dt>
+<dd><p>Signal metrics settings as multi-dimensional np.ndarray, with dim 0=packet idx, dim 1=channel index, dim 2=metric index.
+The ordered metric IDs are available in obj.metric_ids.</p>
+<p>Examples:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>access packet 20, channel 23, and metric 1</dt><dd><p><code class="docutils literal notranslate"><span class="pre">val[20][23][1</span></code>]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>access channel 23, metric 1 over all packets:</dt><dd><p><a href="#id1"><span class="problematic" id="id2">``</span></a>val[:,23,1]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>access metric 1 over all packets and channels:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">y[:,:,1]</span></code>  # returns 2-D array, where dim 0=packet index and dim 1=channels
+<a href="#id3"><span class="problematic" id="id4">``</span></a>np.ravel(z)  # returns 1-D array with packets flattened</p>
+</dd>
+</dl>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.packet_stats">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">packet_stats</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.packet_stats" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.lib.sig_metrics.SignalMetrics.print">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.sig_metrics.SignalMetrics.print" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a summary of the metrics.</p>
 </dd></dl>
 
 </dd></dl>

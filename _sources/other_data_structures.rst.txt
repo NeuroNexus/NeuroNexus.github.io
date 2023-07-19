@@ -27,6 +27,12 @@ Other data structures, functions, and types
     :members:
     :member-order: bysource
 
+.. currentmodule:: radiens.lib.sig_metrics
+
+.. autoclass:: SignalMetrics
+    :members:
+    :member-order: bysource
+
 .. currentmodule:: radiens.utils.util
 
 .. autofunction:: make_time_range
