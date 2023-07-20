@@ -16,4 +16,8 @@ Closed loop stimulation (X-Series)
 .. literalinclude:: ../tutorials/stim_script.py
     :language: python
 
+Streaming signal metrics
+------------------------
+.. literalinclude:: ../tutorials/stream_metrics.py
+    :language: python
 

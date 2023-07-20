@@ -33,6 +33,18 @@ Other data structures, functions, and types
     :members:
     :member-order: bysource
 
+.. autoclass:: METRIC_ID
+    :noindex:
+    :members:
+
+.. autoclass:: METRIC_MODE
+    :members:
+    :member-order: bysource
+
+.. autoclass:: METRIC
+    :members:
+    :member-order: bysource
+
 .. currentmodule:: radiens.utils.util
 
 .. autofunction:: make_time_range
