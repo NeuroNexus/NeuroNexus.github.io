@@ -34,7 +34,6 @@ Other data structures, functions, and types
     :member-order: bysource
 
 .. autoclass:: METRIC_ID
-    :noindex:
     :members:
 
 .. autoclass:: METRIC_MODE
