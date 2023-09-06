@@ -1,7 +1,7 @@
 Introduction
 ============
 
-Radiens supports Python 3.7 and newer. 
+Radiens supports Python 3.10 and newer. 
 
 Installation
 ------------
@@ -12,6 +12,11 @@ Install the most recent Radiens version using pip:
 
     $ pip install radiens
 
+If you're looking to update an already installed version of Radiens to the newest version, run the following:
+
+.. code-block:: console
+
+    $ pip install --upgrade radiens
 
 Basic Usage
 -----------

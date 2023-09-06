@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clients API &mdash; Radiens  2.0.2 documentation</title>
+  <title>Clients API &mdash; Radiens   2.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -299,12 +299,38 @@ It matches and extends the functionality of the Radiens Allego UI app.</p>
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_status">
 <span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_status" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the status of Allego.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>status</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.allego_lib.AllegoState" title="radiens.lib.allego_lib.AllegoState"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllegoState</span></code></a>)</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">get_status</span><span class="p">()</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+<span class="go">ALLEGO status:</span>
+<span class="go">stream       : S_ON</span>
+<span class="go">    time range : [0.000, 2149.197] sec</span>
+<span class="go">    HW memory  : 0.0</span>
+<span class="go">recording         : R_OFF</span>
+<span class="go">    duration        : 0.000 sec</span>
+<span class="go">    file name       : allego_0__uid0906-13-55-32</span>
+<span class="go">    base name       : allego</span>
+<span class="go">    path            : /Users/akelly/sapiens/core_packages/radix/radiens_etc</span>
+<span class="go">    index           : 0</span>
+<span class="go">    file timestamp  : 0906-13-55-32</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.AllegoClient.get_stream_loop_dur_ms">
 <span class="sig-name descname"><span class="pre">get_stream_loop_dur_ms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#radiens.AllegoClient.get_stream_loop_dur_ms" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the stream loop duration in milliseconds</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>Make sure to convert this to seconds if you’re using it to set the sleep time in a loop.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -818,7 +844,7 @@ This is a power user function.</p>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>num_unlinked</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – number of unlinked datasets</p></li>
-<li><p><strong>dataset_ids</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – linked dataset IDs on the Radiens hub.</p></li>
+<li><p><strong>dataset_ids</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – linked dataset IDs on the Radiens hub.</p></li>
 </ul>
 </dd>
 </dl>
@@ -835,7 +861,7 @@ This is a power user function.</p>
 <dd><p>Returns sorted list of linked dataset IDs on the Radiens hub.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dataset_ids</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – linked dataset IDs on the Radiens hub.</p>
+<dd class="field-odd"><p><strong>dataset_ids</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – linked dataset IDs on the Radiens hub.</p>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -1499,7 +1525,7 @@ py:meth:<a class="reference internal" href="#radiens.CurateClient.dsp_slice_time
 <dd><p>Returns current workspace ID</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>workspaces</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>)</p>
+<dd class="field-odd"><p><strong>workspaces</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1517,7 +1543,7 @@ py:meth:<a class="reference internal" href="#radiens.CurateClient.dsp_slice_time
 <dd><p>Returns table of all available workspaces</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>workspaces</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>)</p>
+<dd class="field-odd"><p><strong>workspaces</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">

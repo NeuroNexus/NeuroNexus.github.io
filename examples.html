@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example use cases &mdash; Radiens  2.0.2 documentation</title>
+  <title>Example use cases &mdash; Radiens   2.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -95,8 +95,12 @@
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">allego</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
 
+    <span class="c1"># this script assums you&#39;re already streaming</span>
+    <span class="c1"># if you wanted to start streaming within this script, uncomment this line:</span>
+    <span class="c1"># allego.set_streaming(&#39;on&#39;)</span>
+
     <span class="c1"># duration of each signal chunk during streaming</span>
-    <span class="n">loop_dur</span> <span class="o">=</span> <span class="n">allego</span><span class="o">.</span><span class="n">get_stream_loop_dur_ms</span><span class="p">()</span>
+    <span class="n">loop_dur</span> <span class="o">=</span> <span class="n">allego</span><span class="o">.</span><span class="n">get_stream_loop_dur_ms</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span> <span class="c1"># divide by 1000 to convert to seconds</span>
 
     <span class="c1"># channel_metadata describes all the channel metadata</span>
     <span class="n">chan_meta</span> <span class="o">=</span> <span class="n">allego</span><span class="o">.</span><span class="n">get_channel_metadata</span><span class="p">()</span>
