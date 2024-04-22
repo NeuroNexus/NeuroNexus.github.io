@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example use cases &mdash; Radiens   2.0.3 documentation</title>
+  <title>Example use cases &mdash; Radiens 3.0.06b documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -55,6 +55,7 @@
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html#subclients-api">SubClients API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complete_api.html#enums">Enums</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_data_structures.html">Other data structures, functions, and types</a></li>
 </ul>
 
@@ -89,7 +90,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">AllegoClient</span>
-<span class="kn">from</span> <span class="nn">radiens.utils.constants</span> <span class="kn">import</span> <span class="n">SignalType</span>
+<span class="kn">from</span> <span class="nn">radiens.utils.enums</span> <span class="kn">import</span> <span class="n">SignalType</span>
 
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
@@ -100,7 +101,8 @@
     <span class="c1"># allego.set_streaming(&#39;on&#39;)</span>
 
     <span class="c1"># duration of each signal chunk during streaming</span>
-    <span class="n">loop_dur</span> <span class="o">=</span> <span class="n">allego</span><span class="o">.</span><span class="n">get_stream_loop_dur_ms</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span> <span class="c1"># divide by 1000 to convert to seconds</span>
+    <span class="c1"># divide by 1000 to convert to seconds</span>
+    <span class="n">loop_dur</span> <span class="o">=</span> <span class="n">allego</span><span class="o">.</span><span class="n">get_stream_loop_dur_ms</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span>
 
     <span class="c1"># channel_metadata describes all the channel metadata</span>
     <span class="n">chan_meta</span> <span class="o">=</span> <span class="n">allego</span><span class="o">.</span><span class="n">get_channel_metadata</span><span class="p">()</span>
@@ -185,7 +187,7 @@
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">AllegoClient</span>
-<span class="kn">from</span> <span class="nn">radiens.lib.sig_metrics</span> <span class="kn">import</span> <span class="n">METRIC</span><span class="p">,</span> <span class="n">METRIC_ID</span><span class="p">,</span> <span class="n">METRIC_MODE</span>
+<span class="kn">from</span> <span class="nn">radiens.utils.enums</span> <span class="kn">import</span> <span class="n">MetricID</span><span class="p">,</span> <span class="n">MetricMode</span><span class="p">,</span> <span class="n">MetricName</span>
 
 <span class="c1"># initialize AllegoClient to interact with Radiens API</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
@@ -195,9 +197,9 @@
 
 <span class="c1"># define the metrics to be sampled from the Radiens API</span>
 <span class="n">desired_metrics</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">METRIC_ID</span><span class="p">(</span><span class="n">METRIC_MODE</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">METRIC</span><span class="o">.</span><span class="n">NOISE_UV</span><span class="p">),</span>
-    <span class="n">METRIC_ID</span><span class="p">(</span><span class="n">METRIC_MODE</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">METRIC</span><span class="o">.</span><span class="n">EVENT_MAX_MIN_DIFF_ABS</span><span class="p">),</span>
-    <span class="n">METRIC_ID</span><span class="p">(</span><span class="n">METRIC_MODE</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">METRIC</span><span class="o">.</span><span class="n">MAX_ABS</span><span class="p">)</span>
+    <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">NOISE_UV</span><span class="p">),</span>
+    <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">EVENT_MAX_MIN_DIFF_ABS</span><span class="p">),</span>
+    <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">MAX_ABS</span><span class="p">)</span>
 <span class="p">]</span>
 
 <span class="c1"># define the number of samples to collect and the sample window length in seconds</span>

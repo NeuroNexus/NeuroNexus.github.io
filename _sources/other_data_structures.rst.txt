@@ -33,43 +33,24 @@ Other data structures, functions, and types
     :members:
     :member-order: bysource
 
-.. autoclass:: METRIC_ID
-    :members:
-
-.. autoclass:: METRIC_MODE
-    :members:
-    :member-order: bysource
-
-.. autoclass:: METRIC
-    :members:
-    :member-order: bysource
-
 .. currentmodule:: radiens.utils.util
 
 .. autofunction:: make_time_range
 
-
 .. currentmodule:: radiens.utils.constants
 
-.. autoclass:: KeyIndex
+.. autoclass:: TimeRange
     :members:
-    :member-order: bysource
 
-.. autoclass:: SignalType
+.. autoclass:: SignalArrays
     :members:
-    :member-order: bysource
+
+.. autoclass:: KeyIdxs
+
     
-.. autoclass:: TRS_MODE
-    :members:
 
-.. autoclass:: PSD_SCALING
-    :members:
 
-.. autoclass:: FFT_WINDOW
-    :members:
-
-.. autoclass:: TIME_RANGE
-    :members:
+    
 
 
 

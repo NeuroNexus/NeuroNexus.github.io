@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Other data structures, functions, and types &mdash; Radiens   2.0.3 documentation</title>
+  <title>Other data structures, functions, and types &mdash; Radiens 3.0.06b documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -49,6 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html#subclients-api">SubClients API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complete_api.html#enums">Enums</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Other data structures, functions, and types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.table"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.table</span></code></a></li>
@@ -59,6 +60,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.sel_num_sigs"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.sel_num_sigs()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.num_sigs_total"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.num_sigs_total()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.num_selected_sigs_total"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.num_selected_sigs_total</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.sig_units"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.sig_units</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.sensor_spec"><code class="docutils literal notranslate"><span class="pre">ChannelMetadata.sensor_spec</span></code></a></li>
 </ul>
 </li>
@@ -70,6 +72,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.attributes"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.attributes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.path"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.path</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.base_name"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.base_name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.file_type"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.file_type</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.table"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.table</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.clear_dataset_id"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.clear_dataset_id()</span></code></a></li>
 </ul>
@@ -91,6 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.signals"><code class="docutils literal notranslate"><span class="pre">Signals.signals</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.attributes"><code class="docutils literal notranslate"><span class="pre">Signals.attributes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.channel_metadata"><code class="docutils literal notranslate"><span class="pre">Signals.channel_metadata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.signals_snapshot.Signals.concat"><code class="docutils literal notranslate"><span class="pre">Signals.concat()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics"><code class="docutils literal notranslate"><span class="pre">SignalMetrics</span></code></a><ul>
@@ -108,87 +112,24 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.SignalMetrics.print"><code class="docutils literal notranslate"><span class="pre">SignalMetrics.print()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC_ID"><code class="docutils literal notranslate"><span class="pre">METRIC_ID</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC_ID.mode"><code class="docutils literal notranslate"><span class="pre">METRIC_ID.mode</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC_ID.name"><code class="docutils literal notranslate"><span class="pre">METRIC_ID.name</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC_MODE"><code class="docutils literal notranslate"><span class="pre">METRIC_MODE</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC_MODE.BASE"><code class="docutils literal notranslate"><span class="pre">METRIC_MODE.BASE</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC_MODE.AVG"><code class="docutils literal notranslate"><span class="pre">METRIC_MODE.AVG</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC_MODE.STREAM"><code class="docutils literal notranslate"><span class="pre">METRIC_MODE.STREAM</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC"><code class="docutils literal notranslate"><span class="pre">METRIC</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.NUM_PTS"><code class="docutils literal notranslate"><span class="pre">METRIC.NUM_PTS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.NUM_PTS_ISI"><code class="docutils literal notranslate"><span class="pre">METRIC.NUM_PTS_ISI</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.DUR_SEC"><code class="docutils literal notranslate"><span class="pre">METRIC.DUR_SEC</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MEAN"><code class="docutils literal notranslate"><span class="pre">METRIC.MEAN</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MIN"><code class="docutils literal notranslate"><span class="pre">METRIC.MIN</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MIN_ISI"><code class="docutils literal notranslate"><span class="pre">METRIC.MIN_ISI</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MAX"><code class="docutils literal notranslate"><span class="pre">METRIC.MAX</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MAX_ISI"><code class="docutils literal notranslate"><span class="pre">METRIC.MAX_ISI</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MAX_ABS"><code class="docutils literal notranslate"><span class="pre">METRIC.MAX_ABS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MAX_ABS_ISI"><code class="docutils literal notranslate"><span class="pre">METRIC.MAX_ABS_ISI</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.TIMESTAMP_MIN"><code class="docutils literal notranslate"><span class="pre">METRIC.TIMESTAMP_MIN</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.TIMESTAMP_MAX"><code class="docutils literal notranslate"><span class="pre">METRIC.TIMESTAMP_MAX</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MAX_MIN_DIFF_ABS"><code class="docutils literal notranslate"><span class="pre">METRIC.MAX_MIN_DIFF_ABS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MAX_MIN_DIFF_ABS_ISI"><code class="docutils literal notranslate"><span class="pre">METRIC.MAX_MIN_DIFF_ABS_ISI</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.SD"><code class="docutils literal notranslate"><span class="pre">METRIC.SD</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.SD_ISI"><code class="docutils literal notranslate"><span class="pre">METRIC.SD_ISI</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.VAR"><code class="docutils literal notranslate"><span class="pre">METRIC.VAR</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.VAR_ISI"><code class="docutils literal notranslate"><span class="pre">METRIC.VAR_ISI</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.RMS"><code class="docutils literal notranslate"><span class="pre">METRIC.RMS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.RMS_ISI"><code class="docutils literal notranslate"><span class="pre">METRIC.RMS_ISI</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.NOISE_UV"><code class="docutils literal notranslate"><span class="pre">METRIC.NOISE_UV</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.SNR"><code class="docutils literal notranslate"><span class="pre">METRIC.SNR</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.NUM_EVENTS"><code class="docutils literal notranslate"><span class="pre">METRIC.NUM_EVENTS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_RATE"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_RATE</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_MAX"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_MAX</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_MIN"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_MIN</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_MAX_ABS"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_MAX_ABS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_MAX_MIN_DIFF_ABS"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_MAX_MIN_DIFF_ABS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MIN"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_TIMESTAMP_MIN</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_TIMESTAMP_MAX</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX_ABS"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_TIMESTAMP_MAX_ABS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX_MIN_DIFF_ABS"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_TIMESTAMP_MAX_MIN_DIFF_ABS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MEAN_MAX"><code class="docutils literal notranslate"><span class="pre">METRIC.MEAN_MAX</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MEAN_MIN"><code class="docutils literal notranslate"><span class="pre">METRIC.MEAN_MIN</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.MEAN_MAX_ABS"><code class="docutils literal notranslate"><span class="pre">METRIC.MEAN_MAX_ABS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.sig_metrics.METRIC.EVENT_MEAN_MAX_MIN_DIFF_ABS"><code class="docutils literal notranslate"><span class="pre">METRIC.EVENT_MEAN_MAX_MIN_DIFF_ABS</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#radiens.utils.util.make_time_range"><code class="docutils literal notranslate"><span class="pre">make_time_range()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.KeyIndex"><code class="docutils literal notranslate"><span class="pre">KeyIndex</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.KeyIndex.NTV"><code class="docutils literal notranslate"><span class="pre">KeyIndex.NTV</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.KeyIndex.DATA"><code class="docutils literal notranslate"><span class="pre">KeyIndex.DATA</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.KeyIndex.SYS"><code class="docutils literal notranslate"><span class="pre">KeyIndex.SYS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.TimeRange"><code class="docutils literal notranslate"><span class="pre">TimeRange</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TimeRange.N"><code class="docutils literal notranslate"><span class="pre">TimeRange.N</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TimeRange.dur_sec"><code class="docutils literal notranslate"><span class="pre">TimeRange.dur_sec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TimeRange.fs"><code class="docutils literal notranslate"><span class="pre">TimeRange.fs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TimeRange.sec"><code class="docutils literal notranslate"><span class="pre">TimeRange.sec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TimeRange.timestamp"><code class="docutils literal notranslate"><span class="pre">TimeRange.timestamp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TimeRange.walltime"><code class="docutils literal notranslate"><span class="pre">TimeRange.walltime</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.SignalType"><code class="docutils literal notranslate"><span class="pre">SignalType</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalType.AMP"><code class="docutils literal notranslate"><span class="pre">SignalType.AMP</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalType.AIN"><code class="docutils literal notranslate"><span class="pre">SignalType.AIN</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalType.DIN"><code class="docutils literal notranslate"><span class="pre">SignalType.DIN</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalType.DOUT"><code class="docutils literal notranslate"><span class="pre">SignalType.DOUT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.SignalArrays"><code class="docutils literal notranslate"><span class="pre">SignalArrays</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalArrays.amp"><code class="docutils literal notranslate"><span class="pre">SignalArrays.amp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalArrays.gpio_ain"><code class="docutils literal notranslate"><span class="pre">SignalArrays.gpio_ain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalArrays.gpio_din"><code class="docutils literal notranslate"><span class="pre">SignalArrays.gpio_din</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.SignalArrays.gpio_dout"><code class="docutils literal notranslate"><span class="pre">SignalArrays.gpio_dout</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE"><code class="docutils literal notranslate"><span class="pre">TRS_MODE</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.FROM_HEAD"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.FROM_HEAD</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.SUBSET"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.SUBSET</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TRS_MODE.TO_HEAD"><code class="docutils literal notranslate"><span class="pre">TRS_MODE.TO_HEAD</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.PSD_SCALING"><code class="docutils literal notranslate"><span class="pre">PSD_SCALING</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.FFT_WINDOW"><code class="docutils literal notranslate"><span class="pre">FFT_WINDOW</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.N"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.N</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.dur_sec"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.dur_sec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.fs"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.fs</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.sec"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.sec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.timestamp"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.timestamp</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.constants.TIME_RANGE.walltime"><code class="docutils literal notranslate"><span class="pre">TIME_RANGE.walltime</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.utils.constants.KeyIdxs"><code class="docutils literal notranslate"><span class="pre">KeyIdxs</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -241,34 +182,46 @@
 <dd><p>Signal indices by signal type and index type. All indices are zero-indexed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>stype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">SignalType</span></code>) – requested signal type</p>
+<dd class="field-odd"><p><strong>stype</strong> (<a class="reference internal" href="complete_api.html#radiens.utils.enums.SignalType" title="radiens.utils.enums.SignalType"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalType</span></code></a>) – Signal type</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyIdxs</strong> (<a class="reference internal" href="#radiens.utils.constants.KeyIdxs" title="radiens.utils.constants.KeyIdxs"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIdxs</span></code></a>) – Key index object with keys <code class="xref py py-obj docutils literal notranslate"><span class="pre">ntv</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dset</span></code>, <a class="reference external" href="https://docs.python.org/3/library/sys.html#module-sys" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys</span></code></a></p>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="complete_api.html#radiens.utils.enums.KeyIndex" title="radiens.utils.enums.KeyIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIndex</span></code></a></p>
+</div>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">SignalType</span><span class="o">.</span><span class="n">AMP</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">KEY_IDXS</span><span class="p">(</span><span class="n">ntv</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">46</span><span class="p">],</span> <span class="n">dset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">sys</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">46</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">SignalType</span><span class="o">.</span><span class="n">AIN</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">KEY_IDXS</span><span class="p">(</span><span class="n">ntv</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">dset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">sys</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">33</span><span class="p">])</span>  <span class="c1"># signal has 32 AMP channels</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">SignalType</span><span class="o">.</span><span class="n">AMP</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">KeyIdxs</span><span class="p">(</span><span class="n">ntv</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">46</span><span class="p">],</span> <span class="n">dset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">sys</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">46</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">SignalType</span><span class="o">.</span><span class="n">AIN</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">KeyIdxs</span><span class="p">(</span><span class="n">ntv</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">dset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">sys</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">33</span><span class="p">])</span>  <span class="c1"># signal has 32 AMP channels</span>
 </pre></div>
 </div>
 </div>
-<p>Notes:</p>
-<dl>
-<dt>Index definitions:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">ntv</span></code> is the position of the signal (channel) trace when the backing dataset
-was created for each signal type.  For recording files, it is the position of the channels in the DAQ data stream or primary data file. The <code class="docutils literal notranslate"><span class="pre">ntv</span></code> index starts at zero for each signal type.</p>
-<p><code class="docutils literal notranslate"><span class="pre">dset</span></code> is the position of a signal trace in the backing dataset for each signal type.  Unless the signal traces in the dataset were re-ordered, <code class="docutils literal notranslate"><span class="pre">dset</span></code> will equal <code class="docutils literal notranslate"><span class="pre">ntv</span></code>. The <code class="docutils literal notranslate"><span class="pre">dset</span></code> index starts at zero for each signal type.</p>
-<p><code class="docutils literal notranslate"><span class="pre">sys</span></code> is the position of the signal (channel) trace when the backing dataset was created.
-The <code class="docutils literal notranslate"><span class="pre">sys</span></code> index starts at zero and increases in natural order over all signal types alway in the following order: ‘amp’, ‘gpio_ain’, ‘gpio_din’, ‘gpio_dout’.</p>
-</dd>
-</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="complete_api.html#radiens.utils.enums.KeyIndex" title="radiens.utils.enums.KeyIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIndex</span></code></a>
+<a class="reference internal" href="complete_api.html#radiens.utils.enums.SignalType" title="radiens.utils.enums.SignalType"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalType</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.sel_index">
 <span class="sig-name descname"><span class="pre">sel_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.sel_index" title="Permalink to this definition"></a></dt>
-<dd><p>Selected signal indices by signal type and index type.</p>
-<p>See <a class="reference internal" href="#radiens.lib.channel_metadata.ChannelMetadata.index" title="radiens.lib.channel_metadata.ChannelMetadata.index"><code class="xref py py-meth docutils literal notranslate"><span class="pre">index()</span></code></a> for more information on signal indices.</p>
+<dd><blockquote>
+<div><p>Selected signal indices by signal type and index type.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>stype (~radiens.utils.enums.SignalType): Signal type</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="complete_api.html#radiens.utils.enums.KeyIndex" title="radiens.utils.enums.KeyIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIndex</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -296,6 +249,12 @@ The <code class="docutils literal notranslate"><span class="pre">sys</span></cod
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.sig_units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sig_units</span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.sig_units" title="Permalink to this definition"></a></dt>
+<dd><p>Dictionary of signal units</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.sensor_spec">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sensor_spec</span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.sensor_spec" title="Permalink to this definition"></a></dt>
 <dd><p>Dict with ports (str) as keys mapping to dicts describing headstage, site, and probe wireframe metadata</p>
@@ -309,19 +268,19 @@ The <code class="docutils literal notranslate"><span class="pre">sys</span></cod
 <dd><dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.id">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.id" title="Permalink to this definition"></a></dt>
-<dd><p>Dataset ID of this DataSource the Radiens hub.  <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> indicates that it is not on a hub.</p>
+<dd><p>Dataset ID of this DataSource the Radiens hub.  <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> indicates that it is not on a hub.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.time_range">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_range</span></span><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.time_range" title="Permalink to this definition"></a></dt>
-<dd><p>Dataset time range</p>
+<dd><p>Dataset time range (<a class="reference internal" href="#radiens.utils.constants.TimeRange" title="radiens.utils.constants.TimeRange"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeRange</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.TR">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TR</span></span><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.TR" title="Permalink to this definition"></a></dt>
-<dd><p>Aliases <code class="xref py py-obj docutils literal notranslate"><span class="pre">obj.time_range</span></code></p>
+<dd><p>Alias for <a class="reference internal" href="#radiens.lib.dataset_metadata.DatasetMetadata.time_range" title="radiens.lib.dataset_metadata.DatasetMetadata.time_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_range</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -349,6 +308,12 @@ The <code class="docutils literal notranslate"><span class="pre">sys</span></cod
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.file_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">file_type</span></span><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.file_type" title="Permalink to this definition"></a></dt>
+<dd><p>File type of the Radiens data file set that backs this DataSource.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.table">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">table</span></span><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.table" title="Permalink to this definition"></a></dt>
 <dd><p>Dataset attributes as a table.</p>
@@ -366,7 +331,7 @@ This is a power user function. Best practice is to call it when the dataset has 
 <dl class="py class">
 <dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.allego_lib.</span></span><span class="sig-name descname"><span class="pre">AllegoState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw=&lt;class</span> <span class="pre">'allegoserver_pb2.ConfigAndStatus'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState" title="Permalink to this definition"></a></dt>
-<dd><p>Container for Allego configuration</p>
+<dd><p>Container for Allego state.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.sample_freq">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sample_freq</span></span><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.sample_freq" title="Permalink to this definition"></a></dt>
@@ -451,6 +416,20 @@ This is a power user function. Best practice is to call it when the dataset has 
 <dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals.channel_metadata">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">channel_metadata</span></span><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals.channel_metadata" title="Permalink to this definition"></a></dt>
 <dd><p>Dataset channel metadata</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.lib.signals_snapshot.Signals.concat">
+<span class="sig-name descname"><span class="pre">concat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.signals_snapshot.Signals.concat" title="Permalink to this definition"></a></dt>
+<dd><p>Concatenate two Signals objects into a single Signals object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – Signals object to concatenate with self.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Signals</strong> – concatenated Signals object.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -552,293 +531,24 @@ The ordered metric IDs are available in obj.metric_ids.</p>
 
 </dd></dl>
 
-<dl class="py class">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC_ID">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.sig_metrics.</span></span><span class="sig-name descname"><span class="pre">METRIC_ID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC_ID" title="Permalink to this definition"></a></dt>
-<dd><div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">metric_id</span> <span class="o">=</span> <span class="n">METRIC_ID</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">METRIC_MODE</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">METRIC</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC_ID.mode">
-<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC_ID.mode" title="Permalink to this definition"></a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC_ID.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC_ID.name" title="Permalink to this definition"></a></dt>
-<dd><p>Alias for field number 1</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC_MODE">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.sig_metrics.</span></span><span class="sig-name descname"><span class="pre">METRIC_MODE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC_MODE" title="Permalink to this definition"></a></dt>
-<dd><p>An enumeration.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC_MODE.BASE">
-<span class="sig-name descname"><span class="pre">BASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC_MODE.BASE" title="Permalink to this definition"></a></dt>
-<dd><p>base packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC_MODE.AVG">
-<span class="sig-name descname"><span class="pre">AVG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC_MODE.AVG" title="Permalink to this definition"></a></dt>
-<dd><p>running average of all base packets in the stream</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC_MODE.STREAM">
-<span class="sig-name descname"><span class="pre">STREAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC_MODE.STREAM" title="Permalink to this definition"></a></dt>
-<dd><p>cumulative over all base packets in the stream</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.lib.sig_metrics.</span></span><span class="sig-name descname"><span class="pre">METRIC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC" title="Permalink to this definition"></a></dt>
-<dd><p>An enumeration.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.NUM_PTS">
-<span class="sig-name descname"><span class="pre">NUM_PTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.NUM_PTS" title="Permalink to this definition"></a></dt>
-<dd><p>Number of points in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.NUM_PTS_ISI">
-<span class="sig-name descname"><span class="pre">NUM_PTS_ISI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.NUM_PTS_ISI" title="Permalink to this definition"></a></dt>
-<dd><p>Number of interspike intervals in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.DUR_SEC">
-<span class="sig-name descname"><span class="pre">DUR_SEC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.DUR_SEC" title="Permalink to this definition"></a></dt>
-<dd><p>Packet duration in seconds</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MEAN">
-<span class="sig-name descname"><span class="pre">MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MEAN" title="Permalink to this definition"></a></dt>
-<dd><p>Mean signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MIN">
-<span class="sig-name descname"><span class="pre">MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MIN" title="Permalink to this definition"></a></dt>
-<dd><p>Minimum signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MIN_ISI">
-<span class="sig-name descname"><span class="pre">MIN_ISI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MIN_ISI" title="Permalink to this definition"></a></dt>
-<dd><p>Minimum interspike signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MAX">
-<span class="sig-name descname"><span class="pre">MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MAX" title="Permalink to this definition"></a></dt>
-<dd><p>Maximum signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MAX_ISI">
-<span class="sig-name descname"><span class="pre">MAX_ISI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MAX_ISI" title="Permalink to this definition"></a></dt>
-<dd><p>Maximum interspike signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MAX_ABS">
-<span class="sig-name descname"><span class="pre">MAX_ABS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MAX_ABS" title="Permalink to this definition"></a></dt>
-<dd><p>Absolute maximum signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MAX_ABS_ISI">
-<span class="sig-name descname"><span class="pre">MAX_ABS_ISI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MAX_ABS_ISI" title="Permalink to this definition"></a></dt>
-<dd><p>Absolute maximum interspike signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.TIMESTAMP_MIN">
-<span class="sig-name descname"><span class="pre">TIMESTAMP_MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.TIMESTAMP_MIN" title="Permalink to this definition"></a></dt>
-<dd><p>Timestamp of minimum signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.TIMESTAMP_MAX">
-<span class="sig-name descname"><span class="pre">TIMESTAMP_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.TIMESTAMP_MAX" title="Permalink to this definition"></a></dt>
-<dd><p>Timestamp of maximum signal level in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MAX_MIN_DIFF_ABS">
-<span class="sig-name descname"><span class="pre">MAX_MIN_DIFF_ABS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MAX_MIN_DIFF_ABS" title="Permalink to this definition"></a></dt>
-<dd><p>Absolute difference between maximum and minimum signal levels in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MAX_MIN_DIFF_ABS_ISI">
-<span class="sig-name descname"><span class="pre">MAX_MIN_DIFF_ABS_ISI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MAX_MIN_DIFF_ABS_ISI" title="Permalink to this definition"></a></dt>
-<dd><p>Absolute difference between maximum and minimum interspike signal levels in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.SD">
-<span class="sig-name descname"><span class="pre">SD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.SD" title="Permalink to this definition"></a></dt>
-<dd><p>Signal standard deviation in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.SD_ISI">
-<span class="sig-name descname"><span class="pre">SD_ISI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.SD_ISI" title="Permalink to this definition"></a></dt>
-<dd><p>Signal standard deviation calculated over interspike intervals</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.VAR">
-<span class="sig-name descname"><span class="pre">VAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.VAR" title="Permalink to this definition"></a></dt>
-<dd><p>Signal variance in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.VAR_ISI">
-<span class="sig-name descname"><span class="pre">VAR_ISI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.VAR_ISI" title="Permalink to this definition"></a></dt>
-<dd><p>Signal variance calculated over interspike intervals</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.RMS">
-<span class="sig-name descname"><span class="pre">RMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.RMS" title="Permalink to this definition"></a></dt>
-<dd><p>Root mean square (RMS) signal value in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.RMS_ISI">
-<span class="sig-name descname"><span class="pre">RMS_ISI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.RMS_ISI" title="Permalink to this definition"></a></dt>
-<dd><p>RMS signal value calculated over interspike intervals</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.NOISE_UV">
-<span class="sig-name descname"><span class="pre">NOISE_UV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.NOISE_UV" title="Permalink to this definition"></a></dt>
-<dd><p>Noise level in microvolts</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.SNR">
-<span class="sig-name descname"><span class="pre">SNR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">21</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.SNR" title="Permalink to this definition"></a></dt>
-<dd><p>Signal-to-noise ratio (SNR) of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.NUM_EVENTS">
-<span class="sig-name descname"><span class="pre">NUM_EVENTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">22</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.NUM_EVENTS" title="Permalink to this definition"></a></dt>
-<dd><p>Number of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_RATE">
-<span class="sig-name descname"><span class="pre">EVENT_RATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_RATE" title="Permalink to this definition"></a></dt>
-<dd><p>Event rate in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_MAX">
-<span class="sig-name descname"><span class="pre">EVENT_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_MAX" title="Permalink to this definition"></a></dt>
-<dd><p>Maximum amplitude of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_MIN">
-<span class="sig-name descname"><span class="pre">EVENT_MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">25</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_MIN" title="Permalink to this definition"></a></dt>
-<dd><p>Minimum amplitude of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_MAX_ABS">
-<span class="sig-name descname"><span class="pre">EVENT_MAX_ABS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">26</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_MAX_ABS" title="Permalink to this definition"></a></dt>
-<dd><p>Absolute maximum amplitude of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_MAX_MIN_DIFF_ABS">
-<span class="sig-name descname"><span class="pre">EVENT_MAX_MIN_DIFF_ABS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">27</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_MAX_MIN_DIFF_ABS" title="Permalink to this definition"></a></dt>
-<dd><p>Absolute difference between maximum and minimum amplitudes of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MIN">
-<span class="sig-name descname"><span class="pre">EVENT_TIMESTAMP_MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">28</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MIN" title="Permalink to this definition"></a></dt>
-<dd><p>Timestamp of minimum amplitude of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX">
-<span class="sig-name descname"><span class="pre">EVENT_TIMESTAMP_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">29</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX" title="Permalink to this definition"></a></dt>
-<dd><p>Timestamp of maximum amplitude of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX_ABS">
-<span class="sig-name descname"><span class="pre">EVENT_TIMESTAMP_MAX_ABS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX_ABS" title="Permalink to this definition"></a></dt>
-<dd><p>Timestamp of maximum absolute amplitude of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX_MIN_DIFF_ABS">
-<span class="sig-name descname"><span class="pre">EVENT_TIMESTAMP_MAX_MIN_DIFF_ABS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">31</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_TIMESTAMP_MAX_MIN_DIFF_ABS" title="Permalink to this definition"></a></dt>
-<dd><p>Timestamp of absolute difference between maximum and minimum amplitudes of events in packet</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MEAN_MAX">
-<span class="sig-name descname"><span class="pre">MEAN_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MEAN_MAX" title="Permalink to this definition"></a></dt>
-<dd><p>Mean peak maximum amplitude of events in packet (max over all base packets)</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MEAN_MIN">
-<span class="sig-name descname"><span class="pre">MEAN_MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">33</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MEAN_MIN" title="Permalink to this definition"></a></dt>
-<dd><p>Mean peak minimum amplitude of events in packet (min over all base packets)</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.MEAN_MAX_ABS">
-<span class="sig-name descname"><span class="pre">MEAN_MAX_ABS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">34</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.MEAN_MAX_ABS" title="Permalink to this definition"></a></dt>
-<dd><p>Mean peak absolute maximum amplitude of events in packet (max over all base packets)</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.lib.sig_metrics.METRIC.EVENT_MEAN_MAX_MIN_DIFF_ABS">
-<span class="sig-name descname"><span class="pre">EVENT_MEAN_MAX_MIN_DIFF_ABS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">35</span></em><a class="headerlink" href="#radiens.lib.sig_metrics.METRIC.EVENT_MEAN_MAX_MIN_DIFF_ABS" title="Permalink to this definition"></a></dt>
-<dd><p>Mean peak absolute amplitude of events in packet (max over all base packets)</p>
-</dd></dl>
-
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="radiens.utils.util.make_time_range">
 <span class="sig-prename descclassname"><span class="pre">radiens.utils.util.</span></span><span class="sig-name descname"><span class="pre">make_time_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walltime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pbTR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.util.make_time_range" title="Permalink to this definition"></a></dt>
-<dd><p>Utility function to compose the TIME_RANGE named tuple composed from either a time range or timestamp list.</p>
+<dd><p>Utility function to compose the TimeRange named tuple composed from either a time range or timestamp list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span> <span class="pre">|</span> <span class="pre">numpy.ndarray</span></code>) – time range in seconds as [time start, time end] (optional, default=None).</p></li>
 <li><p><strong>timestamp</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span> <span class="pre">|</span> <span class="pre">numpy.ndarray</span></code>) – timestamp in seconds as [timestamp start, timestamp end]  (optional, default=None).</p></li>
-<li><p><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – sampling frequency in samples/sec (required, default=None)</p></li>
-<li><p><strong>walltime</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a>) – wall time of the time range start.</p></li>
+<li><p><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – sampling frequency in samples/sec (required, default=None)</p></li>
+<li><p><strong>walltime</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a>) – wall time of the time range start.</p></li>
 <li><p><strong>pbTR</strong> – low-level system parameter not available to user.</p></li>
 </ul>
 </dd>
 </dl>
 <p>Notes:</p>
 <dl class="simple">
-<dt>TIME_RANGE named tuple fields:</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sec</span></code> (numpy.ndarray): [time start, time end]
+<dt>TimeRange named tuple fields:</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sec</span></code> (numpy.ndarray): [time start, time end]
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">timestamp</span></code> (numpy.ndarray): [timestamp start, timestamp end]
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">fs</span></code> (float): sampling frequency
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">walltime</span></code>: wall time of the time range start
@@ -854,155 +564,79 @@ Either <code class="xref py py-obj docutils literal notranslate"><span class="pr
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">KeyIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.KeyIndex" title="Permalink to this definition"></a></dt>
-<dd><p>An enumeration of key index types</p>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">key_ind</span> <span class="o">=</span> <span class="n">KeyIndex</span><span class="o">.</span><span class="n">NTV</span>
-</pre></div>
-</div>
-</div>
-<p>Valid values are as follows:</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex.NTV">
-<span class="sig-name descname"><span class="pre">NTV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#radiens.utils.constants.KeyIndex.NTV" title="Permalink to this definition"></a></dt>
-<dd><p>native</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex.DATA">
-<span class="sig-name descname"><span class="pre">DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.utils.constants.KeyIndex.DATA" title="Permalink to this definition"></a></dt>
-<dd><p>data</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.KeyIndex.SYS">
-<span class="sig-name descname"><span class="pre">SYS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#radiens.utils.constants.KeyIndex.SYS" title="Permalink to this definition"></a></dt>
-<dd><p>system</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="radiens.utils.constants.SignalType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">SignalType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.SignalType" title="Permalink to this definition"></a></dt>
-<dd><p>An enumeration of signal types</p>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sig_type</span> <span class="o">=</span> <span class="n">SignalType</span><span class="o">.</span><span class="n">AMP</span>
-</pre></div>
-</div>
-</div>
-<p>Valid values are as follows:</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.SignalType.AMP">
-<span class="sig-name descname"><span class="pre">AMP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#radiens.utils.constants.SignalType.AMP" title="Permalink to this definition"></a></dt>
-<dd><p>primary signals</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.SignalType.AIN">
-<span class="sig-name descname"><span class="pre">AIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.utils.constants.SignalType.AIN" title="Permalink to this definition"></a></dt>
-<dd><p>analog in</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.SignalType.DIN">
-<span class="sig-name descname"><span class="pre">DIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#radiens.utils.constants.SignalType.DIN" title="Permalink to this definition"></a></dt>
-<dd><p>digital in</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.SignalType.DOUT">
-<span class="sig-name descname"><span class="pre">DOUT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#radiens.utils.constants.SignalType.DOUT" title="Permalink to this definition"></a></dt>
-<dd><p>digital out</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">TRS_MODE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.TRS_MODE" title="Permalink to this definition"></a></dt>
-<dd><p>TRS_MODE is the time range selector (TRS) enum used to control time range selection in calls to get signals, spikes, power spectral density, or similar data sets.</p>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sel_mode</span> <span class="o">=</span> <span class="n">TRS_MODE</span><span class="o">.</span><span class="n">SUBSET</span>
-</pre></div>
-</div>
-</div>
-<p>Given a time range [start, end) in seconds (dataset time), the selector modes are:</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE.FROM_HEAD">
-<span class="sig-name descname"><span class="pre">FROM_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#radiens.utils.constants.TRS_MODE.FROM_HEAD" title="Permalink to this definition"></a></dt>
-<dd><p>selects [(head of stream/cache/file - start)</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE.SUBSET">
-<span class="sig-name descname"><span class="pre">SUBSET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#radiens.utils.constants.TRS_MODE.SUBSET" title="Permalink to this definition"></a></dt>
-<dd><p>selects [start, end)</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TRS_MODE.TO_HEAD">
-<span class="sig-name descname"><span class="pre">TO_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#radiens.utils.constants.TRS_MODE.TO_HEAD" title="Permalink to this definition"></a></dt>
-<dd><p>selects [start, head of stream/cache/file]</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="radiens.utils.constants.PSD_SCALING">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">PSD_SCALING</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.PSD_SCALING" title="Permalink to this definition"></a></dt>
-<dd><p>PSD_SCALING is used to set the power spectral density (PSD) scale.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="radiens.utils.constants.FFT_WINDOW">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">FFT_WINDOW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.FFT_WINDOW" title="Permalink to this definition"></a></dt>
-<dd><p>FFT_WINDOW is used to set the time-domain window function for power spectral density (PSD) analysis.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">TIME_RANGE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dur_sec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walltime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="radiens.utils.constants.TimeRange">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">TimeRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dur_sec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walltime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.TimeRange" title="Permalink to this definition"></a></dt>
 <dd><dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.N">
-<span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.N" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="radiens.utils.constants.TimeRange.N">
+<span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#radiens.utils.constants.TimeRange.N" title="Permalink to this definition"></a></dt>
 <dd><p>Alias for field number 5</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.dur_sec">
-<span class="sig-name descname"><span class="pre">dur_sec</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.dur_sec" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="radiens.utils.constants.TimeRange.dur_sec">
+<span class="sig-name descname"><span class="pre">dur_sec</span></span><a class="headerlink" href="#radiens.utils.constants.TimeRange.dur_sec" title="Permalink to this definition"></a></dt>
 <dd><p>Alias for field number 3</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.fs">
-<span class="sig-name descname"><span class="pre">fs</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.fs" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="radiens.utils.constants.TimeRange.fs">
+<span class="sig-name descname"><span class="pre">fs</span></span><a class="headerlink" href="#radiens.utils.constants.TimeRange.fs" title="Permalink to this definition"></a></dt>
 <dd><p>Alias for field number 2</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.sec">
-<span class="sig-name descname"><span class="pre">sec</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.sec" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="radiens.utils.constants.TimeRange.sec">
+<span class="sig-name descname"><span class="pre">sec</span></span><a class="headerlink" href="#radiens.utils.constants.TimeRange.sec" title="Permalink to this definition"></a></dt>
 <dd><p>Alias for field number 0</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.timestamp">
-<span class="sig-name descname"><span class="pre">timestamp</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.timestamp" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="radiens.utils.constants.TimeRange.timestamp">
+<span class="sig-name descname"><span class="pre">timestamp</span></span><a class="headerlink" href="#radiens.utils.constants.TimeRange.timestamp" title="Permalink to this definition"></a></dt>
 <dd><p>Alias for field number 1</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="radiens.utils.constants.TIME_RANGE.walltime">
-<span class="sig-name descname"><span class="pre">walltime</span></span><a class="headerlink" href="#radiens.utils.constants.TIME_RANGE.walltime" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="radiens.utils.constants.TimeRange.walltime">
+<span class="sig-name descname"><span class="pre">walltime</span></span><a class="headerlink" href="#radiens.utils.constants.TimeRange.walltime" title="Permalink to this definition"></a></dt>
 <dd><p>Alias for field number 4</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalArrays">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">SignalArrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpio_ain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpio_din</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpio_dout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.SignalArrays" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalArrays.amp">
+<span class="sig-name descname"><span class="pre">amp</span></span><a class="headerlink" href="#radiens.utils.constants.SignalArrays.amp" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalArrays.gpio_ain">
+<span class="sig-name descname"><span class="pre">gpio_ain</span></span><a class="headerlink" href="#radiens.utils.constants.SignalArrays.gpio_ain" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalArrays.gpio_din">
+<span class="sig-name descname"><span class="pre">gpio_din</span></span><a class="headerlink" href="#radiens.utils.constants.SignalArrays.gpio_din" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.constants.SignalArrays.gpio_dout">
+<span class="sig-name descname"><span class="pre">gpio_dout</span></span><a class="headerlink" href="#radiens.utils.constants.SignalArrays.gpio_dout" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.utils.constants.KeyIdxs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">KeyIdxs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ntv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.KeyIdxs" title="Permalink to this definition"></a></dt>
+<dd><p>Python object with keys of type <code class="xref py py-obj docutils literal notranslate"><span class="pre">ntv</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dset</span></code>, <a class="reference external" href="https://docs.python.org/3/library/sys.html#module-sys" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys</span></code></a>. See <a class="reference internal" href="complete_api.html#radiens.utils.enums.KeyIndex" title="radiens.utils.enums.KeyIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIndex</span></code></a> for more details</p>
 </dd></dl>
 
 </section>

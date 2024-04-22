@@ -24,7 +24,7 @@ SubClients API
    :members:
    :member-order: bysource
 
-.. currentmodule:: radiens.spike_sorter
+.. currentmodule:: radiens.spike_sorter_client
 
 .. autoclass:: SpikeSorterClient
    :members:
@@ -47,3 +47,60 @@ SubClients API
 .. autoclass:: SignalsClient
    :members:
    :member-order: bysource
+
+
+Enums 
+=====
+
+.. currentmodule:: radiens.utils.enums
+
+.. autoclass:: ClientType
+   :members:
+   :member-order: bysource
+
+
+.. autoclass:: KeyIndex
+   :members:
+   :member-order: bysource
+
+.. autoclass:: PsdScaling
+   :members:
+   :member-order: bysource
+
+
+.. autoclass:: SignalUnits
+   :members:
+   :member-order: bysource
+
+.. autoclass:: FftWindow
+   :members:
+   :member-order: bysource
+
+.. autoclass:: RadiensFileType
+   :members:
+   :member-order: bysource
+
+.. autoclass:: MetricMode
+   :members:
+   :member-order: bysource
+
+.. autoclass:: MetricName
+   :members:
+   :member-order: bysource
+
+.. autoclass:: TrsMode
+   :members:
+   :member-order: bysource
+
+.. autoclass:: Port
+   :members:
+   :member-order: bysource
+
+.. autoclass:: SystemMode
+   :members:
+   :member-order: bysource
+
+.. autoclass:: SignalType
+   :members:
+   :member-order: bysource
+
