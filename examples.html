@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example use cases &mdash; Radiens 3.0.06b documentation</title>
+  <title>Examples &mdash; Radiens 3.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -46,10 +46,12 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Example use cases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#streaming-live-signals">Streaming live signals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#stream-live-signals">Stream live signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stream-and-write-signal-metrics">Stream and write signal metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#closed-loop-stimulation-x-series">Closed loop stimulation (X-Series)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#streaming-signal-metrics">Streaming signal metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-signals-from-a-data-set">Get signals from a data set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-spikes-from-a-data-set">Get spikes from a data set</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
@@ -73,7 +75,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Example use cases</li>
+      <li class="breadcrumb-item active">Examples</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,10 +85,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="example-use-cases">
-<span id="python-examples"></span><h1>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this heading"></a></h1>
-<section id="streaming-live-signals">
-<h2>Streaming live signals<a class="headerlink" href="#streaming-live-signals" title="Permalink to this heading"></a></h2>
+  <section id="examples">
+<span id="python-examples"></span><h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
+<section id="stream-live-signals">
+<h2>Stream live signals<a class="headerlink" href="#stream-live-signals" title="Permalink to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">AllegoClient</span>
@@ -122,6 +124,80 @@
 
         <span class="c1"># wait for cache to build up before getting more signals</span>
         <span class="n">sleep</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="stream-and-write-signal-metrics">
+<h2>Stream and write signal metrics<a class="headerlink" href="#stream-and-write-signal-metrics" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Sample signal metrics from the Radiens API and save results to CSV.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">AllegoClient</span>
+<span class="kn">from</span> <span class="nn">radiens.utils.enums</span> <span class="kn">import</span> <span class="n">MetricID</span><span class="p">,</span> <span class="n">MetricMode</span><span class="p">,</span> <span class="n">MetricName</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># initialize AllegoClient to interact with Radiens API</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
+
+    <span class="c1"># use the client to get a signal metrics client</span>
+    <span class="n">metrics_client</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">signal_metrics</span><span class="p">()</span>
+
+    <span class="c1"># define the metrics to be sampled from the Radiens API</span>
+    <span class="n">desired_metrics</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">NOISE_UV</span><span class="p">),</span>
+        <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">EVENT_MAX_MIN_DIFF_ABS</span><span class="p">),</span>
+        <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">MAX_ABS</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># define the number of samples to collect and the sample window length in seconds</span>
+    <span class="n">num_samples</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">sample_window_sec</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># initialize dictionary to hold the sampled metric results</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="n">metric</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">desired_metrics</span><span class="p">}</span>
+
+    <span class="c1"># initialize list to hold the timestamps of each sample</span>
+    <span class="n">sample_times</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># start a loop to collect the defined number of samples</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_samples</span><span class="p">):</span>
+
+        <span class="c1"># get the latest metrics</span>
+        <span class="n">metrics</span> <span class="o">=</span> <span class="n">metrics_client</span><span class="o">.</span><span class="n">get_metrics</span><span class="p">(</span>
+            <span class="n">sample_window_sec</span><span class="p">,</span>
+            <span class="n">metrics</span><span class="o">=</span><span class="n">desired_metrics</span><span class="p">,</span>
+            <span class="n">tail</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># option to get only the last packet of each sample window</span>
+        <span class="p">)</span>
+
+        <span class="c1"># record results and timestamp</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">metric_id</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">metric_ids</span><span class="p">):</span>
+            <span class="n">results</span><span class="p">[</span><span class="n">metric_id</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">])</span>
+        <span class="n">sample_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">time_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># pause for the length of the sample window before collecting the next sample</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="n">sample_window_sec</span><span class="p">)</span>
+
+    <span class="c1"># save each metric&#39;s samples to a separate CSV file</span>
+    <span class="k">for</span> <span class="n">metric_id</span><span class="p">,</span> <span class="n">samples</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+        <span class="c1"># create a DataFrame from the samples</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+
+        <span class="c1"># set the DataFrame&#39;s index to be the sample_times and its columns to be the native indexes from the metrics</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">sample_times</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">ntv_idxs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ntv_idx&#39;</span><span class="p">)</span>
+
+        <span class="c1"># save to csv file</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stream_</span><span class="si">{</span><span class="n">num_samples</span><span class="o">*</span><span class="n">sample_window_sec</span><span class="si">}</span><span class="s2">sec_</span><span class="si">{</span><span class="n">metric_id</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -177,71 +253,100 @@
 </pre></div>
 </div>
 </section>
-<section id="streaming-signal-metrics">
-<h2>Streaming signal metrics<a class="headerlink" href="#streaming-signal-metrics" title="Permalink to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Sample signal metrics from the Radiens API and save results to CSV.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<section id="get-signals-from-a-data-set">
+<h2>Get signals from a data set<a class="headerlink" href="#get-signals-from-a-data-set" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">VidereClient</span>
 
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="n">dpath</span> <span class="o">=</span> <span class="s2">&quot;~/radix/data/&quot;</span>
+<span class="n">base_name</span> <span class="o">=</span> <span class="s2">&quot;DATASET_NAME&quot;</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">AllegoClient</span>
-<span class="kn">from</span> <span class="nn">radiens.utils.enums</span> <span class="kn">import</span> <span class="n">MetricID</span><span class="p">,</span> <span class="n">MetricMode</span><span class="p">,</span> <span class="n">MetricName</span>
 
-<span class="c1"># initialize AllegoClient to interact with Radiens API</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">AllegoClient</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># create a VidereClient object</span>
+    <span class="n">vc</span> <span class="o">=</span> <span class="n">VidereClient</span><span class="p">()</span>
 
-<span class="c1"># use the client to get a signal metrics client</span>
-<span class="n">metrics_client</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">signal_metrics</span><span class="p">()</span>
+    <span class="c1"># meta is returned by link_data_file</span>
+    <span class="n">meta</span> <span class="o">=</span> <span class="n">vc</span><span class="o">.</span><span class="n">link_data_file</span><span class="p">(</span><span class="n">dpath</span><span class="o">+</span><span class="n">base_name</span><span class="p">)</span>
 
-<span class="c1"># define the metrics to be sampled from the Radiens API</span>
-<span class="n">desired_metrics</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">NOISE_UV</span><span class="p">),</span>
-    <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">EVENT_MAX_MIN_DIFF_ABS</span><span class="p">),</span>
-    <span class="n">MetricID</span><span class="p">(</span><span class="n">MetricMode</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">MetricName</span><span class="o">.</span><span class="n">MAX_ABS</span><span class="p">)</span>
-<span class="p">]</span>
-
-<span class="c1"># define the number of samples to collect and the sample window length in seconds</span>
-<span class="n">num_samples</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">sample_window_sec</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="c1"># initialize dictionary to hold the sampled metric results</span>
-<span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="n">metric</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">desired_metrics</span><span class="p">}</span>
-
-<span class="c1"># initialize list to hold the timestamps of each sample</span>
-<span class="n">sample_times</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># start a loop to collect the defined number of samples</span>
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_samples</span><span class="p">):</span>
-
-    <span class="c1"># get the latest metrics</span>
-    <span class="n">metrics</span> <span class="o">=</span> <span class="n">metrics_client</span><span class="o">.</span><span class="n">get_metrics</span><span class="p">(</span>
-        <span class="n">sample_window_sec</span><span class="p">,</span>
-        <span class="n">metrics</span><span class="o">=</span><span class="n">desired_metrics</span><span class="p">,</span>
-        <span class="n">tail</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># option to get only the last packet of each sample window</span>
+    <span class="c1"># get signals</span>
+    <span class="n">sigs</span> <span class="o">=</span> <span class="n">vc</span><span class="o">.</span><span class="n">signals</span><span class="p">()</span><span class="o">.</span><span class="n">get_signals</span><span class="p">(</span>
+        <span class="n">dataset_metadata</span><span class="o">=</span><span class="n">meta</span><span class="p">,</span>
+        <span class="c1"># time_range=[10, 20],  # time range (sec) optional</span>
     <span class="p">)</span>
 
-    <span class="c1"># record results and timestamp</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">metric_id</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">metric_ids</span><span class="p">):</span>
-        <span class="n">results</span><span class="p">[</span><span class="n">metric_id</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">])</span>
-    <span class="n">sample_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">time_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># sigs.time_range contains the returned time range</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sigs</span><span class="o">.</span><span class="n">time_range</span><span class="p">)</span>
 
-    <span class="c1"># pause for the length of the sample window before collecting the next sample</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="n">sample_window_sec</span><span class="p">)</span>
+    <span class="c1"># sigs.signals contains the raw signals</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sigs</span><span class="o">.</span><span class="n">signals</span><span class="o">.</span><span class="n">amp</span><span class="p">)</span>  <span class="c1"># amplifier channels</span>
+    <span class="c1"># print(sigs.signals.gpio_ain)  # analog input channels</span>
+    <span class="c1"># print(sigs.signals.gpio_din)  # digital input channels</span>
+    <span class="c1"># print(sigs.signals.gpio_dout)  # digital output channels</span>
 
-<span class="c1"># save each metric&#39;s samples to a separate CSV file</span>
-<span class="k">for</span> <span class="n">metric_id</span><span class="p">,</span> <span class="n">samples</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># sigs.channel_metadata contains the channel mapping info</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sigs</span><span class="o">.</span><span class="n">channel_metadata</span><span class="p">)</span>
 
-    <span class="c1"># create a DataFrame from the samples</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
 
-    <span class="c1"># set the DataFrame&#39;s index to be the sample_times and its columns to be the native indexes from the metrics</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">sample_times</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">ntv_idxs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ntv_idx&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="get-spikes-from-a-data-set">
+<h2>Get spikes from a data set<a class="headerlink" href="#get-spikes-from-a-data-set" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-    <span class="c1"># save to csv file</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stream_</span><span class="si">{</span><span class="n">num_samples</span><span class="o">*</span><span class="n">sample_window_sec</span><span class="si">}</span><span class="s2">sec_</span><span class="si">{</span><span class="n">metric_id</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">radiens</span> <span class="kn">import</span> <span class="n">VidereClient</span>
+<span class="kn">from</span> <span class="nn">radiens.utils.enums</span> <span class="kn">import</span> <span class="n">SignalType</span>
+<span class="kn">from</span> <span class="nn">radiens.utils.util</span> <span class="kn">import</span> <span class="n">dset_to_ntv_dict</span>
+<span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">savemat</span>
+
+<span class="n">dpath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;~/radix/data/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">base_name</span> <span class="o">=</span> <span class="s2">&quot;DATASET_NAME&quot;</span>
+<span class="n">spikes_base_name</span> <span class="o">=</span> <span class="s2">&quot;DATASET_NAME_s0&quot;</span>
+<span class="n">spikes_save_name</span> <span class="o">=</span> <span class="s2">&quot;DATASET_NAME_s0.mat&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># create a VidereClient object</span>
+    <span class="n">vc</span> <span class="o">=</span> <span class="n">VidereClient</span><span class="p">()</span>
+
+    <span class="c1"># link client to continuous data</span>
+    <span class="n">meta</span> <span class="o">=</span> <span class="n">vc</span><span class="o">.</span><span class="n">link_data_file</span><span class="p">(</span><span class="n">dpath</span><span class="o">/</span><span class="n">base_name</span><span class="p">,</span> <span class="n">link_spikes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># get channel mapping</span>
+    <span class="n">chan_idxs</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">channel_metadata</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">SignalType</span><span class="o">.</span><span class="n">AMP</span><span class="p">)</span>
+    <span class="n">dset_to_ntv</span> <span class="o">=</span> <span class="n">dset_to_ntv_dict</span><span class="p">(</span><span class="n">chan_idxs</span><span class="p">)</span>
+
+    <span class="c1"># get spikes</span>
+    <span class="n">spike_data</span> <span class="o">=</span> <span class="n">vc</span><span class="o">.</span><span class="n">spikes</span><span class="p">()</span><span class="o">.</span><span class="n">get_spike_timestamps</span><span class="p">(</span>
+        <span class="n">spikes_base_name</span><span class="p">,</span>
+        <span class="n">time_range</span><span class="o">=</span><span class="n">meta</span><span class="o">.</span><span class="n">time_range</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># convert timestamps to seconds</span>
+    <span class="n">ts_sec</span> <span class="o">=</span> <span class="n">spike_data</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">meta</span><span class="o">.</span><span class="n">TR</span><span class="o">.</span><span class="n">fs</span>
+
+    <span class="c1"># labels</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">spike_data</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span>
+
+    <span class="c1"># ntv idxs (for each spike)</span>
+    <span class="n">dset_idxs</span> <span class="o">=</span> <span class="n">spike_data</span><span class="p">[</span><span class="s2">&quot;dset_idxs&quot;</span><span class="p">]</span>
+    <span class="n">ntv_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dset_to_ntv</span><span class="p">[</span><span class="n">dset_idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">dset_idx</span> <span class="ow">in</span> <span class="n">dset_idxs</span><span class="p">])</span>
+
+    <span class="c1"># save to .mat file (oned_as=&quot;column&quot; means to save data as column vectors)</span>
+    <span class="n">savemat</span><span class="p">(</span><span class="n">dpath</span><span class="o">/</span><span class="n">spikes_save_name</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s2">&quot;timestamps&quot;</span><span class="p">:</span> <span class="n">ts_sec</span><span class="p">,</span>
+            <span class="s2">&quot;labels&quot;</span><span class="p">:</span> <span class="n">labels</span><span class="p">,</span>
+            <span class="s2">&quot;ntv_idxs&quot;</span><span class="p">:</span> <span class="n">ntv_idxs</span><span class="p">,</span>
+            <span class="p">},</span> <span class="n">oned_as</span><span class="o">=</span><span class="s2">&quot;column&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

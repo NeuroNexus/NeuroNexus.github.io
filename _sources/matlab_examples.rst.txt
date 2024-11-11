@@ -17,7 +17,7 @@ Although there is no MATLAB client for Radiens, the Python client may be accesse
 .. literalinclude:: ../tutorials/install_radiens.m
     :language: matlab
 
-4. Once the above has executed successfully, you can access the clients. The following are the same use cases we saw :ref:`previously <Python examples>`, but this time in MATLAB.
+4. Once the above has executed successfully, you can access the clients. The following are some of the same use cases we saw :ref:`previously <Python examples>`, but this time in MATLAB.
 
 Streaming live signals
 ----------------------

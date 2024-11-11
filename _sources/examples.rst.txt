@@ -1,23 +1,31 @@
 .. _Python examples:
 
-Example use cases
-=================
+Examples
+========
 
 
-Streaming live signals
-----------------------
+Stream live signals
+-------------------
 
 .. literalinclude:: ../tutorials/allego_client_example.py
     :language: python
 
+Stream and write signal metrics
+-------------------------------
+.. literalinclude:: ../tutorials/stream_metrics.py
+    :language: python
 
 Closed loop stimulation (X-Series)
 ----------------------------------
 .. literalinclude:: ../tutorials/stim_script.py
     :language: python
 
-Streaming signal metrics
-------------------------
-.. literalinclude:: ../tutorials/stream_metrics.py
+Get signals from a data set
+---------------------------
+.. literalinclude:: ../tutorials/get_signals_file.py
     :language: python
 
+Get spikes from a data set
+--------------------------
+.. literalinclude:: ../tutorials/get_spikes_file.py
+    :language: python

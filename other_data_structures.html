@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Other data structures, functions, and types &mdash; Radiens 3.0.06b documentation</title>
+  <title>Other data structures, functions, and types &mdash; Radiens 3.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -45,7 +45,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Example use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html#subclients-api">SubClients API</a></li>
@@ -185,7 +185,7 @@
 <dd class="field-odd"><p><strong>stype</strong> (<a class="reference internal" href="complete_api.html#radiens.utils.enums.SignalType" title="radiens.utils.enums.SignalType"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalType</span></code></a>) – Signal type</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>KeyIdxs</strong> (<a class="reference internal" href="#radiens.utils.constants.KeyIdxs" title="radiens.utils.constants.KeyIdxs"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIdxs</span></code></a>) – Key index object with keys <code class="xref py py-obj docutils literal notranslate"><span class="pre">ntv</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dset</span></code>, <a class="reference external" href="https://docs.python.org/3/library/sys.html#module-sys" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys</span></code></a></p>
+<dd class="field-even"><p><strong>KeyIdxs</strong> (<a class="reference internal" href="#radiens.utils.constants.KeyIdxs" title="radiens.utils.constants.KeyIdxs"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIdxs</span></code></a>) – Key index object with keys <code class="xref py py-obj docutils literal notranslate"><span class="pre">ntv</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dset</span></code>, <a class="reference external" href="https://docs.python.org/3/library/sys.html#module-sys" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys</span></code></a></p>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -268,7 +268,7 @@
 <dd><dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.dataset_metadata.DatasetMetadata.id">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#radiens.lib.dataset_metadata.DatasetMetadata.id" title="Permalink to this definition"></a></dt>
-<dd><p>Dataset ID of this DataSource the Radiens hub.  <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> indicates that it is not on a hub.</p>
+<dd><p>Dataset ID of this DataSource the Radiens hub.  <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> indicates that it is not on a hub.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -540,8 +540,8 @@ The ordered metric IDs are available in obj.metric_ids.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span> <span class="pre">|</span> <span class="pre">numpy.ndarray</span></code>) – time range in seconds as [time start, time end] (optional, default=None).</p></li>
 <li><p><strong>timestamp</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span> <span class="pre">|</span> <span class="pre">numpy.ndarray</span></code>) – timestamp in seconds as [timestamp start, timestamp end]  (optional, default=None).</p></li>
-<li><p><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – sampling frequency in samples/sec (required, default=None)</p></li>
-<li><p><strong>walltime</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a>) – wall time of the time range start.</p></li>
+<li><p><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – sampling frequency in samples/sec (required, default=None)</p></li>
+<li><p><strong>walltime</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a>) – wall time of the time range start.</p></li>
 <li><p><strong>pbTR</strong> – low-level system parameter not available to user.</p></li>
 </ul>
 </dd>
@@ -636,7 +636,7 @@ Either <code class="xref py py-obj docutils literal notranslate"><span class="pr
 <dl class="py class">
 <dt class="sig sig-object py" id="radiens.utils.constants.KeyIdxs">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.utils.constants.</span></span><span class="sig-name descname"><span class="pre">KeyIdxs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ntv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.utils.constants.KeyIdxs" title="Permalink to this definition"></a></dt>
-<dd><p>Python object with keys of type <code class="xref py py-obj docutils literal notranslate"><span class="pre">ntv</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dset</span></code>, <a class="reference external" href="https://docs.python.org/3/library/sys.html#module-sys" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys</span></code></a>. See <a class="reference internal" href="complete_api.html#radiens.utils.enums.KeyIndex" title="radiens.utils.enums.KeyIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIndex</span></code></a> for more details</p>
+<dd><p>Python object with keys of type <code class="xref py py-obj docutils literal notranslate"><span class="pre">ntv</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dset</span></code>, <a class="reference external" href="https://docs.python.org/3/library/sys.html#module-sys" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys</span></code></a>. See <a class="reference internal" href="complete_api.html#radiens.utils.enums.KeyIndex" title="radiens.utils.enums.KeyIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyIndex</span></code></a> for more details</p>
 </dd></dl>
 
 </section>

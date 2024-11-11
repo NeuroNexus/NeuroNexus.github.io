@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clients API &mdash; Radiens 3.0.06b documentation</title>
+  <title>Clients API &mdash; Radiens 3.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
@@ -46,7 +46,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Example use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab_examples.html">Accessing clients in MATLAB</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Clients API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#radiens.AllegoClient"><code class="docutils literal notranslate"><span class="pre">AllegoClient</span></code></a><ul>
@@ -432,7 +432,7 @@ It matches and extends the functionality of the Radiens Allego UI app.</p>
 <dd><p>Gets dictionary of dictionaries of available Radiens headstage and probe models, with each model of form key=component ID, value=number of channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sensors</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – has keys ‘headstages’ and ‘probes’ that map to dictionaries of the available headstage models and probe models, respectively.</p>
+<dd class="field-odd"><p><strong>sensors</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – has keys ‘headstages’ and ‘probes’ that map to dictionaries of the available headstage models and probe models, respectively.</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -519,7 +519,7 @@ will return the new signals since the last call to <a class="reference internal"
 <dd><p>Gets digital out state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dout_state_dict</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – has keys ‘digital_outs_mode’ and ‘states’.</p>
+<dd class="field-odd"><p><strong>dout_state_dict</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – has keys ‘digital_outs_mode’ and ‘states’.</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -538,7 +538,7 @@ will return the new signals since the last call to <a class="reference internal"
 <dd><p>Gets analog out settings</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>settings</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>)</p>
+<dd class="field-odd"><p><strong>settings</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -567,33 +567,33 @@ will return the new signals since the last call to <a class="reference internal"
 <dd><p>returns current stimulation params (see <a class="reference internal" href="#radiens.AllegoClient.set_stim_params" title="radiens.AllegoClient.set_stim_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_stim_params()</span></code></a>)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>stim_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – a dictionary where the keys are the system channel indices and the values are dictionaries containing the stimulation parameters. Each dictionary associated with a channel will have the following key-value pairs:</p>
+<dd class="field-odd"><p><strong>stim_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – a dictionary where the keys are the system channel indices and the values are dictionaries containing the stimulation parameters. Each dictionary associated with a channel will have the following key-value pairs:</p>
 <ul class="simple">
-<li><p>‘enabled’: stimulation enabled on channel (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
-<li><p>‘enable_amp_settle’: amp settle enabled on channel (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
-<li><p>‘enable_charge_recovery’: charge recovery enabled on channel (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
+<li><p>‘enabled’: stimulation enabled on channel (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
+<li><p>‘enable_amp_settle’: amp settle enabled on channel (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
+<li><p>‘enable_charge_recovery’: charge recovery enabled on channel (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
 <li><p>‘first_phase_amplitude_uA’: Level of current in µA for the first phase of the stimulation waveform (type)</p></li>
-<li><p>‘first_phase_duration_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘interphase_delay_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘maintain_amp_settle_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘number_of_stim_pulses’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>‘post_stim_amp_settle_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘post_stim_charge_recovery_off_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘post_stim_charge_recovery_on_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘post_trigger_delay_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘pre_stim_amp_settle_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘pulse_or_train’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>‘pulse_train_period_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘refactory_period_ms’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘first_phase_duration_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘interphase_delay_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘maintain_amp_settle_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘number_of_stim_pulses’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>‘post_stim_amp_settle_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘post_stim_charge_recovery_off_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘post_stim_charge_recovery_on_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘post_trigger_delay_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘pre_stim_amp_settle_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘pulse_or_train’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>‘pulse_train_period_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘refactory_period_ms’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
 <li><p>‘second_phase_amplitude_uA’: Level of current in µA for the second phase of the stimulation waveform (type)</p></li>
-<li><p>‘second_phase_duration_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
-<li><p>‘stim_polarity’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>‘stim_shape’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>‘stim_sys_chan_idx’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>‘trigger_edge_or_level’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>‘trigger_high_or_low’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>‘trigger_source_is_keypress’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
-<li><p>‘trigger_source_idx’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>‘second_phase_duration_us’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</p></li>
+<li><p>‘stim_polarity’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>‘stim_shape’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>‘stim_sys_chan_idx’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>‘trigger_edge_or_level’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>‘trigger_high_or_low’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>‘trigger_source_is_keypress’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
+<li><p>‘trigger_source_idx’: (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -641,7 +641,7 @@ will return the new signals since the last call to <a class="reference internal"
 4000, 5000, 6250, 8000, 10000, 12500, 15000, 20000, 25000, 30000</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – requested sampling frequency (samples/sec)</p>
+<dd class="field-odd"><p><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – requested sampling frequency (samples/sec)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>None</strong></p>
@@ -662,10 +662,10 @@ will return the new signals since the last call to <a class="reference internal"
 <dd><p>Sets the analog out hardware filter</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – requested sampling frequency (samples/sec)</p>
+<dd class="field-odd"><p><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – requested sampling frequency (samples/sec)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>analog_out_settings</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>)</p>
+<dd class="field-even"><p><strong>analog_out_settings</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -691,9 +691,9 @@ will return the new signals since the last call to <a class="reference internal"
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – requested port (must be a currently connected port)</p></li>
-<li><p><strong>headstage_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – requested headstage alias or headstage ID</p></li>
-<li><p><strong>probe_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – requested probe alias or probe ID</p></li>
+<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – requested port (must be a currently connected port)</p></li>
+<li><p><strong>headstage_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – requested headstage alias or headstage ID</p></li>
+<li><p><strong>probe_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – requested probe alias or probe ID</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -795,7 +795,7 @@ will return the new signals since the last call to <a class="reference internal"
 <dd><p>Sets signal recording to ‘on’ or ‘off’</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – requested mode, <code class="docutils literal notranslate"><span class="pre">on</span></code> or <code class="docutils literal notranslate"><span class="pre">off</span></code></p>
+<dd class="field-odd"><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – requested mode, <code class="docutils literal notranslate"><span class="pre">on</span></code> or <code class="docutils literal notranslate"><span class="pre">off</span></code></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>None</strong></p>
@@ -821,10 +821,10 @@ will return the new signals since the last call to <a class="reference internal"
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>datasource_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – path to output XDAT file set</p></li>
-<li><p><strong>datasource_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – base name of XDAT file set</p></li>
-<li><p><strong>datasource_idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – index number for the composed file name.</p></li>
-<li><p><strong>is_time_stamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> to time stamp the composed file name.</p></li>
+<li><p><strong>datasource_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – path to output XDAT file set</p></li>
+<li><p><strong>datasource_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – base name of XDAT file set</p></li>
+<li><p><strong>datasource_idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – index number for the composed file name.</p></li>
+<li><p><strong>is_time_stamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> to time stamp the composed file name.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -847,8 +847,8 @@ will return the new signals since the last call to <a class="reference internal"
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dout1_state</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – new dout 1 state</p></li>
-<li><p><strong>dout2_state</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – new dout 2 state</p></li>
+<li><p><strong>dout1_state</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – new dout 1 state</p></li>
+<li><p><strong>dout2_state</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – new dout 2 state</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -921,7 +921,7 @@ It matches and extends the functionality of the Radiens Videre UI app.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.VidereClient.link_data_file">
-<span class="sig-name descname"><span class="pre">link_data_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.VidereClient.link_data_file" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">link_data_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_spikes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.VidereClient.link_data_file" title="Permalink to this definition"></a></dt>
 <dd><p>Links a Radiens data file to the Radiens hub and returns the data set meta data.
 If force=False (default) and the ‘path’ is already linked then nothing is done and existing data set meta data is returned.
 Use force=True to always link the source as a new dataset. All instances of a linked data set are backed by the same data files.</p>
@@ -929,9 +929,9 @@ Use force=True to always link the source as a new dataset. All instances of a li
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
-<li><p><strong>calc_metrics</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to calculate signal metrics (default=True)</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to force the source to be linked to the hub (default=False)</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>calc_metrics</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to calculate signal metrics (default=True)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to force the source to be linked to the hub (default=False)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -953,11 +953,11 @@ Use force=True to always link the source as a new dataset. All instances of a li
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – index of dataset in table returned by <a class="reference internal" href="#radiens.VidereClient.get_dataset_ids" title="radiens.VidereClient.get_dataset_ids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_dataset_ids()</span></code></a></p></li>
-<li><p><strong>dataset_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – dataset ID as listed in table returned by <a class="reference internal" href="#radiens.VidereClient.get_dataset_ids" title="radiens.VidereClient.get_dataset_ids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_dataset_ids()</span></code></a></p></li>
+<li><p><strong>dataset_idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – index of dataset in table returned by <a class="reference internal" href="#radiens.VidereClient.get_dataset_ids" title="radiens.VidereClient.get_dataset_ids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_dataset_ids()</span></code></a></p></li>
+<li><p><strong>dataset_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – dataset ID as listed in table returned by <a class="reference internal" href="#radiens.VidereClient.get_dataset_ids" title="radiens.VidereClient.get_dataset_ids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_dataset_ids()</span></code></a></p></li>
 <li><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – full path to data file set in form of <code class="xref py py-obj docutils literal notranslate"><span class="pre">path/base_name.ext</span></code>.</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
-<li><p><strong>fail_hard</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – if True, then an exception is raised if the requested dataset is not available.</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>fail_hard</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – if True, then an exception is raised if the requested dataset is not available.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -987,13 +987,13 @@ This is a power user function.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">list</span></code>) – data source file or list of data source files.</p></li>
 <li><p><strong>dataset_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">list</span></code>) – dataset ID or list of dataset IDs (default=[], ‘all’ clears all datasets for the Curate session)</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>num_unlinked</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – number of unlinked datasets</p></li>
-<li><p><strong>dataset_ids</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – linked dataset IDs on the Radiens hub.</p></li>
+<li><p><strong>num_unlinked</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – number of unlinked datasets</p></li>
+<li><p><strong>dataset_ids</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – linked dataset IDs on the Radiens hub.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1010,7 +1010,7 @@ This is a power user function.</p>
 <dd><p>Returns sorted list of linked dataset IDs on the Radiens hub.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dataset_ids</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – linked dataset IDs on the Radiens hub.</p>
+<dd class="field-odd"><p><strong>dataset_ids</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – linked dataset IDs on the Radiens hub.</p>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -1170,7 +1170,7 @@ This function blocks until the background DSP stream is complete.
 This is an optional function that does not effect the DSP operation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – stream ID of the requested DSP stream.</p>
+<dd class="field-odd"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – stream ID of the requested DSP stream.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>None</strong></p>
@@ -1197,10 +1197,10 @@ This is an optional function that does not effect the DSP operation.</p>
 It is non-blocking.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – stream ID of the requested DSP stream.</p>
+<dd class="field-odd"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – stream ID of the requested DSP stream.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>frac_complete</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – fraction complete of the DSP stream.</p>
+<dd class="field-even"><p><strong>frac_complete</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – fraction complete of the DSP stream.</p>
 </dd>
 </dl>
 <div class="admonition-examples admonition">
@@ -1226,15 +1226,15 @@ It is non-blocking.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter cut-off frequency in samples/sec (Hz)</p></li>
+<li><p><strong>cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter cut-off frequency in samples/sec (Hz)</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1265,15 +1265,15 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter cut-off frequency in samples/sec (Hz)</p></li>
+<li><p><strong>cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter cut-off frequency in samples/sec (Hz)</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1299,16 +1299,16 @@ The low_cutoff_freq must be less than the high_cutoff_freq.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>low_cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter low cut-off frequency in samples/sec (Hz)</p></li>
-<li><p><strong>high_cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter high cut-off frequency in samples/sec (Hz)</p></li>
+<li><p><strong>low_cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter low cut-off frequency in samples/sec (Hz)</p></li>
+<li><p><strong>high_cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter high cut-off frequency in samples/sec (Hz)</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1340,16 +1340,16 @@ The low_cutoff_freq must be less than the high_cutoff_freq.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>low_cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter low cut-off frequency in samples/sec (Hz)</p></li>
-<li><p><strong>high_cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter high cut-off frequency in samples/sec (Hz)</p></li>
+<li><p><strong>low_cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter low cut-off frequency in samples/sec (Hz)</p></li>
+<li><p><strong>high_cutoff_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter high cut-off frequency in samples/sec (Hz)</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1380,16 +1380,16 @@ This is non-blocking. The requested DSP operation runs in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – notch frequency in samples/sec (Hz)</p></li>
-<li><p><strong>bandwidth</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter bandwidth in samples/sec (Hz)</p></li>
+<li><p><strong>freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – notch frequency in samples/sec (Hz)</p></li>
+<li><p><strong>bandwidth</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – filter bandwidth in samples/sec (Hz)</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1421,16 +1421,16 @@ The reference signal is zeroed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>source_chan</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – source channel index</p></li>
-<li><p><strong>ref_chan</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – reference channel index</p></li>
+<li><p><strong>source_chan</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – source channel index</p></li>
+<li><p><strong>ref_chan</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – reference channel index</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1462,15 +1462,15 @@ The reference channel is zeroed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ref_chan</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – reference channel index</p></li>
+<li><p><strong>ref_chan</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – reference channel index</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1503,12 +1503,12 @@ This is non-blocking. The requested DSP operation runs in the background.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1542,15 +1542,15 @@ and ‘target_sampling_freq=5000’</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>decimate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – sample factor</p></li>
+<li><p><strong>decimate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – sample factor</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1582,12 +1582,12 @@ This is non-blocking. The requested DSP operation runs in the background.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1603,16 +1603,16 @@ This is non-blocking. The requested DSP operation runs in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time_start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – slice start time in seconds</p></li>
-<li><p><strong>time_end</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – slice end time in seconds</p></li>
+<li><p><strong>time_start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – slice start time in seconds</p></li>
+<li><p><strong>time_end</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – slice end time in seconds</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1643,15 +1643,15 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>target_channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel indices of channels to slice from the source</p></li>
+<li><p><strong>target_channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel indices of channels to slice from the source</p></li>
 <li><p><strong>source_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
 <li><p><strong>target_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to target (output) file</p></li>
-<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force replacing target file if it exists</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
+<dd class="field-even"><p><strong>stream_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – background DSP stream ID</p>
 </dd>
 </dl>
 <div class="admonition-notes admonition">
@@ -1703,9 +1703,9 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>workspace_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – optional workspace ID</p></li>
-<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – optional tags</p></li>
-<li><p><strong>notes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – optional notes</p></li>
+<li><p><strong>workspace_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – optional workspace ID</p></li>
+<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – optional tags</p></li>
+<li><p><strong>notes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – optional notes</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1727,7 +1727,7 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dd><p>Switches to requested workspace</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>workspace_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – workspace ID</p>
+<dd class="field-odd"><p><strong>workspace_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – workspace ID</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>None</strong></p>
@@ -1748,7 +1748,7 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dd><p>Deletes requested workspace</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>workspace_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – workspace ID</p>
+<dd class="field-odd"><p><strong>workspace_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – workspace ID</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>None</strong></p>
@@ -1769,7 +1769,7 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dd><p>Returns current workspace ID</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>workspaces</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>)</p>
+<dd class="field-odd"><p><strong>workspaces</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1787,7 +1787,7 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dd><p>Returns table of all available workspaces</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>workspaces</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>)</p>
+<dd class="field-odd"><p><strong>workspaces</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>)</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1865,7 +1865,7 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dd><p>Sets spike sorting on or off</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – mode [<code class="docutils literal notranslate"><span class="pre">on</span></code>, <code class="docutils literal notranslate"><span class="pre">off</span></code>]</p>
+<dd class="field-odd"><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – mode [<code class="docutils literal notranslate"><span class="pre">on</span></code>, <code class="docutils literal notranslate"><span class="pre">off</span></code>]</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>None</strong></p>
@@ -1887,16 +1887,16 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>neg_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
-<li><p><strong>pos_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
-<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">uV</span></code> | <code class="docutils literal notranslate"><span class="pre">sd</span></code></p></li>
-<li><p><strong>ntv_idxs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel native indices (default None=all channels)</p></li>
-<li><p><strong>weak_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to set the weak threshold (default=False)</p></li>
+<li><p><strong>neg_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
+<li><p><strong>pos_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">uV</span></code> | <code class="docutils literal notranslate"><span class="pre">sd</span></code></p></li>
+<li><p><strong>ntv_idxs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel native indices (default None=all channels)</p></li>
+<li><p><strong>weak_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to set the weak threshold (default=False)</p></li>
 <li><p><strong>channel_meta</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelMetadata</span></code>) – Allego connected channels</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1920,15 +1920,15 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>neg_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
-<li><p><strong>pos_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
-<li><p><strong>ntv_idxs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel native indices (default None=all channels)</p></li>
-<li><p><strong>weak_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to set the weak threshold (default=False)</p></li>
+<li><p><strong>neg_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
+<li><p><strong>pos_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
+<li><p><strong>ntv_idxs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel native indices (default None=all channels)</p></li>
+<li><p><strong>weak_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to set the weak threshold (default=False)</p></li>
 <li><p><strong>channel_meta</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelMetadata</span></code>) – Allego connected channels</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1952,12 +1952,12 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pre_thr_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – pre-threshold window duration in milliseconds (default None=not changed)</p></li>
-<li><p><strong>post_thr_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – post-threshold window duration in milliseconds (default None=not changed)</p></li>
+<li><p><strong>pre_thr_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – pre-threshold window duration in milliseconds (default None=not changed)</p></li>
+<li><p><strong>post_thr_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – post-threshold window duration in milliseconds (default None=not changed)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of spike window</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of spike window</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1980,10 +1980,10 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <dd><p>Sets spike shadow window.  The shadow window is the time skipped after each threshold crossing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>shadow_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – shadow window duration in ms (default None=not changed)</p>
+<dd class="field-odd"><p><strong>shadow_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – shadow window duration in ms (default None=not changed)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of spike shadow window</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of spike shadow window</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -2122,7 +2122,7 @@ The returned spike data has spike timestamps, spike waveforms, and spike labels.
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – dataset ID</p></li>
+<li><p><strong>dataset_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – dataset ID</p></li>
 <li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – </p></li>
 <li><p><strong>ntv_idxs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – </p></li>
 </ul>
@@ -2138,7 +2138,7 @@ The returned spike data has spike timestamps, spike waveforms, and spike labels.
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – dataset ID</p></li>
+<li><p><strong>dataset_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – dataset ID</p></li>
 <li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – </p></li>
 <li><p><strong>ntv_idxs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – </p></li>
 </ul>
@@ -2239,17 +2239,17 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>neg_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
-<li><p><strong>pos_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
-<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">uV</span></code> | <code class="docutils literal notranslate"><span class="pre">sd</span></code></p></li>
-<li><p><strong>ntv_idxs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel native indices (default None=all channels)</p></li>
-<li><p><strong>weak_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to set the weak threshold (default=False)</p></li>
+<li><p><strong>neg_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
+<li><p><strong>pos_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">uV</span></code> | <code class="docutils literal notranslate"><span class="pre">sd</span></code></p></li>
+<li><p><strong>ntv_idxs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel native indices (default None=all channels)</p></li>
+<li><p><strong>weak_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to set the weak threshold (default=False)</p></li>
 <li><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – dataset metadata object</p></li>
 <li><p><strong>channel_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a>) – Allego connected channels</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -2273,16 +2273,16 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>neg_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
-<li><p><strong>pos_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
-<li><p><strong>ntv_idxs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel native indices (default None=all channels)</p></li>
-<li><p><strong>weak_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to set the weak threshold (default=False)</p></li>
+<li><p><strong>neg_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
+<li><p><strong>pos_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <code class="docutils literal notranslate"><span class="pre">on</span></code> | <code class="docutils literal notranslate"><span class="pre">off</span></code></p></li>
+<li><p><strong>ntv_idxs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – channel native indices (default None=all channels)</p></li>
+<li><p><strong>weak_thr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to set the weak threshold (default=False)</p></li>
 <li><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – dataset metadata object</p></li>
 <li><p><strong>channel_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a>) – Allego connected channels</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -2306,14 +2306,14 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pre_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – ms before event</p></li>
-<li><p><strong>post_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – ms after event</p></li>
+<li><p><strong>pre_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – ms before event</p></li>
+<li><p><strong>post_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – ms after event</p></li>
 <li><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – dataset metadata object</p></li>
 <li><p><strong>channel_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a>) – Allego connected channels</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of event window</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of event window</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -2337,13 +2337,13 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>shadow_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – duration of shadow in milliseconds</p></li>
+<li><p><strong>shadow_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – duration of shadow in milliseconds</p></li>
 <li><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – dataset metadata object</p></li>
 <li><p><strong>channel_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a>) – Allego connected channels</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of event shadow</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of event shadow</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -2367,12 +2367,12 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>packet_dur_sec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – duration in seconds of signals used to calculate signal metrics packet</p></li>
+<li><p><strong>packet_dur_sec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – duration in seconds of signals used to calculate signal metrics packet</p></li>
 <li><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – dataset metadata object</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
+<dd class="field-even"><p><strong>msg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – summary description of threshold levels</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -2397,7 +2397,7 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – metadata on linked dataset</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Radiens hub name (default = DEFAULT_HUB, optional)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Radiens hub name (default = DEFAULT_HUB, optional)</p></li>
 <li><p><strong>dataset_metadata</strong> – dataset metadata object</p></li>
 </ul>
 </dd>
@@ -2416,7 +2416,7 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dd class="field-odd"><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – dataset metadata object</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – dict of status parameters, with keys=’time_range’,’packet_dur_sec’, ‘beta’, ‘is_tracking_cache’, ‘wall_time_start’, ‘persistence_sec’</p>
+<dd class="field-even"><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – dict of status parameters, with keys=’time_range’,’packet_dur_sec’, ‘beta’, ‘is_tracking_cache’, ‘wall_time_start’, ‘persistence_sec’</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2428,8 +2428,8 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">list,</span> <span class="pre">ndarray</span></code>) – if parent client is <a class="reference internal" href="#radiens.AllegoClient" title="radiens.AllegoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllegoClient</span></code></a>, then this parameter can be <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>; otherwise, it must be <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></p></li>
-<li><p><strong>metrics</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">MetricID</span></code>. It specified a default list is used.</p></li>
+<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">list,</span> <span class="pre">ndarray</span></code>) – if parent client is <a class="reference internal" href="#radiens.AllegoClient" title="radiens.AllegoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllegoClient</span></code></a>, then this parameter can be <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>; otherwise, it must be <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></p></li>
+<li><p><strong>metrics</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">MetricID</span></code>. It specified a default list is used.</p></li>
 <li><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – dataset metadata object</p></li>
 <li><p><strong>channel_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a>) – Allego connected channels</p></li>
 </ul>
@@ -2476,15 +2476,15 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeRange</span></code>) – requested time range in seconds (required)</p></li>
 <li><p><strong>sel_mode</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TrsMode</span></code>) – time range selection mode (optional, default=TrsMode.SUBSET)</p></li>
 <li><p><strong>sig_sel</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">SigSelect</span></code>) – requested AMP signals (optional, default=all AMP signals)</p></li>
-<li><p><strong>samp_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – PSD sample frequency in Hz. (optional, default=dataset_metadata.TR.fs)</p></li>
+<li><p><strong>samp_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – PSD sample frequency in Hz. (optional, default=dataset_metadata.TR.fs)</p></li>
 <li><p><strong>freq_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list,</span> <span class="pre">np.ndarray</span></code>) – requested frequency range.  (optional, default=[1, 300])</p></li>
-<li><p><strong>collapse_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – True collapses <code class="xref py py-obj docutils literal notranslate"><span class="pre">freq_range</span></code> into one frequency bin (optional, default=False)</p></li>
+<li><p><strong>collapse_freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – True collapses <code class="xref py py-obj docutils literal notranslate"><span class="pre">freq_range</span></code> into one frequency bin (optional, default=False)</p></li>
 <li><p><strong>scaling</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">PsdScaling</span></code>) – sets the PSD scale (optional, default=PsdScaling.ABSOLUTE)</p></li>
 <li><p><strong>window</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">FftWindow</span></code>) – sets the FFT window(optional, default=FftWindow.HAMMING_p01)</p></li>
-<li><p><strong>freq_resolution</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – requested frequency resolution in Hz (optional, default=None)</p></li>
+<li><p><strong>freq_resolution</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – requested frequency resolution in Hz (optional, default=None)</p></li>
 <li><p><strong>file</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">string</span></code>) – save psd data to file (optional, default=None)</p></li>
 <li><p><strong>dataset_metadata</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code>) – dataset metadata (required for Videre, optional for Allego, default=None)</p></li>
-<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Radiens hub name (optional, default=DEFAULT_HUB)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Radiens hub name (optional, default=DEFAULT_HUB)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
