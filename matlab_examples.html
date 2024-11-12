@@ -49,6 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Accessing clients in MATLAB</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#streaming-live-signals">Streaming live signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-spikes-from-a-data-set">Get spikes from a data set</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="complete_api.html">Clients API</a></li>
@@ -108,16 +109,16 @@
 <h2>Streaming live signals<a class="headerlink" href="#streaming-live-signals" title="Permalink to this heading"></a></h2>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% import radiens python package and connect client</span>
 <span class="n">radiens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">py</span><span class="p">.</span><span class="n">importlib</span><span class="p">.</span><span class="n">import_module</span><span class="p">(</span><span class="s">&#39;radiens&#39;</span><span class="p">);</span>
-<span class="n">allego</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">AllegoClient</span><span class="p">();</span>
+<span class="n">ac</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">AllegoClient</span><span class="p">();</span>
 
 <span class="c">% duration of each signal chunk during streaming</span>
-<span class="n">loop_dur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">allego</span><span class="p">.</span><span class="n">get_stream_loop_dur_ms</span><span class="p">()</span>
+<span class="n">loop_dur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ac</span><span class="p">.</span><span class="n">get_stream_loop_dur_ms</span><span class="p">()</span>
 
 <span class="c">% channel_metadata describes all the channel metadata</span>
-<span class="n">chan_meta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">allego</span><span class="p">.</span><span class="n">get_channel_metadata</span><span class="p">()</span>
+<span class="n">chan_meta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ac</span><span class="p">.</span><span class="n">get_channel_metadata</span><span class="p">()</span>
 
 <span class="c">% set time to primary cache head (live signals)</span>
-<span class="n">allego</span><span class="p">.</span><span class="n">set_time_to_cache_head</span><span class="p">()</span><span class="w">  </span>
+<span class="n">ac</span><span class="p">.</span><span class="n">set_time_to_cache_head</span><span class="p">()</span><span class="w">  </span>
 
 <span class="c">% wait for cache to build up before starting aquisition loop</span>
 <span class="nb">pause</span><span class="p">(</span><span class="n">loop_dur</span><span class="p">)</span>
@@ -125,7 +126,7 @@
 <span class="c">% aquisition loop   </span>
 <span class="k">while</span><span class="w"> </span><span class="nb">true</span><span class="w">    </span>
 <span class="w">    </span><span class="c">% returns a py.tuple</span>
-<span class="w">    </span><span class="n">sigs_tuple</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">allego</span><span class="p">.</span><span class="n">get_signals</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sigs_tuple</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ac</span><span class="p">.</span><span class="n">get_signals</span><span class="p">();</span>
 
 <span class="w">    </span><span class="c">% we can cast py.tuple as a cell array in matlab</span>
 <span class="w">    </span><span class="n">sigs_cell_array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="n">sigs_tuple</span><span class="p">);</span>
@@ -145,6 +146,42 @@
 </pre></div>
 </div>
 <p>Note that the type conversions add noticable latency, and the effective loop duration may be considerably larger than <code class="docutils literal notranslate"><span class="pre">loop_dur</span></code>.</p>
+</section>
+<section id="get-spikes-from-a-data-set">
+<h2>Get spikes from a data set<a class="headerlink" href="#get-spikes-from-a-data-set" title="Permalink to this heading"></a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% importing python modules/submodules in matlab</span>
+<span class="n">radiens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">py</span><span class="p">.</span><span class="n">importlib</span><span class="p">.</span><span class="n">import_module</span><span class="p">(</span><span class="s">&#39;radiens&#39;</span><span class="p">);</span>
+<span class="n">util</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">util</span><span class="p">;</span>
+<span class="n">enums</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">enums</span><span class="p">;</span>
+
+<span class="c">% paths</span>
+<span class="n">dpath</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;~/radix/data/&quot;</span><span class="p">;</span>
+<span class="n">base_name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;DATASET_NAME&quot;</span><span class="p">;</span>
+<span class="n">spikes_base_name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;DATASET_NAME_s0&quot;</span><span class="p">;</span>
+
+<span class="c">% create a client object</span>
+<span class="n">vc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">radiens</span><span class="p">.</span><span class="n">VidereClient</span><span class="p">();</span>
+<span class="n">meta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">vc</span><span class="p">.</span><span class="n">link_data_file</span><span class="p">(</span><span class="s">&#39;~/radix/data/allego_0__uid1108-14-55-23&#39;</span><span class="p">);</span>
+
+<span class="c">% get channel mapping</span>
+<span class="n">chan_idxs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">meta</span><span class="p">.</span><span class="n">channel_metadata</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">enums</span><span class="p">.</span><span class="n">SignalType</span><span class="p">.</span><span class="n">AMP</span><span class="p">);</span>
+<span class="n">dset_to_ntv</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">util</span><span class="p">.</span><span class="n">dset_to_ntv_dict</span><span class="p">(</span><span class="n">chan_idxs</span><span class="p">);</span>
+
+
+<span class="c">% get spikes</span>
+<span class="n">args</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pyargs</span><span class="p">(</span><span class="s">&quot;time_range&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">py</span><span class="p">.</span><span class="n">list</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">]));</span><span class="w">  </span><span class="c">% time range can optionally be passed</span>
+<span class="n">spike_data</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">vc</span><span class="p">.</span><span class="n">spikes</span><span class="p">().</span><span class="n">get_spike_timestamps</span><span class="p">(</span><span class="k">...</span>
+<span class="w">    </span><span class="n">spikes_base_name</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="n">args</span><span class="w"> </span><span class="k">...</span><span class="c"> % optional</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="n">timestamps_sec</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">spike_data</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;timestamps&quot;</span><span class="p">))</span><span class="o">/</span><span class="n">meta</span><span class="p">.</span><span class="n">time_range</span><span class="p">.</span><span class="n">fs</span><span class="p">;</span>
+<span class="n">labels</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">spike_data</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;labels&quot;</span><span class="p">));</span>
+<span class="n">idxs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">spike_data</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;dset_idxs&quot;</span><span class="p">));</span><span class="w"> </span><span class="c">% row index (in raw data)</span>
+
+<span class="c">% convert idxs to native channel index</span>
+<span class="n">ntv_idxs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">arrayfun</span><span class="p">(@(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">dset_to_ntv</span><span class="p">{</span><span class="nb">i</span><span class="p">}),</span><span class="w"> </span><span class="n">idxs</span><span class="p">);</span>
+</pre></div>
+</div>
 </section>
 </section>
 

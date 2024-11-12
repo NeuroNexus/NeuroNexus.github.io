@@ -2117,7 +2117,7 @@ The returned spike data has spike timestamps, spike waveforms, and spike labels.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.spikes_client.SpikesClient.get_spike_waveforms">
-<span class="sig-name descname"><span class="pre">get_spike_waveforms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.spikes_client.SpikesClient.get_spike_waveforms" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_spike_waveforms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.spikes_client.SpikesClient.get_spike_waveforms" title="Permalink to this definition"></a></dt>
 <dd><p>Gets spike waveforms for specified time range of a spikes file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2133,14 +2133,13 @@ The returned spike data has spike timestamps, spike waveforms, and spike labels.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.spikes_client.SpikesClient.get_spike_timestamps">
-<span class="sig-name descname"><span class="pre">get_spike_timestamps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.spikes_client.SpikesClient.get_spike_timestamps" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_spike_timestamps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.spikes_client.SpikesClient.get_spike_timestamps" title="Permalink to this definition"></a></dt>
 <dd><p>Gets spike timestamps for specified time range of a spikes file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dataset_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – dataset ID</p></li>
 <li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – </p></li>
-<li><p><strong>ntv_idxs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list[float]</span></code>) – </p></li>
 </ul>
 </dd>
 </dl>

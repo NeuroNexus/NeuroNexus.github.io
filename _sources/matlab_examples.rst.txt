@@ -27,6 +27,12 @@ Streaming live signals
 
 Note that the type conversions add noticable latency, and the effective loop duration may be considerably larger than ``loop_dur``.
 
+Get spikes from a data set
+--------------------------
+
+.. literalinclude:: ../tutorials/get_spikes_file.m
+    :language: matlab
+
 .. Loading and accessing saved recording
 .. -------------------------------------
 
