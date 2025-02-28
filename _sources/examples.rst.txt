@@ -20,6 +20,11 @@ Closed loop stimulation (X-Series)
 .. literalinclude:: ../tutorials/stim_script.py
     :language: python
 
+List data sets in a directory
+-----------------------------
+.. literalinclude:: ../tutorials/list_data_sets.py
+    :language: python
+
 Get signals from a data set
 ---------------------------
 .. literalinclude:: ../tutorials/get_signals_file.py

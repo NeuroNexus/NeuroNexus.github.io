@@ -1,22 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clients API &mdash; Radiens 3.0.3 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>Clients API &mdash; Radiens 3.0.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+      <script src="_static/doctools.js"></script>
+      <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -85,6 +85,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.VidereClient.spike_sorter"><code class="docutils literal notranslate"><span class="pre">VidereClient.spike_sorter()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.VidereClient.spikes"><code class="docutils literal notranslate"><span class="pre">VidereClient.spikes()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.VidereClient.signals"><code class="docutils literal notranslate"><span class="pre">VidereClient.signals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.VidereClient.list_dir"><code class="docutils literal notranslate"><span class="pre">VidereClient.list_dir()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.VidereClient.link_data_file"><code class="docutils literal notranslate"><span class="pre">VidereClient.link_data_file()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.VidereClient.get_data_file_metadata"><code class="docutils literal notranslate"><span class="pre">VidereClient.get_data_file_metadata()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.VidereClient.clear_dataset"><code class="docutils literal notranslate"><span class="pre">VidereClient.clear_dataset()</span></code></a></li>
@@ -120,6 +121,21 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.CurateClient.file_convert"><code class="docutils literal notranslate"><span class="pre">CurateClient.file_convert()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.CurateClient.dsp_slice_time"><code class="docutils literal notranslate"><span class="pre">CurateClient.dsp_slice_time()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.CurateClient.dsp_slice_channels"><code class="docutils literal notranslate"><span class="pre">CurateClient.dsp_slice_channels()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radiens.FileSystemClient"><code class="docutils literal notranslate"><span class="pre">FileSystemClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.hubs"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.hubs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.id"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.ls"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.ls()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.list_dir"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.list_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.copy_files"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.copy_files()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.cp"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.cp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.delete_files"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.delete_files()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.rm"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.rm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.rename_file"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.rename_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.mv"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.mv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.link_data_file"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.link_data_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.FileSystemClient.get_data_file_metadata"><code class="docutils literal notranslate"><span class="pre">FileSystemClient.get_data_file_metadata()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -220,6 +236,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.utils.enums.RadiensFileType.NSX"><code class="docutils literal notranslate"><span class="pre">RadiensFileType.NSX</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.utils.enums.RadiensFileType.TDT"><code class="docutils literal notranslate"><span class="pre">RadiensFileType.TDT</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.utils.enums.RadiensFileType.SPIKES"><code class="docutils literal notranslate"><span class="pre">RadiensFileType.SPIKES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.utils.enums.RadiensFileType.OE_DAT"><code class="docutils literal notranslate"><span class="pre">RadiensFileType.OE_DAT</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#radiens.utils.enums.MetricMode"><code class="docutils literal notranslate"><span class="pre">MetricMode</span></code></a><ul>
@@ -920,8 +937,14 @@ It matches and extends the functionality of the Radiens Videre UI app.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="radiens.VidereClient.list_dir">
+<span class="sig-name descname"><span class="pre">list_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'date'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.VidereClient.list_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Lists Radiens recording and/or spikes files that are in the requested directory. This function is a wrapper around the file system client. See <a class="reference internal" href="#radiens.FileSystemClient.list_dir" title="radiens.FileSystemClient.list_dir"><code class="xref py py-meth docutils literal notranslate"><span class="pre">FileSystemClient.list_dir()</span></code></a> for more details.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="radiens.VidereClient.link_data_file">
-<span class="sig-name descname"><span class="pre">link_data_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_spikes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.VidereClient.link_data_file" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">link_data_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ftype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_spikes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.VidereClient.link_data_file" title="Permalink to this definition"></a></dt>
 <dd><p>Links a Radiens data file to the Radiens hub and returns the data set meta data.
 If force=False (default) and the ‘path’ is already linked then nothing is done and existing data set meta data is returned.
 Use force=True to always link the source as a new dataset. All instances of a linked data set are backed by the same data files.</p>
@@ -929,6 +952,7 @@ Use force=True to always link the source as a new dataset. All instances of a li
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
+<li><p><strong>ftype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">RadiensFileType</span></code>) – file type (default=None, inferred from file extension)</p></li>
 <li><p><strong>calc_metrics</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to calculate signal metrics (default=True)</p></li>
 <li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – use True to force the source to be linked to the hub (default=False)</p></li>
 <li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
@@ -1101,7 +1125,7 @@ This is a power user function.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="radiens.CurateClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.</span></span><span class="sig-name descname"><span class="pre">CurateClient</span></span><a class="headerlink" href="#radiens.CurateClient" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.</span></span><span class="sig-name descname"><span class="pre">CurateClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.CurateClient" title="Permalink to this definition"></a></dt>
 <dd><p>CurateClient implements the radiens API for data curation. It matches and extends the functionality of the Radiens Curate UI app.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="radiens.CurateClient.hubs">
@@ -1672,6 +1696,250 @@ This is non-blocking and the requested DSP operation runs in the background.</p>
 <p><a class="reference internal" href="#radiens.CurateClient.dsp_progress" title="radiens.CurateClient.dsp_progress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dsp_progress()</span></code></a>
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">dsp_progress_bar()</span></code>
 <a class="reference internal" href="#radiens.CurateClient.dsp_slice_time" title="radiens.CurateClient.dsp_slice_time"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dsp_slice_time()</span></code></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiens.FileSystemClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiens.</span></span><span class="sig-name descname"><span class="pre">FileSystemClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient" title="Permalink to this definition"></a></dt>
+<dd><p>Container for Radiens file system commands.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.hubs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hubs</span></span><a class="headerlink" href="#radiens.FileSystemClient.hubs" title="Permalink to this definition"></a></dt>
+<dd><p>dict of active radiens hubs, with hub ID as key.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#radiens.FileSystemClient.id" title="Permalink to this definition"></a></dt>
+<dd><p>UID of this client session.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.ls">
+<span class="sig-name descname"><span class="pre">ls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'date'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.ls" title="Permalink to this definition"></a></dt>
+<dd><p>Aliases client.list_dir() to list Radiens recording and/or spikes files that are in the requested directory.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.list_dir" title="radiens.FileSystemClient.list_dir"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list_dir()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.list_dir">
+<span class="sig-name descname"><span class="pre">list_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'date'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.list_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Lists Radiens recording and/or spikes files that are in the requested directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>req_dir</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – requested directory; if empty, <code class="xref py py-obj docutils literal notranslate"><span class="pre">$HOME/radix/data</span></code> is used</p></li>
+<li><p><strong>sort_by</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – flag to specify the ordering of the returned file list, ‘date’, ‘name’, ‘size’, ‘type’ (default=’date)</p></li>
+<li><p><strong>include</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – flag to specify file types, ‘recording’, ‘time-series’, ‘spikes’, ‘all’ (default=’all’)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>file_type</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – table of files in the requested directory</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">list_dir</span><span class="p">(</span><span class="s2">&quot;./&quot;</span><span class="p">)</span>
+<span class="go">pandas.DataFrame</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>Directory name wildcards are allowed, but must resolve to only one directory.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.ls" title="radiens.FileSystemClient.ls"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ls()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.copy_files">
+<span class="sig-name descname"><span class="pre">copy_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.copy_files" title="Permalink to this definition"></a></dt>
+<dd><p>Copies one or more Radiens files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path,</span> <span class="pre">list</span></code>) – path to source file(s)</p></li>
+<li><p><strong>dest</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to destination file(s)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force copy if destination file already exists (default=False)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>file_desc</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">FileSysResponse</span></code>) – details of the command result</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">copy_files</span><span class="p">(</span><span class="s2">&quot;./my_rec_file.xdat&quot;</span><span class="p">,</span> <span class="s1">&#39;./targ_dir/new_file&#39;</span><span class="p">)</span>
+<span class="go">FileSysResponse</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>The destination file type is always the same as the source file type.
+File name wildcards are allowed, but must resolve to only one file.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.cp" title="radiens.FileSystemClient.cp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cp()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.cp">
+<span class="sig-name descname"><span class="pre">cp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.cp" title="Permalink to this definition"></a></dt>
+<dd><p>Aliases client.copy_files() to copy one or more Radiens files.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.copy_files" title="radiens.FileSystemClient.copy_files"><code class="xref py py-meth docutils literal notranslate"><span class="pre">copy_files()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.delete_files">
+<span class="sig-name descname"><span class="pre">delete_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.delete_files" title="Permalink to this definition"></a></dt>
+<dd><p>Deletes (aka removes) one or more Radiens files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path,</span> <span class="pre">list</span></code>) – path to source file(s)</p></li>
+<li><p><strong>dry_run</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to list the requested files without deleting them (default=False)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>file_type</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – table of copied files.</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">delete_files</span><span class="p">(</span><span class="s2">&quot;./my_rec_file.xdat&quot;</span><span class="p">)</span>
+<span class="go">pandas.DataFrame</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>The requested files are permanently deleted from the file system.
+File name wildcards are allowed, but must resolve to only one file.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.rm" title="radiens.FileSystemClient.rm"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rm()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.rm">
+<span class="sig-name descname"><span class="pre">rm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.rm" title="Permalink to this definition"></a></dt>
+<dd><p>Aliases client.delete_files() to delete (aka remove) one or more Radiens files.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.delete_files" title="radiens.FileSystemClient.delete_files"><code class="xref py py-meth docutils literal notranslate"><span class="pre">delete_files()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.rename_file">
+<span class="sig-name descname"><span class="pre">rename_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest=&lt;built-in</span> <span class="pre">function</span> <span class="pre">any&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name='default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.rename_file" title="Permalink to this definition"></a></dt>
+<dd><p>Renames (aka moves) one Radiens file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
+<li><p><strong>dest</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to destination file</p></li>
+<li><p><strong>dry_run</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to list the requested files without deleting them (default=False)</p></li>
+<li><p><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – flag to force renaming if the destination file exists (default=False)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>file_type</strong> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>) – table of renamed file.</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">rename_files</span><span class="p">(</span><span class="s2">&quot;./my_rec_file.xdat&quot;</span><span class="p">,</span> <span class="s2">&quot;./targ_dir/my_rec_file&quot;</span><span class="p">)</span>
+<span class="go">pandas.DataFrame</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>The destination file type is the same as the source file type.
+File name wildcards are allowed, but must resolve to only one file.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.mv" title="radiens.FileSystemClient.mv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mv()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.mv">
+<span class="sig-name descname"><span class="pre">mv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest=&lt;built-in</span> <span class="pre">function</span> <span class="pre">any&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name='default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.mv" title="Permalink to this definition"></a></dt>
+<dd><p>Aliases client.rename_file() to rename (aka move) one Radiens file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.rename_file" title="radiens.FileSystemClient.rename_file"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename_file()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.link_data_file">
+<span class="sig-name descname"><span class="pre">link_data_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.link_data_file" title="Permalink to this definition"></a></dt>
+<dd><p>Links a Radiens data file to the Radiens hub as a new dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
+<li><p><strong>calc_metrics</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – set True to calculate signal metrics (default=False)</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>data_source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code>) – data file metadata</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.rename_file" title="radiens.FileSystemClient.rename_file"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename_file()</span></code></a>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">_clear_dataset()</span></code>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">get_dataset_ids()</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiens.FileSystemClient.get_data_file_metadata">
+<span class="sig-name descname"><span class="pre">get_data_file_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.FileSystemClient.get_data_file_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the meta data for a Radiens data file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str,</span> <span class="pre">pathlib.Path</span></code>) – path to source file</p></li>
+<li><p><strong>hub_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – radiens hub name (default=radiens.utils.constants.DEFAULT_HUB)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>data_source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code>) – data file metadata</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#radiens.FileSystemClient.rename_file" title="radiens.FileSystemClient.rename_file"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rename_file()</span></code></a>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">_clear_dataset()</span></code>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">get_dataset_ids()</span></code></p>
 </div>
 </dd></dl>
 
@@ -2427,7 +2695,7 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">list,</span> <span class="pre">ndarray</span></code>) – if parent client is <a class="reference internal" href="#radiens.AllegoClient" title="radiens.AllegoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllegoClient</span></code></a>, then this parameter can be <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>; otherwise, it must be <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></p></li>
+<li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">list,</span> <span class="pre">ndarray</span></code>) – if parent client is <a class="reference internal" href="#radiens.AllegoClient" title="radiens.AllegoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllegoClient</span></code></a>, then this parameter can be <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>; otherwise, it must be <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></p></li>
 <li><p><strong>metrics</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">MetricID</span></code>. It specified a default list is used.</p></li>
 <li><p><strong>dataset_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.dataset_metadata.DatasetMetadata" title="radiens.lib.dataset_metadata.DatasetMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a>) – dataset metadata object</p></li>
 <li><p><strong>channel_metadata</strong> (<a class="reference internal" href="other_data_structures.html#radiens.lib.channel_metadata.ChannelMetadata" title="radiens.lib.channel_metadata.ChannelMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelMetadata</span></code></a>) – Allego connected channels</p></li>
@@ -2685,6 +2953,12 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dt class="sig sig-object py" id="radiens.utils.enums.RadiensFileType.SPIKES">
 <span class="sig-name descname"><span class="pre">SPIKES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#radiens.utils.enums.RadiensFileType.SPIKES" title="Permalink to this definition"></a></dt>
 <dd><p>Spikes file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiens.utils.enums.RadiensFileType.OE_DAT">
+<span class="sig-name descname"><span class="pre">OE_DAT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">22</span></em><a class="headerlink" href="#radiens.utils.enums.RadiensFileType.OE_DAT" title="Permalink to this definition"></a></dt>
+<dd><p>Open Ephys .dat file</p>
 </dd></dl>
 
 </dd></dl>
