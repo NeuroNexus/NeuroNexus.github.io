@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clients API &mdash; Radiens 3.0.9 documentation</title>
+  <title>Clients API &mdash; Radiens 3.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
@@ -2715,16 +2715,18 @@ If <code class="docutils literal notranslate"><span class="pre">cmd=standard</sp
 <dd><p>Signals client object for Allego, Curate, and Videre</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="radiens.signals_client.SignalsClient.get_signals">
-<span class="sig-name descname"><span class="pre">get_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_sel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.signals_client.SignalsClient.get_signals" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_sel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntv_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hub_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiens.signals_client.SignalsClient.get_signals" title="Permalink to this definition"></a></dt>
 <dd><p>Gets signals over the specified time range from a linked dataset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeRange</span></code>) – see <a class="reference internal" href="other_data_structures.html#radiens.utils.util.make_time_range" title="radiens.utils.util.make_time_range"><code class="xref py py-meth docutils literal notranslate"><span class="pre">make_time_range()</span></code></a></p></li>
 <li><p><strong>dataset_metadata</strong> – see <code class="xref py py-meth docutils literal notranslate"><span class="pre">link_data_file()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_data_file_metadata()</span></code></p></li>
-<li><p><strong>sel_mode</strong> – optional (default <code class="xref py py-attr docutils literal notranslate"><span class="pre">TrsMode.SUBSET</span></code>)</p></li>
-<li><p><strong>sig_sel</strong> – optional</p></li>
-<li><p><strong>hub_name</strong> – optional</p></li>
+<li><p><strong>sel_mode</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TrsMode</span></code>) – time range selection mode (optional, default <code class="xref py py-attr docutils literal notranslate"><span class="pre">TrsMode.SUBSET</span></code>)</p></li>
+<li><p><strong>sig_sel</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">SigSelect</span></code>) – see <code class="xref py py-meth docutils literal notranslate"><span class="pre">make_signal_selector()</span></code> (optional)</p></li>
+<li><p><strong>sig_type</strong> – signal type — one of “amp”, “ain”, “din”, “dout” (optional)</p></li>
+<li><p><strong>ntv_idxs</strong> – channel indices of <code class="xref py py-obj docutils literal notranslate"><span class="pre">sig_type</span></code> to return. (optional, default “all”)</p></li>
+<li><p><strong>hub_name</strong> – (optional)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>

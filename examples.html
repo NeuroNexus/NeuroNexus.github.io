@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Examples &mdash; Radiens 3.0.9 documentation</title>
+  <title>Examples &mdash; Radiens 3.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
@@ -294,6 +294,8 @@
     <span class="n">sigs</span> <span class="o">=</span> <span class="n">vc</span><span class="o">.</span><span class="n">signals</span><span class="p">()</span><span class="o">.</span><span class="n">get_signals</span><span class="p">(</span>
         <span class="n">dataset_metadata</span><span class="o">=</span><span class="n">meta</span><span class="p">,</span>
         <span class="c1"># time_range=[10, 20],  # time range (sec) optional</span>
+        <span class="n">sig_type</span><span class="o">=</span><span class="s2">&quot;amp&quot;</span><span class="p">,</span>  <span class="c1"># &quot;amp&quot;, &quot;ain&quot;, &quot;din&quot;, or &quot;dout&quot;</span>
+        <span class="n">ntv_idxs</span><span class="o">=</span><span class="s2">&quot;all&quot;</span>  <span class="c1"># channel indices to get of `sig_type`</span>
     <span class="p">)</span>
 
     <span class="c1"># sigs.time_range contains the returned time range</span>
