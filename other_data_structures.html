@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Other data structures, functions, and types &mdash; Radiens 3.1.1 documentation</title>
+  <title>Other data structures, functions, and types &mdash; Radiens 3.1.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
@@ -81,6 +81,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.sample_freq"><code class="docutils literal notranslate"><span class="pre">AllegoState.sample_freq</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.system_mode"><code class="docutils literal notranslate"><span class="pre">AllegoState.system_mode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.port_num_channels"><code class="docutils literal notranslate"><span class="pre">AllegoState.port_num_channels</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.cable_delay_spec"><code class="docutils literal notranslate"><span class="pre">AllegoState.cable_delay_spec</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.cable_length_ft"><code class="docutils literal notranslate"><span class="pre">AllegoState.cable_length_ft</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.recording"><code class="docutils literal notranslate"><span class="pre">AllegoState.recording</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#radiens.lib.allego_lib.AllegoState.stream"><code class="docutils literal notranslate"><span class="pre">AllegoState.stream</span></code></a></li>
@@ -167,7 +168,175 @@
 <dl class="py property">
 <dt class="sig sig-object py" id="radiens.lib.channel_metadata.ChannelMetadata.table">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">table</span></span><a class="headerlink" href="#radiens.lib.channel_metadata.ChannelMetadata.table" title="Permalink to this definition"></a></dt>
-<dd><p>Metadata table providing metadata on each channel (aka signal) in the dataset.</p>
+<dd><p>Table containing per-channel metadata, with one row per channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pd.DataFrame</strong> – Each row describes one channel. Column identifiers are as follows:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>port (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>)</dt><dd><ul>
+<li><p>Port label from acquisition hardware</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>chan_name (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>)</dt><dd><ul>
+<li><p>Channel name</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>chan_type (<a class="reference internal" href="complete_api.html#radiens.utils.enums.SignalType" title="radiens.utils.enums.SignalType"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalType</span></code></a>)</dt><dd><ul>
+<li><p>Signal type</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>sys_key_idx (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</dt><dd><ul>
+<li><p>Immutable absolute index of channel assigned at time of recording</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ntv_key_idx (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</dt><dd><ul>
+<li><p>Immutable relative (to signal type) channel index of the channel assigned at time of recording</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>dataset_key_idx (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</dt><dd><ul>
+<li><p>Dataset channel index relative to signal type</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>dataset_key_idx_abs (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</dt><dd><ul>
+<li><p>Absolute channel index</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>site_num (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</dt><dd><ul>
+<li><p>Site identifier on the probe</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>color_group_idx (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</dt><dd><ul>
+<li><p>Internal color group index used for visualization</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>selected (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)</dt><dd><ul>
+<li><p>Whether the channel is selected</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>audio (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list[bool]</span></code>)</dt><dd><ul>
+<li><p>List of two booleans indicating left and right audio channels ([is_audio_left, is_audio_right])</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>site_shape (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>)</dt><dd><ul>
+<li><p>Geometric descriptor of the site</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>site_ctr_x/y/z (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</dt><dd><ul>
+<li><p>Coordinates of the site center relative to the sensor</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>site_lim_x/y/z_[min/max] (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</dt><dd><ul>
+<li><p>Site bounding box limits</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>site_ctr_tcs_x/y/z (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</dt><dd><ul>
+<li><p>Site center in tissue coordinate system (TCS)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>sensor_units (<a class="reference internal" href="complete_api.html#radiens.utils.enums.SignalUnits" title="radiens.utils.enums.SignalUnits"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalUnits</span></code></a>)</dt><dd><ul>
+<li><p>Physical units of the signal</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>site_area_um2 (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</dt><dd><ul>
+<li><p>Area of the site in µm²</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>scs_to_tcs (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>)</dt><dd><ul>
+<li><p>Offset from sensor to tissue coordinate system</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>sensor_id (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>)</dt><dd><ul>
+<li><p>Full sensor identifier</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>probe_id (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>)</dt><dd><ul>
+<li><p>Identifier for the probe</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>headstage_id (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>)</dt><dd><ul>
+<li><p>Identifier for the headstage</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ntv_chan_name (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>)</dt><dd><ul>
+<li><p>Native channel name from hardware</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>sensor_uid (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>)</dt><dd><ul>
+<li><p>Unique sensor identifier</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -348,6 +517,12 @@ This is a power user function. Best practice is to call it when the dataset has 
 <dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.port_num_channels">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">port_num_channels</span></span><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.port_num_channels" title="Permalink to this definition"></a></dt>
 <dd><p>Number of channels on each connected port.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="radiens.lib.allego_lib.AllegoState.cable_delay_spec">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cable_delay_spec</span></span><a class="headerlink" href="#radiens.lib.allego_lib.AllegoState.cable_delay_spec" title="Permalink to this definition"></a></dt>
+<dd><p>Cable delay specification for each system port</p>
 </dd></dl>
 
 <dl class="py property">
